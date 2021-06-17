@@ -1,3 +1,6 @@
 [submodule ".vim/pack/themes/start/gruvbox"]
 	path = .vim/pack/themes/start/gruvbox
 	url = https://github.com/morhetz/gruvbox.git
+[submodule ".vim/pack/syntax/start/ini-syntax-definition"]
+	path = .vim/pack/syntax/start/ini-syntax-definition
+	url = https://github.com/vim-scripts/ini-syntax-definition
