@@ -1,0 +1,35 @@
+[colors]
+bg = #282828
+fg = #ebddb2
+red = #cc241d
+green = #98971a
+blue = #458588
+yellow = #d79921
+aqua = #689d6a
+purple = #b16286
+
+[bar/desktop-bottom]
+monitor = DP-2
+
+width = 100%
+height = 40
+bottom = true
+
+background = ${colors.bg}
+foreground = ${colors.fg}
+
+padding-left = 4
+padding-right = 4
+
+modules-left = wm
+modules-right = date
+
+[module/date]
+type = internal/date
+date = "%m-%d-%Y"
+time = "%H:%M"
+label = %date% %time%
+
+[module/wm]
+type = internal/i3
+
