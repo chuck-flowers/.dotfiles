@@ -1,0 +1,13 @@
+[user]
+	email = t_chuck_flowers@yahoo.com
+	name = Chuck Flowers
+[core]
+	editor = vim
+[rebase]
+	autoSquash = true
+[pull]
+	ff = only
+[alias]
+	l = log --oneline
+    rr = rebase -i origin
+
