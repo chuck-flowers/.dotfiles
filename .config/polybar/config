@@ -19,6 +19,8 @@ bottom = true
 ; colors
 background = ${colors.bg}
 foreground = ${colors.fg}
+background-alt = ${colors.yellow}
+foreground-alt = ${colors.aqua}
 
 ; fonts
 font-0 = Fira Code
