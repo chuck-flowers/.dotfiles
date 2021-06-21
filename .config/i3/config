@@ -181,4 +181,5 @@ bindsym $mod+r mode "resize"
 #}
 
 exec_always feh --bg-center $HOME/Pictures/wallpaper.png
-exec_always polybar desktop-bottom
+exec_always $HOME/.config/polybar/launch.sh
+
