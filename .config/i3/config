@@ -147,6 +147,14 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-msg exit"
 
+# class                 border  background text    indicator child_border
+client.focused          #458588 #458588    #ebdbb2 #458588   #458588
+# client.focused_inactive
+# client.unfocused
+client.urgent           #cc241d #cc241d    #ebdbb2 #cc241d   #cc241d
+# client.placeholder
+# client.background
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
