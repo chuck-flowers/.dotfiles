@@ -46,3 +46,5 @@ label = %date% %time%
 [module/wm]
 type = internal/i3
 
+index-sort = true
+
