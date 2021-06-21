@@ -24,6 +24,9 @@ foreground = ${colors.fg}
 padding-left = 4
 padding-right = 4
 
+; system tray
+tray-position = right
+
 ; modules
 modules-left = wm
 modules-right = date
