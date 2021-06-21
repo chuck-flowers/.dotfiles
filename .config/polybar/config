@@ -20,6 +20,10 @@ bottom = true
 background = ${colors.bg}
 foreground = ${colors.fg}
 
+; fonts
+font-0 = Fira Code
+font-1 = Font Awesome
+
 ; spacing
 padding-left = 4
 padding-right = 4
