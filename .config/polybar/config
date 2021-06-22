@@ -48,3 +48,6 @@ type = internal/i3
 
 index-sort = true
 
+label-focused-background = ${colors.yellow}
+label-focused-foreground = ${colors.bg}
+
