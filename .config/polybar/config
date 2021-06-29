@@ -40,7 +40,7 @@ modules-right = date
 [module/date]
 type = internal/date
 date = "%m-%d-%Y"
-time = "%H:%M"
+time = "%I:%M %p"
 label = %date% %time%
 
 [module/wm]
