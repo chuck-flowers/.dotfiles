@@ -35,7 +35,7 @@ tray-position = right
 
 ; modules
 modules-left = wm
-modules-right = date
+modules-center = date
 
 [module/date]
 type = internal/date
