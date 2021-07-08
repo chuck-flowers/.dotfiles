@@ -11,10 +11,10 @@ purple = #b16286
 [bar/desktop-bottom]
 monitor = DP-2
 
+[section/base-bar]
 ; size/position
 width = 100%
 height = 30
-bottom = true
 
 ; colors
 background = ${colors.bg}
@@ -30,12 +30,19 @@ font-1 = Font Awesome
 padding-left = 4
 padding-right = 4
 
-; system tray
+[bar/desktop-bottom]
+inherit = section/base-bar
+monitor = DP-2
+bottom = true
 tray-position = right
 
 ; modules
 modules-left = wm
 modules-center = date
+
+[bar/desktop-top]
+inherit = section/base-bar
+monitor = DP-2
 
 [module/date]
 type = internal/date
