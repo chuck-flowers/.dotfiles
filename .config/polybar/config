@@ -1,15 +1,12 @@
 [colors]
-bg = #282828
-fg = #ebddb2
-red = #cc241d
-green = #98971a
-blue = #458588
-yellow = #d79921
-aqua = #689d6a
-purple = #b16286
-
-[bar/desktop-bottom]
-monitor = DP-2
+bg = ${xrdb:color0}
+fg = ${xrdb:color15}
+red = ${xrdb:color1}
+green = ${xrdb:color2}
+yellow = ${xrdb:color3}
+blue = ${xrdb:color4}
+purple = ${xrdb:color5}
+aqua = ${xrdb:color6}
 
 [section/base-bar]
 ; size/position
