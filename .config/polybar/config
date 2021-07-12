@@ -49,7 +49,11 @@ inherit = section/base-bar
 
 ; modules
 modules-center = window
-modules-right = memory
+modules-right = cpu memory
+
+[module/cpu]
+type = internal/cpu
+label = CPU %percentage%%
 
 [module/date]
 type = internal/date
