@@ -25,7 +25,9 @@ foreground-alt = ${colors.aqua}
 
 ; fonts
 font-0 = Fira Code
-font-1 = Font Awesome
+font-1 = Font Awesome 5 Free
+font-2 = Font Awesome 5 Free Solid
+font-3 = Font Awesome 5 Free Brands
 
 ; spacing
 padding-left = 4
