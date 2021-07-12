@@ -49,12 +49,17 @@ inherit = section/base-bar
 
 ; modules
 modules-center = window
+modules-right = memory
 
 [module/date]
 type = internal/date
 date = "%m-%d-%Y"
 time = "%I:%M %p"
 label = %date% %time%
+
+[module/memory]
+type = internal/memory
+label = RAM %percentage_used%%
 
 [module/window]
 type = internal/xwindow
