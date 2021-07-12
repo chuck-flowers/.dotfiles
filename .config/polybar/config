@@ -9,9 +9,13 @@ purple = ${xrdb:color5}
 aqua = ${xrdb:color6}
 
 [section/base-bar]
+monitor = ${env:MONITOR}
+
 ; size/position
-width = 100%
+width = 100%:-30
 height = 30
+offset-x = 15
+offset-y = 15
 
 ; colors
 background = ${colors.bg}
@@ -27,9 +31,12 @@ font-1 = Font Awesome
 padding-left = 4
 padding-right = 4
 
+; i3 specific configuration
+wm-restack = i3
+override-redirect = true
+
 [bar/desktop-bottom]
 inherit = section/base-bar
-monitor = DP-2
 bottom = true
 tray-position = right
 
@@ -39,7 +46,6 @@ modules-center = date
 
 [bar/desktop-top]
 inherit = section/base-bar
-monitor = DP-2
 
 ; modules
 modules-center = window
