@@ -41,11 +41,17 @@ modules-center = date
 inherit = section/base-bar
 monitor = DP-2
 
+; modules
+modules-center = window
+
 [module/date]
 type = internal/date
 date = "%m-%d-%Y"
 time = "%I:%M %p"
 label = %date% %time%
+
+[module/window]
+type = internal/xwindow
 
 [module/wm]
 type = internal/i3
