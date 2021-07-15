@@ -30,8 +30,8 @@ font-2 = Font Awesome 5 Free Solid
 font-3 = Font Awesome 5 Free Brands
 
 ; spacing
-padding-left = 4
-padding-right = 4
+padding-left = 1
+padding-right = 1
 module-margin = 1
 
 ; i3 specific configuration
@@ -42,6 +42,7 @@ override-redirect = true
 inherit = section/base-bar
 bottom = true
 tray-position = right
+padding-left = 0
 
 ; modules
 modules-left = wm
@@ -52,7 +53,7 @@ inherit = section/base-bar
 
 ; modules
 modules-center = window
-modules-right = cpu memory
+modules-right = cpu memory temp
 
 [module/cpu]
 type = internal/cpu
@@ -67,6 +68,17 @@ label = %date% %time%
 [module/memory]
 type = internal/memory
 label =  %percentage_used%%
+
+[module/temp]
+type = internal/temperature
+label =  %temperature-c%
+label-warn =  %temperature-c%
+label-warn-foreground = #cc241d
+units = true
+
+hwmon-path = /sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon1/temp3_input
+base-temperature = 20
+warn-temperature = 60
 
 [module/window]
 type = internal/xwindow
