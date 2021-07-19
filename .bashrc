@@ -10,3 +10,6 @@ test -e /etc/bash_completion && source /etc/bash_completion
 # Define the shell prompt
 PS1='[\u@\h \W]\$ '
 
+# Define EDITOR
+export EDITOR=vim
+
