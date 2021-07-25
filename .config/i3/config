@@ -184,6 +184,11 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# Custom key bindings
+bindsym $mod+z exec firefox
+bindsym $mod+x exec pcmanfm
+bindsym $mod+c exec steam
+
 # Configure the gaps for windows
 default_border pixel 3
 gaps inner 15
