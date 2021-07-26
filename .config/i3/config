@@ -204,3 +204,6 @@ exec $HOME/.config/polybar/launch.sh
 # Configure the compositor
 exec picom &
 
+# Autostart applications
+exec dex -a
+
