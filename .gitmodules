@@ -4,3 +4,6 @@
 [submodule ".vim/pack/syntax/start/ini-syntax-definition"]
 	path = .vim/pack/syntax/start/ini-syntax-definition
 	url = https://github.com/vim-scripts/ini-syntax-definition
+[submodule ".vim/pack/utils/start/YouCompleteMe"]
+	path = .vim/pack/utils/start/YouCompleteMe
+	url = https://github.com/ycm-core/YouCompleteMe
