@@ -185,7 +185,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Custom key bindings
-bindsym $mod+z exec firefox
+bindsym $mod+z exec xdg-open http:
 bindsym $mod+x exec pcmanfm
 bindsym $mod+c exec steam
 
