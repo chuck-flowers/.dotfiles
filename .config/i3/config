@@ -196,7 +196,7 @@ gaps vertical 47
 gaps horizontal 2
 
 # Set the wallpaper
-exec_always nitrogen --restore &
+exec nitrogen --restore &
 
 # Configure the polybars
 exec $HOME/.config/polybar/launch.sh
