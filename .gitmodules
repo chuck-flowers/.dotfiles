@@ -10,3 +10,6 @@
 [submodule ".vim/pack/ui/start/vim-airline"]
 	path = .vim/pack/ui/start/vim-airline
 	url = https://github.com/vim-airline/vim-airline
+[submodule "/home/cflowers/.vim/pack/syntax/start/graphql"]
+	path = /home/cflowers/.vim/pack/syntax/start/graphql
+	url = https://github.com/jparise/vim-graphql.git
