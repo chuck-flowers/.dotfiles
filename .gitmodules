@@ -13,3 +13,6 @@
 [submodule "/home/cflowers/.vim/pack/syntax/start/graphql"]
 	path = /home/cflowers/.vim/pack/syntax/start/graphql
 	url = https://github.com/jparise/vim-graphql.git
+[submodule "/home/cflowers/.vim/pack/syntax/start/typescript-vim"]
+	path = /home/cflowers/.vim/pack/syntax/start/typescript-vim
+	url = https://github.com/leafgarland/typescript-vim
