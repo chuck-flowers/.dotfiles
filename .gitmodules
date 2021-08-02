@@ -16,3 +16,6 @@
 [submodule "/home/cflowers/.vim/pack/syntax/start/typescript-vim"]
 	path = /home/cflowers/.vim/pack/syntax/start/typescript-vim
 	url = https://github.com/leafgarland/typescript-vim
+[submodule "/home/cflowers/.vim/pack/ui/start/nerdtree"]
+	path = /home/cflowers/.vim/pack/ui/start/nerdtree
+	url = https://github.com/preservim/nerdtree.git
