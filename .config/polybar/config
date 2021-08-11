@@ -52,7 +52,7 @@ modules-center = date
 inherit = section/base-bar
 
 ; modules
-modules-left = audio
+modules-left = compositor audio
 modules-center = window
 modules-right = cpu memory temp
 
@@ -64,6 +64,12 @@ format-volume =  <label-volume>
 
 label-muted = 
 label-muted-foreground = ${colors.red}
+
+[module/compositor]
+type = custom/script
+
+exec = pgrep picom > /dev/null && echo ' ON' || echo ' OFF'
+click-left = pgrep picom > /dev/null && pkill picom > /dev/null || picom &
 
 [module/cpu]
 type = internal/cpu
