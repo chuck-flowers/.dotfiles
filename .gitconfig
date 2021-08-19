@@ -9,5 +9,6 @@
 	ff = only
 [alias]
 	l = log --oneline
-    rr = rebase -i origin
+	rd = rebase -i master
+	rr = rebase -i origin
 
