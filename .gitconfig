@@ -8,7 +8,7 @@
 [pull]
 	ff = only
 [alias]
-	l = log --oneline
+	l = log --decorate --oneline --graph
 	rd = rebase -i master
 	rr = rebase -i origin
 
