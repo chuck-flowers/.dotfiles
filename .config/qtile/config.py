@@ -80,6 +80,11 @@ keys = [
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawncmd(),
         desc="Spawn a command using a prompt widget"),
+
+	# Quick launch
+	Key([mod], "z", lazy.spawn("brave"), "Launch web browser"),
+	Key([mod], "x", lazy.spawn("alacritty -e ranger"), "Launch file browser"),
+	Key([mod], "c", lazy.spawn("steam"), "Launch Steam")
 ]
 
 groups = [Group(i) for i in "123456789"]
