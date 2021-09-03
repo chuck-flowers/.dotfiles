@@ -124,12 +124,19 @@ extension_defaults = widget_defaults.copy()
 
 screens = [
     Screen(
+		top=bar.Bar(
+			[
+				widget.Spacer(),
+				widget.WindowName(width=bar.CALCULATED),
+				widget.Spacer()
+			],
+			24
+		),
         bottom=bar.Bar(
             [
                 widget.CurrentLayout(),
                 widget.GroupBox(),
                 widget.Prompt(),
-                widget.WindowName(),
                 widget.Chord(
                     chords_colors={
                         'launch': ("#ff0000", "#ffffff"),
