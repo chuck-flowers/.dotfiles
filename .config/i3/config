@@ -186,7 +186,7 @@ bindsym $mod+r mode "resize"
 
 # Custom key bindings
 bindsym $mod+z exec xdg-open http:
-bindsym $mod+x exec pcmanfm
+bindsym $mod+x exec alacritty -e ranger
 bindsym $mod+c exec steam
 
 # Configure the gaps for windows
