@@ -9,10 +9,15 @@ test -e "$HOME/.bash_functions" && source "$HOME/.bash_functions"
 
 # Add bash completions
 test -e /etc/bash_completion && source /etc/bash_completion
+which himalaya > /dev/null && eval "$(himalaya completion bash)"
 
 # Define the shell prompt
 PS1='[\u@\h \W]\$ '
 
-# Define EDITOR
+# Define program defaults
+export BROWSER=brave
 export EDITOR=vim
+
+# Define Extend the path
+PATH=~/.local/bin:$PATH
 
