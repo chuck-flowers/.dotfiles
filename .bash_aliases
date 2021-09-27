@@ -1,4 +1,5 @@
 alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
-alias ls='ls --color=auto'
+alias less='less -R'
 alias ll='ls -l --color=auto'
+alias ls='ls --color=auto'
 
