@@ -1,15 +1,3 @@
-[submodule ".vim/pack/themes/start/gruvbox"]
-	path = .vim/pack/themes/start/gruvbox
-	url = https://github.com/morhetz/gruvbox.git
-[submodule ".vim/pack/syntax/start/ini-syntax-definition"]
-	path = .vim/pack/syntax/start/ini-syntax-definition
-	url = https://github.com/vim-scripts/ini-syntax-definition
-[submodule ".vim/pack/utils/start/YouCompleteMe"]
-	path = .vim/pack/utils/start/YouCompleteMe
-	url = https://github.com/ycm-core/YouCompleteMe
-[submodule ".vim/pack/ui/start/vim-airline"]
-	path = .vim/pack/ui/start/vim-airline
-	url = https://github.com/vim-airline/vim-airline
 [submodule "/home/cflowers/.vim/pack/syntax/start/graphql"]
 	path = /home/cflowers/.vim/pack/syntax/start/graphql
 	url = https://github.com/jparise/vim-graphql.git
