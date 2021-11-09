@@ -2,13 +2,13 @@
 	email = t_chuck_flowers@yahoo.com
 	name = Chuck Flowers
 [core]
-	editor = vim
+	editor = nvim
 [rebase]
 	autoSquash = true
 [pull]
 	ff = only
 [alias]
-	l = log --decorate --oneline --graph
+	l = log --all --decorate --oneline --graph
 	rd = rebase -i master
 	rr = rebase -i origin
 
