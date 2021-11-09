@@ -16,7 +16,7 @@ PS1='[\u@\h \W]\$ '
 
 # Define program defaults
 export BROWSER=brave
-export EDITOR=vim
+export EDITOR=nvim
 
 # Define Extend the path
 PATH=~/.local/bin:$PATH
