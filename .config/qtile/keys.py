@@ -245,7 +245,7 @@ keys = [
     Key(
         [mod],
         "x",
-        lazy.spawn("alacritty -e sleep .25 && ranger"),
+        lazy.spawn("alacritty -e bash -c 'sleep .25 && ranger'"),
         "Launch file browser"
     ),
     Key(
