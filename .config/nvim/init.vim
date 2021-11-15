@@ -15,6 +15,9 @@ set autoindent
 set softtabstop=4
 set shiftwidth=4
 
+" Configure the line wrapping behavior
+set nowrap
+
 lua << EOF
 local nvim_lsp = require('lspconfig')
 
