@@ -257,8 +257,28 @@ keys = [
     Key(
         [mod],
         "v",
-        lazy.spawn("alacritty -e nvim /home/cflowers/vimwiki/index.wiki"),
+        lazy.spawn(
+            """
+alacritty -e bash -c \\
+'sleep .25 && nvim /home/cflowers/vimwiki/index.wiki'
+            """
+        ),
         "Launch vimwiki for editing"
+    ),
+    Key(
+        [mod, "shift"],
+        "v",
+        lazy.spawn(
+            """
+alacritty -e bash -c \\
+'sleep .25 && nvim -es -- /home/cflowers/vimwiki/index.wiki << EOF
+VimwikiAll2HTML
+Vimwiki2HTMLBrowse
+q
+EOF
+'
+            """
+        )
     )
 ]
 
