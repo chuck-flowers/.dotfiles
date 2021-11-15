@@ -19,16 +19,20 @@ set shiftwidth=4
 set nowrap
 
 lua << EOF
-local nvim_lsp = require('lspconfig')
+pcall(function ()
+	local nvim_lsp = require('lspconfig')
 
-nvim_lsp.bashls.setup{
-}
-nvim_lsp.dockerls.setup{
-}
-nvim_lsp.pylsp.setup{
-}
-nvim_lsp.rust_analyzer.setup{
-}
+	if nvim_lsp ~= nil then
+		nvim_lsp.bashls.setup{
+		}
+		nvim_lsp.dockerls.setup{
+		}
+		nvim_lsp.pylsp.setup{
+		}
+		nvim_lsp.rust_analyzer.setup{
+		}
+	end
+end)
 EOF
 
 " KEY BINDINGS
@@ -39,14 +43,19 @@ nnoremap <leader>ff <cmd>Telescope find_files<cr>
 
 " Configure nvim-cmp
 lua << EOF
-local cmp = require 'cmp'
-cmp.setup {
-	mapping = {},
-	formatting = {},
-	sources = {
-		{ name = "nvim_lsp" }
-	}
-}
+pcall(function ()
+	local cmp = require('cmp')
+
+	if cmp ~= nil then
+		cmp.setup {
+			mapping = {},
+			formatting = {},
+			sources = {
+				{ name = "nvim_lsp" }
+			}
+		}
+	end
+end)
 EOF
 
 " FILE CONFIGURATIONS
