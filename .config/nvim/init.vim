@@ -38,6 +38,9 @@ EOF
 " KEY BINDINGS
 let mapleader=" "
 
+" Configure fugitive
+nnoremap <leader>Gs <cmd>Git<cr>
+
 " Configure telescope
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 
