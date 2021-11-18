@@ -43,6 +43,9 @@ nnoremap <leader>Gs <cmd>Git<cr>
 nnoremap <leader>Gc <cmd>Git commit<cr>
 nnoremap <leader>Gl <cmd>Git l<cr>
 
+" Configure nerdtree
+nnoremap <leader>N <cmd>NERDTreeToggle<cr>
+
 " Configure telescope
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 
