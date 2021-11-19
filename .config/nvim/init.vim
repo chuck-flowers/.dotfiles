@@ -38,6 +38,9 @@ EOF
 " KEY BINDINGS
 let mapleader=" "
 
+" Configure dashboard
+let g:dashboard_default_executive = 'telescope'
+
 " Configure fugitive
 nnoremap <leader>Gs <cmd>Git<cr>
 nnoremap <leader>Gc <cmd>Git commit<cr>
