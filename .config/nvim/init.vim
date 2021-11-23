@@ -52,6 +52,14 @@ nnoremap <leader>N <cmd>NERDTreeToggle<cr>
 " Configure telescope
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 
+" Configure vimwiki
+let wiki = {}
+let wiki.diary_rel_path = "journal/"
+let wiki.diary_index = "journal"
+let wiki.diary_header = "Journal"
+let g:vimwiki_list = [wiki]
+autocmd BufWritePost *.wiki VimwikiAll2HTML
+
 " Configure nvim-cmp
 lua << EOF
 pcall(function ()
