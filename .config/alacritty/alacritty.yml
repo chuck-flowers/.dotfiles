@@ -45,4 +45,8 @@ colors:
 font:
   normal:
     family: Fira Code
+window:
+  padding:
+    x: 4
+    y: 4
 
