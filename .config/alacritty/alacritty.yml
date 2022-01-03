@@ -42,4 +42,7 @@ colors:
     magenta: '#8f3f71'
     cyan:    '#427b58'
     white:   '#928374'
+font:
+  normal:
+    family: Fira Code
 
