@@ -22,15 +22,32 @@ lua << EOF
 pcall(function ()
 	local nvim_lsp = require('lspconfig')
 
+	local function on_attach(client, bufnr)
+		local opts = { noremap=true, silent=true }
+
+		local function buf_set_keymap(...)
+			vim.api.nvim_buf_set_keymap(bufnr, ...)
+		end
+
+		buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+		buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+	end
+
 	if nvim_lsp ~= nil then
-		nvim_lsp.bashls.setup{
+		local servers = {
+			'bashls',
+			'clangd',
+			'dockerls',
+			'pylsp',
+			'rust_analyzer',
+			'tsserver'
 		}
-		nvim_lsp.dockerls.setup{
-		}
-		nvim_lsp.pylsp.setup{
-		}
-		nvim_lsp.rust_analyzer.setup{
-		}
+
+		for _, lsp in ipairs(servers) do
+			nvim_lsp[lsp].setup {
+				on_attach = on_attach
+			}
+		end
 	end
 end)
 EOF
