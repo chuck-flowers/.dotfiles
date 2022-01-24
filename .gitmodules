@@ -16,3 +16,6 @@
 [submodule ".local/share/nvim/site/pack/utility/start/vim-surround"]
 	path = .local/share/nvim/site/pack/utility/start/vim-surround
 	url = https://github.com/tpope/vim-surround
+[submodule ".local/share/nvim/site/pack/theming/start/vim-startify"]
+	path = .local/share/nvim/site/pack/theming/start/vim-startify
+	url = https://github.com/mhinz/vim-startify
