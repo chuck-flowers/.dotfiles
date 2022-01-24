@@ -19,3 +19,6 @@
 [submodule ".local/share/nvim/site/pack/theming/start/vim-startify"]
 	path = .local/share/nvim/site/pack/theming/start/vim-startify
 	url = https://github.com/mhinz/vim-startify
+[submodule ".local/share/nvim/site/pack/theming/start/vim-transparent"]
+	path = .local/share/nvim/site/pack/theming/start/vim-transparent
+	url = https://github.com/tribela/vim-transparent
