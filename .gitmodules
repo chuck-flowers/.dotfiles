@@ -7,3 +7,9 @@
 [submodule "/home/cflowers/.vim/pack/ui/start/nerdtree"]
 	path = /home/cflowers/.vim/pack/ui/start/nerdtree
 	url = https://github.com/preservim/nerdtree.git
+[submodule ".local/share/nvim/site/pack/theming/start/vim-airline"]
+	path = .local/share/nvim/site/pack/theming/start/vim-airline
+	url = https://github.com/vim-airline/vim-airline
+[submodule ".local/share/nvim/site/pack/theming/start/gruvbox"]
+	path = .local/share/nvim/site/pack/theming/start/gruvbox
+	url = https://github.com/morhetz/gruvbox
