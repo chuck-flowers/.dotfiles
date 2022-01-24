@@ -25,3 +25,6 @@
 [submodule ".local/share/nvim/site/pack/theming/start/vim-devicons"]
 	path = .local/share/nvim/site/pack/theming/start/vim-devicons
 	url = https://github.com/ryanoasis/vim-devicons
+[submodule ".local/share/nvim/site/pack/ui/start/nerdtree"]
+	path = .local/share/nvim/site/pack/ui/start/nerdtree
+	url = https://github.com/preservim/nerdtree
