@@ -13,3 +13,6 @@
 [submodule ".local/share/nvim/site/pack/theming/start/gruvbox"]
 	path = .local/share/nvim/site/pack/theming/start/gruvbox
 	url = https://github.com/morhetz/gruvbox
+[submodule ".local/share/nvim/site/pack/utility/start/vim-surround"]
+	path = .local/share/nvim/site/pack/utility/start/vim-surround
+	url = https://github.com/tpope/vim-surround
