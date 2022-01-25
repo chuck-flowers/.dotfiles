@@ -28,3 +28,6 @@
 [submodule ".local/share/nvim/site/pack/ui/start/nerdtree"]
 	path = .local/share/nvim/site/pack/ui/start/nerdtree
 	url = https://github.com/preservim/nerdtree
+[submodule ".local/share/nvim/site/pack/lang/start/nvim-lspconfig"]
+	path = .local/share/nvim/site/pack/lang/start/nvim-lspconfig
+	url = https://github.com/neovim/nvim-lspconfig
