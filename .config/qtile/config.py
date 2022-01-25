@@ -44,7 +44,7 @@ layouts = get_layouts()
 mouse = get_mouse()
 
 widget_defaults = dict(
-    font='Fira Code',
+    font='FiraCode Nerd Font',
     fontsize=16,
     foreground=gruvbox_dark["foreground"],
     padding=3,
