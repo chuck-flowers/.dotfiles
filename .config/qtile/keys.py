@@ -245,7 +245,7 @@ keys = [
     Key(
         [mod],
         "x",
-        lazy.spawn(f"{terminal} -e bash -c 'sleep .25 && ranger'"),
+        lazy.spawn(f"{terminal} -e bash -c 'ranger'"),
         "Launch file browser"
     ),
     Key(
@@ -258,27 +258,14 @@ keys = [
         [mod],
         "v",
         lazy.spawn(
-            f"""
-{terminal} -e bash -c \\
-'sleep .25 && nvim /home/cflowers/vimwiki/index.wiki'
-            """
+            f"{terminal} -e bash -c 'nvim /home/cflowers/vimwiki/index.wiki'"
         ),
         "Launch vimwiki for editing"
     ),
     Key(
         [mod, "shift"],
         "v",
-        lazy.spawn(
-            f"""
-{terminal} -e bash -c \\
-'sleep .25 && nvim -es -- /home/cflowers/vimwiki/index.wiki << EOF
-VimwikiAll2HTML
-Vimwiki2HTMLBrowse
-q
-EOF
-'
-            """
-        )
+        lazy.spawn("xdg-open /home/cflowers/vimwiki_html/index.html")
     )
 ]
 
