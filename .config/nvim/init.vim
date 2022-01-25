@@ -75,8 +75,8 @@ let wiki = {}
 let wiki.diary_rel_path = "journal/"
 let wiki.diary_index = "journal"
 let wiki.diary_header = "Journal"
+let wiki.auto_export = 1
 let g:vimwiki_list = [wiki]
-autocmd BufWritePost *.wiki VimwikiAll2HTML
 
 " Configure nvim-cmp
 lua << EOF
