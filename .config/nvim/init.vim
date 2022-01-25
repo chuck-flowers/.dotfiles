@@ -31,6 +31,7 @@ pcall(function ()
 
 		buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
 		buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+		buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
 	end
 
 	if nvim_lsp ~= nil then
@@ -84,10 +85,17 @@ pcall(function ()
 
 	if cmp ~= nil then
 		cmp.setup {
-			mapping = {},
+			mapping = {
+				['<C-p>'] = cmp.mapping.select_prev_item(),
+				['<C-n>'] = cmp.mapping.select_next_item(),
+				['<CR>'] = cmp.mapping.confirm {
+					behavior = cmp.ConfirmBehavior.Replace,
+					select = true
+				}
+			},
 			formatting = {},
 			sources = {
-				{ name = "nvim_lsp" }
+				{ name = 'nvim_lsp' }
 			}
 		}
 	end
