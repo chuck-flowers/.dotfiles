@@ -46,3 +46,6 @@
 [submodule ".local/share/nvim/site/pack/organization/start/vimwiki"]
 	path = .local/share/nvim/site/pack/organization/start/vimwiki
 	url = https://github.com/vimwiki/vimwiki
+[submodule ".local/share/nvim/site/pack/vcs/start/vim-fugitive"]
+	path = .local/share/nvim/site/pack/vcs/start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
