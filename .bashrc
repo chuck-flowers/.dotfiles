@@ -9,7 +9,9 @@ test -e "$HOME/.bash_functions" && source "$HOME/.bash_functions"
 
 # Add bash completions
 test -e /etc/bash_completion && source /etc/bash_completion
-which himalaya > /dev/null && eval "$(himalaya completion bash)"
+if which himalaya > /dev/null 2> /dev/null; then
+	eval "$(himalaya completion bash)"
+fi
 
 # Define the shell prompt
 if which starship > /dev/null 2> /dev/null; then
