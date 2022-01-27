@@ -69,6 +69,7 @@ nnoremap <leader>N <cmd>NERDTreeToggle<cr>
 
 " Configure telescope
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fb <cmd>Telescope git_branches<cr>
 
 " Configure vimwiki
 let wiki = {}
