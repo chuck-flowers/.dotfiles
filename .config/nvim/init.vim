@@ -57,7 +57,7 @@ EOF
 let mapleader=" "
 
 " Configure dashboard
-let g:dashboard_default_executive = 'telescope'
+let g:startify_lists = [ { 'type': 'sessions', 'header': ['Projects'] } ]
 
 " Configure fugitive
 nnoremap <leader>Gs <cmd>Git<cr>
