@@ -1,20 +1,22 @@
+#!/usr/bin/bash
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
 # Include aliases if they exist
-test -e "$HOME/.bash_aliases" && source ~/.bash_aliases
+test -e "./.bash_aliases" && source "./.bash_aliases"
 
 # Include bash functions if they exist
-test -e "$HOME/.bash_functions" && source "$HOME/.bash_functions"
+test -e "./.bash_functions" && source "./.bash_functions"
 
 # Add bash completions
 test -e /etc/bash_completion && source /etc/bash_completion
-if which himalaya > /dev/null 2> /dev/null; then
+if command -v himalaya > /dev/null 2> /dev/null; then
 	eval "$(himalaya completion bash)"
 fi
 
 # Define the shell prompt
-if which starship > /dev/null 2> /dev/null; then
+if command -v starship > /dev/null 2> /dev/null; then
 	eval "$(starship init bash)"
 else
 	PS1='[\u@\h \W]\$ '
