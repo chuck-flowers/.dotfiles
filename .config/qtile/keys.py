@@ -258,7 +258,7 @@ keys = [
         [mod],
         "v",
         lazy.spawn(
-            f"{terminal} -e bash -c 'nvim /home/cflowers/vimwiki/index.wiki'"
+            f"{terminal} -e bash -c nvim"
         ),
         "Launch vimwiki for editing"
     ),
