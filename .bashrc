@@ -3,11 +3,17 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Define Extend the path
+PATH=~/.local/bin:$PATH
+
 # Include aliases if they exist
 test -e "./.bash_aliases" && source "./.bash_aliases"
 
 # Include bash functions if they exist
 test -e "./.bash_functions" && source "./.bash_functions"
+
+# Include rust in the environment if it exists
+test -e "./.cargo/env" && source "./.cargo/env"
 
 # Add bash completions
 test -e /etc/bash_completion && source /etc/bash_completion
@@ -25,7 +31,4 @@ fi
 # Define program defaults
 export BROWSER=brave
 export EDITOR=nvim
-
-# Define Extend the path
-PATH=~/.local/bin:$PATH
 
