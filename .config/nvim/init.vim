@@ -91,27 +91,25 @@ lua << EOF
 pcall(function ()
 	local cmp = require('cmp')
 
-	if cmp ~= nil then
-		cmp.setup {
-			mapping = {
-				['<C-p>'] = cmp.mapping.select_prev_item(),
-				['<C-n>'] = cmp.mapping.select_next_item(),
-				['<CR>'] = cmp.mapping.confirm {
-					behavior = cmp.ConfirmBehavior.Replace,
-					select = true
-				}
-			},
-			formatting = {},
-			snippet = {
-				expand = function (args)
-					vim.fn["vsnip#anonymous"](args.body)
-				end
-			},
-			sources = {
-				{ name = 'nvim_lsp' }
+	cmp.setup ({
+		mapping = {
+			['<C-p>'] = cmp.mapping.select_prev_item(),
+			['<C-n>'] = cmp.mapping.select_next_item(),
+			['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+			['<CR>'] = cmp.mapping.confirm {
+				behavior = cmp.ConfirmBehavior.Replace,
+				select = true
 			}
+		},
+		snippet = {
+			expand = function (args)
+				vim.fn["vsnip#anonymous"](args.body)
+			end
+		},
+		sources = {
+			{ name = 'nvim_lsp' }
 		}
-	end
+	})
 end)
 EOF
 
