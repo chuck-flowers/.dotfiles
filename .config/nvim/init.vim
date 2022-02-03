@@ -53,11 +53,7 @@ pcall(function ()
 end)
 EOF
 
-" KEY BINDINGS
 let mapleader=" "
-
-" Configure dashboard
-let g:startify_lists = [ { 'type': 'sessions', 'header': ['Projects'] } ]
 
 " Configure fugitive
 nnoremap <leader>Gs <cmd>Git<cr>
@@ -66,6 +62,10 @@ nnoremap <leader>Gl <cmd>Git l<cr>
 
 " Configure nerdtree
 nnoremap <leader>N <cmd>NERDTreeToggle<cr>
+
+" Configure startify
+let g:startify_lists = [ { 'type': 'sessions', 'header': ['Projects'] }, { 'type': 'bookmarks', 'header': ['Files'] } ]
+let g:startify_bookmarks = [ { 'c': '~/.config/nvim/init.vim' } ]
 
 " Configure telescope
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
