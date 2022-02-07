@@ -169,6 +169,32 @@ keys = [
         desc="Reset all window sizes"
     ),
 
+    # Move between groups
+    Key(
+        [mod, "mod1"],
+        "h",
+        lazy.screen.prev_group(),
+        desc="Moves to the group to the left"
+    ),
+    Key(
+        [mod, "mod1"],
+        "l",
+        lazy.screen.next_group(),
+        desc="Moves to the group to the right"
+    ),
+    Key(
+        [mod, "mod1"],
+        "Left",
+        lazy.screen.prev_group(),
+        desc="Moves to the group to the left"
+    ),
+    Key(
+        [mod, "mod1"],
+        "Right",
+        lazy.screen.next_group(),
+        desc="Moves to the group to the right"
+    ),
+
     # Toggle between split and unsplit sides of stack.
     # Split = all windows displayed
     # Unsplit = 1 window displayed, like Max layout, but still with
