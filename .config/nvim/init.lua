@@ -22,6 +22,9 @@ vim.o.shiftwidth = 4
 -- Configure the line wrapping behavior
 vim.o.wrap = false
 
+-- Configure leader key
+vim.g.mapleader = " "
+
 -- Configure the dashboard
 vim.g.startify_bookmarks = { { c = '~/.config/nvim/init.lua' } }
 vim.g.startify_lists = {
@@ -50,6 +53,10 @@ cmp.setup({
 	}
 })
 
+-- Configure fugitive
+vim.api.nvim_set_keymap('n', '<Leader>Gs', ':Git<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<Leader>Gc', ':Git commit<CR>', { noremap = true })
+
 -- Configure LSP clients
 for _, lsp in ipairs({
 	'bashls',
@@ -60,7 +67,7 @@ for _, lsp in ipairs({
 	'tsserver'
 }) do
 	lspconfig[lsp].setup {
-		on_attach = function ()
+		on_attach = function (client, bufnr)
 			local opts = { noremap=true, silent=true }
 
 			local function buf_set_keymap(...)
@@ -75,7 +82,12 @@ for _, lsp in ipairs({
 	}
 end
 
+-- Configure nerdtree
+vim.api.nvim_set_keymap('n', '<Leader>N', ':NERDTreeToggle<CR>', { noremap = true })
+
 -- Configure telescope
+vim.api.nvim_set_keymap('n', '<Leader>ff', ':Telescope find_files<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<Leader>fb', ':Telescope git_branches<CR>', { noremap = true })
 telescope.setup({
 	defaults = {
 		file_ignore_patterns = { 'node_modules' }
