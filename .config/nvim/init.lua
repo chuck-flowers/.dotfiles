@@ -22,6 +22,13 @@ vim.o.shiftwidth = 4
 -- Configure the line wrapping behavior
 vim.o.wrap = false
 
+-- Configure the dashboard
+vim.g.startify_bookmarks = { { c = '~/.config/nvim/init.lua' } }
+vim.g.startify_lists = {
+	{ type = 'sessions', header = {'Projects'} },
+	{ type = 'bookmarks', header = {'Bookmarks'} }
+}
+
 -- Configure completions
 cmp.setup({
 	mapping = {
