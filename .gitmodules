@@ -7,9 +7,6 @@
 [submodule "/home/cflowers/.vim/pack/ui/start/nerdtree"]
 	path = /home/cflowers/.vim/pack/ui/start/nerdtree
 	url = https://github.com/preservim/nerdtree.git
-[submodule ".local/share/nvim/site/pack/theming/start/vim-airline"]
-	path = .local/share/nvim/site/pack/theming/start/vim-airline
-	url = https://github.com/vim-airline/vim-airline
 [submodule ".local/share/nvim/site/pack/theming/start/gruvbox"]
 	path = .local/share/nvim/site/pack/theming/start/gruvbox
 	url = https://github.com/morhetz/gruvbox
@@ -64,3 +61,6 @@
 [submodule ".local/share/nvim/site/pack/formatting/start/editorconfig-vim"]
 	path = .local/share/nvim/site/pack/formatting/start/editorconfig-vim
 	url = https://github.com/editorconfig/editorconfig-vim
+[submodule ".local/share/nvim/site/pack/theming/start/lualine.nvim"]
+	path = .local/share/nvim/site/pack/theming/start/lualine.nvim
+	url = https://github.com/nvim-lualine/lualine.nvim
