@@ -1,5 +1,6 @@
 local cmp = require('cmp')
 local lspconfig = require('lspconfig')
+local lualine = require('lualine')
 local telescope = require('telescope')
 
 -- Show line numbers
@@ -81,6 +82,25 @@ for _, lsp in ipairs({
 		end
 	}
 end
+
+-- Configure lualine
+lualine.setup({
+	options = {
+		icons_enabled = true,
+		theme = 'auto'
+	},
+	sections = {
+		lualine_a = { 'mode' },
+		lualine_b = { 'filename' },
+		lualine_c = { 'progress', 'location' },
+		lualine_x = { 'branch', 'diff', 'diagnostics' },
+		lualine_y = {},
+		lualine_z = {},
+	},
+	inactive_sections = {},
+	tabline = {},
+	extensions = {}
+})
 
 -- Configure nerdtree
 vim.api.nvim_set_keymap('n', '<Leader>N', ':NERDTreeToggle<CR>', { noremap = true })
