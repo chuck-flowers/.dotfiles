@@ -76,47 +76,35 @@ def build_screens():
 		format="%m/%d/%Y %a",
 		padding=10
 	)
-	
+
+	topBar = [
+		widget.Spacer(),
+		window_name,
+		widget.Spacer(),
+		check_updates,
+		cpu,
+		ram,
+		hdd,
+		gpu
+	]
+
+	bottomBar = [
+		current_layout,
+		group_box,
+		widget.Spacer(),
+		clock,
+		widget.Spacer(),
+		sys_tray,
+		date
+	]
+
 	return [
 		build_screen(
-			[
-				widget.Spacer(),
-				window_name,
-				widget.Spacer(),
-				check_updates,
-				cpu,
-				ram,
-				hdd,
-				gpu
-			],
-			[
-				current_layout,
-				group_box,
-				widget.Spacer(),
-				clock,
-				widget.Spacer(),
-				sys_tray,
-				date
-			]
+			topBar,
+			bottomBar
 		),
 		build_screen(
-			[
-				widget.Spacer(),
-				window_name,
-				widget.Spacer(),
-				check_updates,
-				cpu,
-				ram,
-				gpu
-			],
-			[
-				current_layout,
-				group_box,
-				widget.Spacer(),
-				clock,
-				widget.Spacer(),
-				sys_tray,
-				date
-			]
+			topBar,
+			bottomBar
 		)
 	]
