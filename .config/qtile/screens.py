@@ -3,18 +3,37 @@ from libqtile import bar, widget
 from libqtile.config import Screen
 
 def build_screens():
-	def build_bar(widgets):
+	def build_bar(widgets, margin):
 		return bar.Bar(
 			widgets,
 			30,
 			background=gruvbox_dark["background"],
-			margin=5
+			margin=margin
 		)
 
 	def build_screen(top_widgets, bottom_widgets):
+		MARGIN_VALUE = 10
 		return Screen(
-			top=build_bar(top_widgets),
-			bottom=build_bar(bottom_widgets),
+			top=build_bar(
+				top_widgets,
+				margin=[
+					MARGIN_VALUE, 
+					MARGIN_VALUE, 
+					MARGIN_VALUE // 2, 
+					MARGIN_VALUE
+				]
+			),
+			bottom=build_bar(
+				bottom_widgets,
+				margin=[
+                    MARGIN_VALUE // 2,
+					MARGIN_VALUE,
+					MARGIN_VALUE,
+					MARGIN_VALUE
+				]
+			),
+			left=bar.Gap(MARGIN_VALUE // 2),
+			right=bar.Gap(MARGIN_VALUE // 2),
 			wallpaper='~/Pictures/wallpapers/wallpaper-sunset.svg',
 			wallpaper_mode='stretch'
 		)
