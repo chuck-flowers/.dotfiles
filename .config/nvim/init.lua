@@ -55,9 +55,9 @@ cmp.setup({
 })
 
 -- Configure fugitive
-vim.api.nvim_set_keymap('n', '<Leader>Gs', ':Git<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<Leader>Gc', ':Git commit<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<Leader>Gl', ':Git log --all --decorate --oneline --graph<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<Leader>gs', ':Git<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<Leader>gc', ':Git commit<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<Leader>gl', ':Git log --all --decorate --oneline --graph<CR>', { noremap = true })
 
 -- Configure LSP clients
 for _, lsp in ipairs({
