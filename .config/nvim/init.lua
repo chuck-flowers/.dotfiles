@@ -112,7 +112,8 @@ lualine.setup({
 })
 
 -- Configure nerdtree
-vim.api.nvim_set_keymap('n', '<Leader>N', ':NERDTreeToggle<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<Leader>nn', ':NERDTreeToggle<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<Leader>nf', ':NERDTreeFind<CR>', { noremap = true })
 
 -- Configure telescope
 vim.api.nvim_set_keymap('n', '<Leader>ff', ':Telescope find_files<CR>', { noremap = true })
