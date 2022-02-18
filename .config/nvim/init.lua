@@ -23,8 +23,10 @@ vim.o.shiftwidth = 4
 -- Configure the line wrapping behavior
 vim.o.wrap = false
 
--- Configure leader key
+-- Configure key bindings
 vim.g.mapleader = " "
+vim.api.nvim_set_keymap('n', '<C-h>', ':cprevious<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<C-l>', ':cnext<CR>', { noremap = true })
 
 -- Configure the dashboard
 vim.g.startify_bookmarks = { { c = '~/.config/nvim/init.lua' } }
