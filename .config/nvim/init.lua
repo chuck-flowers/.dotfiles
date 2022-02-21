@@ -59,6 +59,7 @@ cmp.setup({
 -- Configure fugitive
 vim.api.nvim_set_keymap('n', '<Leader>gs', ':Git<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<Leader>gc', ':Git commit<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<Leader>gC', ':Git commit -a<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<Leader>gl', ':Git log --all --decorate --oneline --graph<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<Leader>gbm', ':Git checkout --track master -b ', { noremap = true })
 vim.api.nvim_set_keymap('n', '<Leader>gir', ':Git rebase -i<CR>', { noremap = true })
@@ -71,6 +72,7 @@ for _, lsp in ipairs({
 	'bashls',
 	'clangd',
 	'dockerls',
+	'graphql',
 	'pylsp',
 	'rust_analyzer',
 	'tsserver'
