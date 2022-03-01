@@ -55,12 +55,12 @@
 [submodule ".local/share/nvim/site/pack/lang/start/vim-graphql"]
 	path = .local/share/nvim/site/pack/lang/start/vim-graphql
 	url = https://github.com/jparise/vim-graphql
-[submodule ".local/share/nvim/site/pack/utility/start/vim-vsnip"]
-	path = .local/share/nvim/site/pack/utility/start/vim-vsnip
-	url = https://github.com/hrsh7th/vim-vsnip
 [submodule ".local/share/nvim/site/pack/formatting/start/editorconfig-vim"]
 	path = .local/share/nvim/site/pack/formatting/start/editorconfig-vim
 	url = https://github.com/editorconfig/editorconfig-vim
 [submodule ".local/share/nvim/site/pack/theming/start/lualine.nvim"]
 	path = .local/share/nvim/site/pack/theming/start/lualine.nvim
 	url = https://github.com/nvim-lualine/lualine.nvim
+[submodule ".local/share/nvim/site/pack/utility/start/LuaSnip"]
+	path = .local/share/nvim/site/pack/utility/start/LuaSnip
+	url = https://github.com/L3MON4D3/LuaSnip
