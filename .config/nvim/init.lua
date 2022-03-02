@@ -1,6 +1,7 @@
 local cmp = require('cmp')
 local lspconfig = require('lspconfig')
 local lualine = require('lualine')
+local luasnip = require('luasnip')
 local telescope = require('telescope')
 
 -- Show line numbers
@@ -48,7 +49,7 @@ cmp.setup({
 	},
 	snippet = {
 		expand = function (args)
-			vim.fn['vsnip#anonymous'](args.body)
+			luasnip.lsp_expand(args.body)
 		end
 	},
 	sources = {
