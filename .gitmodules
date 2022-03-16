@@ -67,3 +67,9 @@
 [submodule ".local/share/nvim/site/pack/utility/start/nvim-treesitter"]
 	path = .local/share/nvim/site/pack/utility/start/nvim-treesitter
 	url = https://github.com/nvim-treesitter/nvim-treesitter
+[submodule ".local/share/nvim/site/pack/diagnostics/start/trouble.nvim"]
+	path = .local/share/nvim/site/pack/diagnostics/start/trouble.nvim
+	url = https://github.com/folke/trouble.nvim
+[submodule ".local/share/nvim/site/pack/theming/start/nvim-web-devicons"]
+	path = .local/share/nvim/site/pack/theming/start/nvim-web-devicons
+	url = https://github.com/kyazdani42/nvim-web-devicons
