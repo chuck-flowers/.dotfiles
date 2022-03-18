@@ -3,7 +3,8 @@ local lualine = require('lualine')
 lualine.setup({
 	options = {
 		icons_enabled = true,
-		theme = 'auto'
+		theme = 'auto',
+		globalstatus = true
 	},
 	sections = {
 		lualine_a = { 'mode' },
