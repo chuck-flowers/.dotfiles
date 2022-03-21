@@ -8,10 +8,6 @@ vim.o.relativenumber = true
 -- Enable syntax highlighting
 vim.cmd('syntax on')
 
--- Configure color scheme
-vim.o.background = 'dark'
-vim.cmd('colorscheme gruvbox')
-
 -- Configure tabbing behavior
 vim.o.tabstop = 4
 vim.o.autoindent = true

@@ -1,3 +1,5 @@
+local packer = require('packer')
+
 -- Lists all non-hidden files in a provided directory
 local function ls_files(directory)
 	local to_return = {}
@@ -15,8 +17,13 @@ end
 
 local plugin_config_dir = os.getenv('HOME') .. '/.config/nvim/lua/plugins'
 local plugin_config_files = ls_files(plugin_config_dir);
-for i, plugin_config_file in ipairs(plugin_config_files) do
-	local module_name = string.gsub(plugin_config_file, '%.lua', '')
-	require('plugins/'..module_name)
-end
+packer.startup(function (use)
+	for i, pluginFile in ipairs(plugin_config_files) do
+		local pluginName = string.gsub(pluginFile, '.lua', '')
+		local pluginConfig = require('plugins/' .. pluginName)
+		if type(pluginConfig) == 'table' then
+			use(pluginConfig)
+		end
+	end
+end)
 

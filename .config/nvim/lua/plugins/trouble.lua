@@ -1,7 +1,7 @@
-local trouble = require('trouble')
+return {
+	'folke/trouble.nvim',
+	config = function()
+		local trouble = require('trouble')
+	end
+}
 
-vim.api.nvim_set_keymap('n', '<Leader>t', ':TroubleToggle<CR>', { noremap = true })
-
-trouble.setup({
-
-})
