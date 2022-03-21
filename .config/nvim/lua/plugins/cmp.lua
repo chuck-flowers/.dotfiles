@@ -1,5 +1,11 @@
 return {
 	'hrsh7th/nvim-cmp',
+	requires = {
+		{ 'neovim/nvim-lspconfig' },
+		{ 'hrsh7th/cmp-nvim-lsp' },
+		{ 'saadparwaiz1/cmp_luasnip' },
+		{ 'L3MON4D3/LuaSnip' }
+	},
 	config = function()
 		local cmp = require('cmp')
 		local luasnip = require('luasnip')
@@ -20,7 +26,8 @@ return {
 				end
 			},
 			sources = {
-				{ name = 'nvim_lsp' }
+				{ name = 'nvim_lsp' },
+				{ name = 'luasnip' }
 			}
 		})
 	end
