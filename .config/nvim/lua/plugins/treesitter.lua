@@ -9,7 +9,10 @@ return {
 				enable = true,
 				additional_vim_regex_highlighting = { 'org' }
 			},
-			ensure_installed = { 'org' }
+			ensure_installed = {
+				'typescript',
+				'org'
+			}
 		})
 	end
 }
