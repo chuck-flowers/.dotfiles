@@ -30,7 +30,7 @@ return {
 					keymap = {
 						"n",
 						def.key,
-						'<cmd>e ' .. def.file .. ' <CR>',
+						'<cmd>e ' .. def.file .. ' <CR>:cd %:h<CR>',
 						{
 							noremap = false,
 							silent = true,
