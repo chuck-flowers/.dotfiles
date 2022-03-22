@@ -10,6 +10,7 @@ return {
 				additional_vim_regex_highlighting = { 'org' }
 			},
 			ensure_installed = {
+				'tsx',
 				'typescript',
 				'org'
 			}
