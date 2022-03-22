@@ -21,9 +21,7 @@ packer.startup(function (use)
 	for i, pluginFile in ipairs(plugin_config_files) do
 		local pluginName = string.gsub(pluginFile, '.lua', '')
 		local pluginConfig = require('plugins/' .. pluginName)
-		if type(pluginConfig) == 'table' then
-			use(pluginConfig)
-		end
+		use(pluginConfig)
 	end
 end)
 
