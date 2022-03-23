@@ -11,7 +11,8 @@ return {
 
 		local bookmark_defs = {
 			{ key = 'c', file = '~/.config/nvim/init.lua' },
-			{ key = 'w', file = '~/.config/qtile/config.py' }
+			{ key = 'w', file = '~/.config/qtile/config.py' },
+			{ key = 'o', file = '~/org/notes.org' }
 		}
 
 		local bookmark_buttons = {}
