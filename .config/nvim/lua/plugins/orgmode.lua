@@ -10,6 +10,7 @@ return {
 
 		orgmode.setup({
 			org_agenda_files = '~/org/**/*',
+			org_agenda_span = 'day',
 			org_default_notes_file = '~/org/notes.org',
 			org_agenda_templates = {
 				t = {
