@@ -1,3 +1,47 @@
+local bookmark_defs = {
+	{ key = 'c', file = '~/.config/nvim/init.lua' },
+	{ key = 'w', file = '~/.config/qtile/config.py' },
+	{ key = 'o', file = '~/org/notes.org' }
+}
+
+local projects = { }
+
+function create_bookmark_buttons()
+	local bookmark_buttons = {}
+
+	for i, def in ipairs(bookmark_defs) do
+		table.insert(bookmark_buttons, {
+			type = 'button',
+			val = ': ' .. def.file,
+			on_press = function()
+				local key = vim.api.nvim_replace_termcodes(def.key, true, false, true)
+				vim.api.nvim_feedkeys(key, "normal", false)
+			end,
+			opts = {
+				position = 'left',
+				hl = 'Tag',
+				shortcut = def.key,
+				keymap = {
+					"n",
+					def.key,
+					'<cmd>e ' .. def.file .. ' <CR>:cd %:h<CR>',
+					{
+						noremap = false,
+						silent = true,
+						nowait = true
+					}
+				}
+			}
+		})
+	end
+
+	return bookmark_buttons
+end
+
+function create_project_buttons()
+
+end
+
 return {
 	'goolord/alpha-nvim',
 	config = function()
@@ -8,39 +52,6 @@ return {
 
 		local INTRA_SECTION_SPACING = 1
 		local INTER_SECTION_SPACING = 2
-
-		local bookmark_defs = {
-			{ key = 'c', file = '~/.config/nvim/init.lua' },
-			{ key = 'w', file = '~/.config/qtile/config.py' },
-			{ key = 'o', file = '~/org/notes.org' }
-		}
-
-		local bookmark_buttons = {}
-		for i, def in ipairs(bookmark_defs) do
-			table.insert(bookmark_buttons, {
-				type = 'button',
-				val = ': ' .. def.file,
-				on_press = function()
-					local key = vim.api.nvim_replace_termcodes(def.key, true, false, true)
-					vim.api.nvim_feedkeys(key, "normal", false)
-				end,
-				opts = {
-					position = 'left',
-					hl = 'Tag',
-					shortcut = def.key,
-					keymap = {
-						"n",
-						def.key,
-						'<cmd>e ' .. def.file .. ' <CR>:cd %:h<CR>',
-						{
-							noremap = false,
-							silent = true,
-							nowait = true
-						}
-					}
-				}
-			})
-		end
 
 		local HEADER = {
 			type = 'group',
@@ -69,7 +80,7 @@ return {
 				{ type = 'text', val = 'Bookmarks', opts = { hl = 'Type' } },
 				{
 					type = 'group',
-					val = bookmark_buttons
+					val = create_bookmark_buttons()
 				}
 			},
 			opts = {
@@ -83,9 +94,7 @@ return {
 				{ type = 'text', val = 'Projects', opts = { hl = 'Type' } },
 				{
 					type = 'group',
-					val = {
-
-					}
+					val = create_project_buttons()
 				}
 			},
 			opts = {
