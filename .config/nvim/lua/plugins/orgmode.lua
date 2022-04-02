@@ -15,7 +15,9 @@ return {
 			org_agenda_templates = {
 				t = {
 					description = 'Task',
-					template = '* TODO %?\n  %t'
+					template = '* TODO %?\n  %t',
+					target = '~/org/todos.org'
+
 				},
 				j = {
 					description = 'Journal',
