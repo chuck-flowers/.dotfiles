@@ -4,6 +4,7 @@ require('plugins')
 -- Show line numbers
 vim.o.number = true
 vim.o.relativenumber = true
+vim.o.cursorline = true
 
 -- Enable syntax highlighting
 vim.cmd('syntax on')
