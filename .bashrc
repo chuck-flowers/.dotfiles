@@ -17,9 +17,8 @@ test -e "./.cargo/env" && source "./.cargo/env"
 
 # Add bash completions
 test -e /etc/bash_completion && source /etc/bash_completion
-if command -v himalaya > /dev/null 2> /dev/null; then
-	eval "$(himalaya completion bash)"
-fi
+command -v himalaya > /dev/null 2> /dev/null && eval "$(himalaya completion bash)"
+command -v gh > /dev/null 2> /dev/null && eval "$(gh completion)"
 
 # Define the shell prompt
 if command -v starship > /dev/null 2> /dev/null; then
