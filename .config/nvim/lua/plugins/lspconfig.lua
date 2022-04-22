@@ -10,11 +10,12 @@ return {
 			'graphql',
 			'pylsp',
 			'rust_analyzer',
-			'tsserver'
+			'tsserver',
+			'yamlls'
 		}
 
 		for _, lsp in ipairs(lsps) do
-			lspconfig[lsp].setup {
+			local settings = {
 				on_attach = function (client, bufnr)
 					local opts = { noremap=true, silent=true }
 
@@ -29,6 +30,19 @@ return {
 					buf_set_keymap('n', '<leader>lr', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
 				end
 			}
+
+			if lsp == 'yamlls' then
+				-- TODO
+				settings.settings = {
+					yaml = {
+						schemas = {
+							['https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json'] = 'docker-compose*.yml'
+						}
+					}
+				}
+			end
+
+			lspconfig[lsp].setup(settings)
 		end
 	end
 }
