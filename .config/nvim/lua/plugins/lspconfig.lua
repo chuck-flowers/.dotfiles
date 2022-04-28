@@ -8,6 +8,7 @@ return {
 			'clangd',
 			'dockerls',
 			'graphql',
+			'jsonls',
 			'pylsp',
 			'rust_analyzer',
 			'tsserver',
