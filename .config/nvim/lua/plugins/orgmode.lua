@@ -27,6 +27,25 @@ return {
 					target = '~/org/journal-current-month.org'
 				}
 			},
+			org_custom_exports = {
+				H = {
+					label = 'Export to Custom HTML',
+					action = function(exporter)
+						local current_file = vim.api.nvim_buf_get_name(0)
+						local target = vim.fn.fnamemodify(current_file, ':p:r')..'.html'
+						local command = { 'pandoc', '-L', 'diagram-generator.lua', '-s', '--self-contained', current_file, '-o', target }
+						local on_success = function(output)
+							print('Success!')
+							vim.api.nvim_echo({{ table.concat(output, '\n') }}, true, {})
+						end
+						local on_error = function(err)
+							print('Error!')
+							vim.api.nvim_echo({{ table.concat(err, '\n'), 'ErrorMsg' }}, true, {})
+						end
+						return exporter(command , target, on_success, on_error)
+					end
+				}
+			},
 			org_default_notes_file = '~/org/notes.org'
 		})
 	end
