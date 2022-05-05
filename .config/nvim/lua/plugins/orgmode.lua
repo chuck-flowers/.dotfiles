@@ -13,7 +13,7 @@ return {
 			org_agenda_span = 'day',
 			org_agenda_skip_deadline_if_done = true,
 			org_agenda_skip_scheduled_if_done = true,
-			org_agenda_start_day = 0,
+			org_agenda_start_on_weekday = 0,
 			org_agenda_templates = {
 				t = {
 					description = 'Task',
