@@ -4,43 +4,40 @@ return {
 		local lspconfig = require('lspconfig')
 
 		local lsps = {
-			'bashls',
-			'clangd',
-			'dockerls',
-			'graphql',
-			'jsonls',
-			'pylsp',
-			'rust_analyzer',
-			'tsserver',
-			'yamlls'
-		}
-
-		for _, lsp in ipairs(lsps) do
-			local settings = {
-				on_attach = function (client, bufnr)
-					local opts = { noremap=true, silent=true }
-
-					local function buf_set_keymap(...)
-						vim.api.nvim_buf_set_keymap(bufnr, ...)
-					end
-
-					buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-					buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-					buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts);
-					buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-					buf_set_keymap('n', '<leader>lr', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-				end
-			}
-
-			if lsp == 'yamlls' then
-				-- TODO
-				settings.settings = {
+			bashls = {},
+			clangd = {},
+			dockerls = {},
+			graphql = {},
+			omnisharp = {
+				cmd = { 'omnisharp', '--languageserver', '--hostPID', tostring(pid) }
+			},
+			pylsp = {},
+			rust_analyzer = {},
+			tsserver = {},
+			yamlls = {
+				settings = {
 					yaml = {
 						schemas = {
 							['https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json'] = 'docker-compose*.yml'
 						}
 					}
 				}
+			}
+		}
+
+		for lsp, settings in pairs(lsps) do
+			settings.on_attach = function (client, bufnr)
+				local opts = { noremap=true, silent=true }
+
+				local function buf_set_keymap(...)
+					vim.api.nvim_buf_set_keymap(bufnr, ...)
+				end
+
+				buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+				buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+				buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts);
+				buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+				buf_set_keymap('n', '<leader>lr', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
 			end
 
 			lspconfig[lsp].setup(settings)
