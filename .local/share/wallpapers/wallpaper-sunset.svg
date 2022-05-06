@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1920"
+   height="1080"
+   viewBox="0 0 508 285.75"
+   version="1.1"
+   id="svg5"
+   inkscape:label="bg-gradient"
+   inkscape:version="1.1 (c4e8f9ed74, 2021-05-24)"
+   sodipodi:docname="wallpaper-sunset.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="false"
+     units="px"
+     inkscape:zoom="0.5"
+     inkscape:cx="897"
+     inkscape:cy="617"
+     inkscape:window-width="1916"
+     inkscape:window-height="1026"
+     inkscape:window-x="0"
+     inkscape:window-y="22"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg5" />
+  <defs
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="dusk-fade">
+      <stop
+         style="stop-color:#282828;stop-opacity:0.5"
+         offset="0"
+         id="stop14445" />
+      <stop
+         style="stop-color:#282828;stop-opacity:0"
+         offset="0.50290018"
+         id="stop16183" />
+      <stop
+         style="stop-color:#282828;stop-opacity:0.5"
+         offset="1"
+         id="stop14447" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="ground-fade">
+      <stop
+         style="stop-color:#b8bb26;stop-opacity:1"
+         offset="0"
+         id="stop11208" />
+      <stop
+         style="stop-color:#98971a;stop-opacity:1"
+         offset="1"
+         id="stop11210" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="sky-fade">
+      <stop
+         style="stop-color:#83a598;stop-opacity:1"
+         offset="0"
+         id="stop5890" />
+      <stop
+         style="stop-color:#458588;stop-opacity:1"
+         offset="1"
+         id="stop5892" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#sky-fade"
+       id="linearGradient5896"
+       x1="264.60532"
+       y1="142.75877"
+       x2="264.60532"
+       y2="0.04246876"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#ground-fade"
+       id="linearGradient11214"
+       x1="264.96484"
+       y1="143.39429"
+       x2="264.96484"
+       y2="285.63559"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#dusk-fade"
+       id="linearGradient14451"
+       x1="254.23639"
+       y1="0.22118658"
+       x2="254.23639"
+       y2="284.28906"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <rect
+     style="fill:url(#linearGradient5896);fill-opacity:1;stroke-width:0.642006;stroke:none"
+     id="rect5808"
+     width="508"
+     height="142.875"
+     x="0"
+     y="0"
+     inkscape:label="sky" />
+  <circle
+     style="fill:#d79921;fill-opacity:1;stroke-width:0.452439;stroke:none"
+     id="path7722"
+     cx="254"
+     cy="154.77483"
+     r="35.71233"
+     inkscape:label="sun" />
+  <rect
+     style="fill:url(#linearGradient11214);fill-opacity:1;fill-rule:evenodd;stroke-width:0.533494;stroke:none"
+     id="background"
+     width="508"
+     height="142.875"
+     x="0"
+     y="142.875"
+     inkscape:label="ground" />
+  <rect
+     style="fill:url(#linearGradient14451);fill-opacity:1;stroke:none;stroke-width:0.341923;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.522134"
+     id="rect14363"
+     width="507.65808"
+     height="285.40808"
+     x="0.17096169"
+     y="0.17096169"
+     inkscape:label="dusk-mask" />
+</svg>
