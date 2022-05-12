@@ -8,6 +8,7 @@ return {
 			clangd = {},
 			dockerls = {},
 			graphql = {},
+			jsonls = {},
 			omnisharp = {
 				cmd = { 'omnisharp', '--languageserver', '--hostPID', tostring(pid) }
 			},
