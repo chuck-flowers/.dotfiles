@@ -257,7 +257,7 @@ keys = [
     Key(
         [mod],
         "p",
-        lazy.spawn("/home/cflowers/.local/bin/passmenu"),
+        lazy.spawn("passmenu"),
         desc="Fetch password"
     ),
 
