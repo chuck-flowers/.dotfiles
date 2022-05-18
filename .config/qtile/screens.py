@@ -66,7 +66,7 @@ def build_screens():
 		background=gruvbox_dark["darkYellow"],
 		format=' {r:.1f}%',
 		padding=10,
-		partition='/',
+		partition='/home',
 		visible_on_warn=False
 	)
 
