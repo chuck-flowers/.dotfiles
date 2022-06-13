@@ -46,7 +46,8 @@ return {
 					end
 				}
 			},
-			org_default_notes_file = '~/org/notes.org'
+			org_default_notes_file = '~/org/notes.org',
+			org_indent_mode = 'indent'
 		})
 	end
 }
