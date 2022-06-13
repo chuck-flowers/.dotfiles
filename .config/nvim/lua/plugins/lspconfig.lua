@@ -3,12 +3,17 @@ return {
 	config = function()
 		local lspconfig = require('lspconfig')
 
+		local capabilities = vim.lsp.protocol.make_client_capabilities()
+		capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 		local lsps = {
 			bashls = {},
 			clangd = {},
 			dockerls = {},
 			graphql = {},
-			jsonls = {},
+			jsonls = {
+				capabilities = capabilities
+			},
 			omnisharp = {
 				cmd = { 'omnisharp', '--languageserver', '--hostPID', tostring(pid) }
 			},
