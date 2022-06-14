@@ -9,6 +9,7 @@
 	ff = only
 [alias]
 	l = log --all --decorate --oneline --graph
+	lb = log --decorate --oneline --graph
 	rd = rebase -i master
 	rr = rebase -i origin
 
