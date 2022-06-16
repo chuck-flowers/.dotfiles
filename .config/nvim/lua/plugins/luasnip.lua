@@ -2,7 +2,12 @@ return {
 	'L3MON4D3/LuaSnip',
 	config = function()
 		local luasnip = require('luasnip')
+
 		local s = luasnip.snippet
+		local jump = luasnip.jump
+		local jumpable = luasnip.jumpable
+
+		-- Nodes
 		local t = luasnip.text_node
 		local i = luasnip.insert_node
 
@@ -22,6 +27,19 @@ return {
 				}
 			)
 		})
+
+		vim.keymap.set({ 'i', 's' }, '<c-l>', function()
+			if jumpable(1) then
+				jump(1)
+			end
+		end, { silent = true })
+
+		vim.keymap.set({ 'i', 's' }, '<c-h>', function()
+			if jumpable(-1) then
+				jump(-1)
+			end
+		end, { silent = true })
+
 	end
 }
 
