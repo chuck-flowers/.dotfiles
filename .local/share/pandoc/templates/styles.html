@@ -1,6 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
 
 * {
+	/* Spacing */
+	--space-unit: 1rem;
+	--space-1: calc(1 * var(--space-unit));
+	--space-2: calc(2 * var(--space-unit));
+	--space-3: calc(3 * var(--space-unit));
+	--space-4: calc(4 * var(--space-unit));
+
 	/* Gruvbox Colors */
 	--darkBlack: #282828;
 	--darkRed: #cc241d;
@@ -36,5 +43,19 @@ a {
 
 a:visited {
 	color: var(--darkPurple);
+}
+
+table {
+	padding: var(--space-2);
+}
+
+th {
+	padding: var(--space-1);
+	border: 1px solid;
+}
+
+td {
+	padding: var(--space-1);
+	border: 1px solid;
 }
 
