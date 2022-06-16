@@ -37,12 +37,16 @@ return {
 						local on_success = function(output)
 							print('Success!')
 							vim.api.nvim_echo({{ table.concat(output, '\n') }}, true, {})
+							vim.fn.system({
+								'xdg-open',
+								target
+							})
 						end
 						local on_error = function(err)
 							print('Error!')
 							vim.api.nvim_echo({{ table.concat(err, '\n'), 'ErrorMsg' }}, true, {})
 						end
-						return exporter(command , target, on_success, on_error)
+						return exporter(command, target, on_success, on_error)
 					end
 				}
 			},
