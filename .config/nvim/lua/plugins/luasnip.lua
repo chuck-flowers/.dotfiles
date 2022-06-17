@@ -3,59 +3,28 @@ return {
 	config = function()
 		-- Modules
 		local luasnip = require('luasnip')
-		local luasnip_fmt = require('luasnip.extras.fmt')
+		local luasnip_lua_loader = require('luasnip.loaders.from_lua')
 
-		-- LS Functions
-		local s = luasnip.snippet
-		local jump = luasnip.jump
-		local jumpable = luasnip.jumpable
-		local fmt = luasnip_fmt.fmt
-
-		-- LS Nodes
-		local t = luasnip.text_node
-		local i = luasnip.insert_node
-
-		luasnip.add_snippets('typescript', {
-			s(
-				'export_function',
-				fmt(
-					'export function {}({}): {} {{\n\t{}\n}}',
-					{
-						i(1, 'name'),
-						i(2, 'params'),
-						i(3, 'return_type'),
-						i(0, 'body')
-					}
-				)
-			)
+		-- Load the snippets from files
+		luasnip_lua_loader.load({
+			paths = './lua/plugins/luasnip/snippets'
 		})
 
-		luasnip.add_snippets('typescript', {
-			s(
-				'export_async_function',
-				fmt(
-					'export async function {}({}): Promise<{}> {{\n\t{}\n}}',
-					{
-						i(1, 'name'),
-						i(2, 'params'),
-						i(3, 'return_type'),
-						i(0, 'body')
-					}
-				)
-			)
-		})
-
-		vim.keymap.set({ 'i', 's' }, '<c-l>', function()
-			if jumpable(1) then
-				jump(1)
+		local function safe_jump_forward()
+			if luasnip.jumpable(1) then
+				luasnip.jump(1)
 			end
-		end, { silent = true })
+		end
 
-		vim.keymap.set({ 'i', 's' }, '<c-h>', function()
-			if jumpable(-1) then
-				jump(-1)
+		local function safe_jump_backward()
+			if luasnip.jumpable(-1) then
+				luasnip.jump(-1)
 			end
-		end, { silent = true })
+		end
+
+		-- Key Maps
+		vim.keymap.set({ 'i', 's' }, '<c-l>', safe_jump_forward, { silent = true })
+		vim.keymap.set({ 'i', 's' }, '<c-h>', safe_jump_backward, { silent = true })
 
 	end
 }
