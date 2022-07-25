@@ -28,7 +28,7 @@ import os
 import subprocess
 from typing import List  # noqa: F401
 
-from libqtile import layout
+from libqtile import hook, layout
 from libqtile.config import Match
 from libqtile.lazy import lazy
 
@@ -83,3 +83,8 @@ auto_minimize = True
 # We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
 # java that happens to be on java's whitelist.
 wmname = "LG3D"
+
+@hook.subscribe.startup_once
+def autostart():
+    home = os.path.expanduser('~/.config/qtile/autostart.sh')
+    subprocess.Popen([home])
