@@ -11,6 +11,9 @@ return {
 			clangd = {},
 			dockerls = {},
 			graphql = {},
+			html = {
+				capabilities = capabilities
+			},
 			jsonls = {
 				capabilities = capabilities
 			},
