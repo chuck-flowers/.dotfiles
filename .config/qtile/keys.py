@@ -271,7 +271,7 @@ keys = [
     Key(
         [mod],
         "x",
-        lazy.spawn(f"{terminal} -e bash -c 'ranger'"),
+        lazy.spawn("pcmanfm"),
         "Launch file browser"
     ),
     Key(
