@@ -5,6 +5,7 @@
 	editor = nvim
 [rebase]
 	autoSquash = true
+	autoStash = true
 [pull]
 	ff = only
 [alias]
