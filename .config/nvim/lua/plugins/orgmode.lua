@@ -9,6 +9,7 @@ return {
 		orgmode.setup_ts_grammar()
 
 		orgmode.setup({
+			calendar_week_start_day = 0,
 			org_agenda_files = '~/org/**/*',
 			org_agenda_span = 'day',
 			org_agenda_skip_deadline_if_done = true,
