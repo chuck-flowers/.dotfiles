@@ -1,6 +1,9 @@
+import subprocess
+
 from colors import gruvbox_dark
 from libqtile import bar, widget
 from libqtile.config import Screen
+from libqtile.lazy import lazy
 
 def build_screens():
 	def build_bar(widgets, margin):
@@ -26,7 +29,7 @@ def build_screens():
 			bottom=build_bar(
 				bottom_widgets,
 				margin=[
-                    MARGIN_VALUE // 2,
+					MARGIN_VALUE // 2,
 					MARGIN_VALUE,
 					MARGIN_VALUE,
 					MARGIN_VALUE
@@ -48,6 +51,16 @@ def build_screens():
 		distro='Arch',
 		display_format=" {updates}",
 		padding=10
+	)
+
+	compositor = widget.GenPollText(
+		fmt = ': {}',
+		func = lambda: subprocess.run(['bash', '-c', 'if pgrep picom > /dev/null; then printf ON; else printf OFF; fi'], stdout=subprocess.PIPE).stdout.decode('utf-8').strip(),
+		update_interval = 5,
+		mouse_callbacks = {
+			"Button1": lazy.spawn('bash -c "if pgrep picom > /dev/null; then pkill picom; else picom -b; fi"')
+		},
+		padding = 10
 	)
 
 	cpu = widget.CPU(
@@ -101,6 +114,7 @@ def build_screens():
 		window_name,
 		widget.Spacer(),
 		check_updates,
+		compositor,
 		cpu,
 		ram,
 		hdd,
