@@ -4,11 +4,15 @@ return {
 		{ 'neovim/nvim-lspconfig' },
 		{ 'hrsh7th/cmp-nvim-lsp' },
 		{ 'saadparwaiz1/cmp_luasnip' },
-		{ 'L3MON4D3/LuaSnip' }
+		{ 'L3MON4D3/LuaSnip' },
+		{ 'windwp/nvim-autopairs' }
 	},
 	config = function()
+		local autopairs_cmp = require('nvim-autopairs.completion.cmp')
 		local cmp = require('cmp')
 		local luasnip = require('luasnip')
+
+		cmp.event:on('confirm_done', autopairs_cmp.on_confirm_done())
 
 		cmp.setup({
 			mapping = {
