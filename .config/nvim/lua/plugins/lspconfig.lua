@@ -22,6 +22,7 @@ return {
 			},
 			pylsp = {},
 			rust_analyzer = {},
+			sqlls = {},
 			sumneko_lua = {
 				settings = {
 					Lua = {
