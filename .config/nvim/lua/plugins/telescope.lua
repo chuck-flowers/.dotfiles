@@ -16,6 +16,7 @@ return {
 		vim.api.nvim_set_keymap('n', '<Leader>ft', ':Telescope live_grep<CR>', { noremap = true })
 		vim.api.nvim_set_keymap('n', '<Leader>fh', ':Telescope help_tags<CR>', { noremap = true })
 		vim.api.nvim_set_keymap('n', '<Leader>fp', ':Telescope project<CR>', { noremap = true })
+		vim.api.nvim_set_keymap('n', '<Leader>fs', ':Telescope lsp_dynamic_workspace_symbols<CR>', { noremap = true })
 
 		telescope.setup({
 			defaults = {
