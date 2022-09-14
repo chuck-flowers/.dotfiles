@@ -261,6 +261,14 @@ keys = [
         desc="Fetch password"
     ),
 
+    # Utils
+    Key(
+        [mod],
+        "period",
+        lazy.spawn("rofimoji"),
+        desc="Select Emoji"
+    ),
+
     # Quick launch
     Key(
         [mod],
@@ -287,11 +295,6 @@ keys = [
             f"{terminal} -e bash -c nvim"
         ),
         "Launch vimwiki for editing"
-    ),
-    Key(
-        [mod, "shift"],
-        "v",
-        lazy.spawn("xdg-open /home/cflowers/vimwiki_html/index.html")
     )
 ]
 
