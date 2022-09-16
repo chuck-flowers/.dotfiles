@@ -1,8 +1,12 @@
 return {
 	'nvim-treesitter/nvim-treesitter',
 	run = ':TSUpdate',
+	requires = {
+		'nvim-treesitter/nvim-treesitter-context'
+	},
 	config = function()
 		local ts_configs = require('nvim-treesitter.configs')
+		local ts_context = require('treesitter-context')
 
 		ts_configs.setup({
 			highlight = {
@@ -25,6 +29,8 @@ return {
 				'typescript'
 			}
 		})
+
+		ts_context.setup()
 	end
 }
 
