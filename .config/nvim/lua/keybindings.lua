@@ -11,8 +11,10 @@ vim.api.nvim_set_keymap('v', '<C-j>', ":'<'>m '>+1<CR>gv=gv", { noremap = true }
 vim.api.nvim_set_keymap('v', '<C-k>', ":'<'>m '<-2<CR>gv=gv", { noremap = true })
 
 -- Tweaks the behavior of the scrolling behavior
-vim.api.nvim_set_keymap('n', '<C-d>', '<C-d>M', { noremap = true })
-vim.api.nvim_set_keymap('n', '<C-u>', '<C-u>M', { noremap = true })
+vim.keymap.set('n', '<C-f>', '<C-f>M', { noremap = true })
+vim.keymap.set('n', '<C-b>', '<C-b>M', { noremap = true })
+vim.keymap.set('n', '<C-d>', '<C-d>M', { noremap = true })
+vim.keymap.set('n', '<C-u>', '<C-u>M', { noremap = true })
 
 -- Allows for reloading config
 vim.keymap.set('n', '<leader><leader>so', function ()
