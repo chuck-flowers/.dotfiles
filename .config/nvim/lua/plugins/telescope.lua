@@ -11,7 +11,7 @@ return {
 		telescope.load_extension('project')
 
 		vim.keymap.set('n', '<Leader>ff', ':lua require("telescope.builtin").find_files({ hidden = true })<CR>', { noremap = true })
-		vim.keymap.set('n', '<Leader>fb', ':Telescope git_branches<CR>', { noremap = true })
+		vim.keymap.set('n', '<Leader>fb', ':Telescope buffers<CR>', { noremap = true })
 		vim.keymap.set('n', '<Leader>ft', ':Telescope live_grep<CR>', { noremap = true })
 		vim.keymap.set('n', '<Leader>fh', ':Telescope help_tags<CR>', { noremap = true })
 		vim.keymap.set('n', '<Leader>fp', ':Telescope project<CR>', { noremap = true })
