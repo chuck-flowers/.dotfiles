@@ -10,12 +10,13 @@ return {
 
 		telescope.load_extension('project')
 
-		vim.keymap.set('n', '<Leader>ff', ':lua require("telescope.builtin").find_files({ hidden = true })<CR>', { noremap = true })
-		vim.keymap.set('n', '<Leader>fb', ':Telescope buffers<CR>', { noremap = true })
-		vim.keymap.set('n', '<Leader>ft', ':Telescope live_grep<CR>', { noremap = true })
-		vim.keymap.set('n', '<Leader>fh', ':Telescope help_tags<CR>', { noremap = true })
-		vim.keymap.set('n', '<Leader>fp', ':Telescope project<CR>', { noremap = true })
-		vim.keymap.set('n', '<Leader>fs', ':Telescope lsp_dynamic_workspace_symbols<CR>', { noremap = true })
+		vim.keymap.set('n', '<Leader>ff', '<cmd>lua require("telescope.builtin").find_files({ hidden = true })<CR>')
+		vim.keymap.set('n', '<Leader>fb', '<cmd>Telescope buffers<CR>')
+		vim.keymap.set('n', '<Leader>ft', '<cmd>Telescope live_grep<CR>')
+		vim.keymap.set('n', '<Leader>fh', '<cmd>Telescope help_tags<CR>')
+		vim.keymap.set('n', '<Leader>fp', '<cmd>Telescope project<CR>')
+		vim.keymap.set('n', '<Leader>fs', '<cmd>Telescope lsp_dynamic_workspace_symbols<CR>')
+		vim.keymap.set('n', '<Leader>fm', '<cmd>Telescope man_pages<CR>')
 
 		telescope.setup({
 			defaults = {
