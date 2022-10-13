@@ -37,7 +37,7 @@ def build_screens():
 			),
 			left=bar.Gap(MARGIN_VALUE // 2),
 			right=bar.Gap(MARGIN_VALUE // 2),
-			wallpaper='~/.local/share/wallpapers/wallpaper-sunset.svg',
+			wallpaper='~/.local/share/wallpapers/moonlit-mountain.svg',
 			wallpaper_mode='stretch'
 		)
 
