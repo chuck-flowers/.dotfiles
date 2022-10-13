@@ -20,7 +20,18 @@ return {
 			omnisharp = {
 				cmd = { 'omnisharp', '--languageserver', '--hostPID', tostring(pid) }
 			},
-			pylsp = {},
+			pylsp = {
+				settings = {
+					pylsp = {
+						plugins = {
+							pylint = {
+								enabled = true,
+								executable = 'pylint'
+							}
+						}
+					}
+				}
+			},
 			rust_analyzer = {},
 			sqlls = {},
 			sumneko_lua = {
