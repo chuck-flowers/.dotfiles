@@ -38,7 +38,13 @@ return {
 					}
 				}
 			},
-			tsserver = {},
+			tsserver = {
+				init_options = {
+					preferences = {
+						quotePreference = 'single'
+					}
+				}
+			},
 			vuels = {},
 			yamlls = {
 				settings = {
