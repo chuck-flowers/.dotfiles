@@ -1,10 +1,11 @@
 return {
 	'wbthomason/packer.nvim',
 	config = function()
-		vim.api.nvim_set_keymap('n', '<Leader>ps', '<cmd>PackerStatus<CR>', { noremap = true })
-		vim.api.nvim_set_keymap('n', '<Leader>pc', '<cmd>PackerCompile<CR>', { noremap = true })
-		vim.api.nvim_set_keymap('n', '<Leader>pi', '<cmd>PackerInstall<CR>', { noremap = true })
-		vim.api.nvim_set_keymap('n', '<Leader>pu', '<cmd>PackerSync<CR>', { noremap = true })
+		vim.keymap.set('n', '<Leader>ps', '<cmd>PackerStatus<CR>')
+		vim.keymap.set('n', '<Leader>pc', '<cmd>PackerCompile<CR>')
+		vim.keymap.set('n', '<Leader>pi', '<cmd>PackerInstall<CR>')
+		vim.keymap.set('n', '<Leader>pu', '<cmd>PackerSync<CR>')
+		vim.keymap.set('n', '<leader>pp', '<cmd>PackerProfile<CR>')
 	end
 }
 
