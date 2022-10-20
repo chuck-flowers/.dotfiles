@@ -6,28 +6,54 @@ return {
 		{ 'nvim-telescope/telescope-project.nvim' }
 	},
 	config = function()
-		local telescope = require('telescope')
-		telescope.load_extension('project')
+		local telescope = nil
+		local builtin = nil
+		local function load_plugin()
+			if telescope == nil then
+				telescope = require 'telescope'
+				builtin = require 'telescope.builtin'
+				telescope.load_extension('project')
+				telescope.setup({
+					defaults = {
+						file_ignore_patterns = {
+							'node_modules',
+							'.git'
+						}
+					}
+				})
+			end
+		end
 
 		vim.keymap.set('n', '<Leader>ff', function ()
-			require('telescope.builtin').find_files({ hidden = true })
+			load_plugin()
+			builtin.find_files({ hidden = true })
 		end)
 
-		vim.keymap.set('n', '<Leader>fb', '<cmd>Telescope buffers<CR>')
-		vim.keymap.set('n', '<Leader>ft', '<cmd>Telescope live_grep<CR>')
-		vim.keymap.set('n', '<Leader>fh', '<cmd>Telescope help_tags<CR>')
-		vim.keymap.set('n', '<Leader>fp', '<cmd>Telescope project<CR>')
-		vim.keymap.set('n', '<Leader>fs', '<cmd>Telescope lsp_dynamic_workspace_symbols<CR>')
-		vim.keymap.set('n', '<Leader>fm', '<cmd>Telescope man_pages<CR>')
+		vim.keymap.set('n', '<Leader>fb', function()
+			load_plugin()
+			builtin.buffers({})
+		end)
 
-		telescope.setup({
-			defaults = {
-				file_ignore_patterns = {
-					'node_modules',
-					'.git'
-				}
-			}
-		})
+		vim.keymap.set('n', '<Leader>ft', function()
+			load_plugin()
+			builtin.live_grep({})
+		end)
+		vim.keymap.set('n', '<Leader>fh', function()
+			load_plugin()
+			builtin.help_tags({})
+		end)
+		vim.keymap.set('n', '<Leader>fp', function()
+			load_plugin()
+			telescope.extensions.project({})
+		end)
+		vim.keymap.set('n', '<Leader>fs', function()
+			load_plugin()
+			builtin.lsp_dynamic_workspace_symbols({})
+		end)
+		vim.keymap.set('n', '<Leader>fm', function()
+			load_plugin()
+			builtin.man_pages({})
+		end)
 	end
 }
 
