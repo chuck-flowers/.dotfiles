@@ -44,7 +44,7 @@ return {
 		end)
 		vim.keymap.set('n', '<Leader>fp', function()
 			load_plugin()
-			telescope.extensions.project({})
+			telescope.extensions.project.project({})
 		end)
 		vim.keymap.set('n', '<Leader>fs', function()
 			load_plugin()
