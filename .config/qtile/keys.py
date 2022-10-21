@@ -295,6 +295,32 @@ keys = [
             f"{terminal} -e bash -c nvim"
         ),
         "Launch vimwiki for editing"
+    ),
+
+    # Audio Keys
+    Key(
+        [],
+        "XF86AudioPlay",
+        lazy.spawn(
+            "playerctl play-pause"
+        ),
+        "Toggle whether the current audio source is playing"
+    ),
+    Key(
+        [],
+        "XF86AudioNext",
+        lazy.spawn(
+            "playerctl next"
+        ),
+        "Skip to the next track"
+    ),
+    Key(
+        [],
+        "XF86AudioPrev",
+        lazy.spawn(
+            "playerctl previous"
+        ),
+        "Skip to the previous track"
     )
 ]
 
