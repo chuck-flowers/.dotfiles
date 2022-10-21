@@ -65,6 +65,14 @@ return {
 			return service_name .. 'Deps'
 		end, { 1 }),
 		body = i(0, '')
+	})),
+	s('jest_test', fmt([[
+		it('{test_name}', () => {{
+			{body}
+		}});
+	]], {
+		test_name = i(1, 'Test'),
+		body = i(0, '')
 	}))
 }
 
