@@ -1,5 +1,8 @@
 return {
 	'nvim-lualine/lualine.nvim',
+	requires = {
+		'nvim-tree/nvim-web-devicons'
+	},
 	config = function()
 		local lualine = require('lualine')
 
@@ -10,12 +13,12 @@ return {
 				globalstatus = true
 			},
 			sections = {
-				lualine_a = { 'mode' },
+				lualine_a = { 'mode', 'filetype' },
 				lualine_b = { 'filename', 'progress', 'location' },
 				lualine_c = {},
 				lualine_x = {},
-				lualine_y = {},
-				lualine_z = { 'branch', 'diff', 'diagnostics' },
+				lualine_y = { 'diagnostics' },
+				lualine_z = { 'branch', 'diff' }
 			},
 			inactive_sections = {},
 			tabline = {},
@@ -23,4 +26,3 @@ return {
 		})
 	end
 }
-
