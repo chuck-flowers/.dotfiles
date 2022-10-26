@@ -34,7 +34,7 @@ return {
 	})),
 	s('fn_service', fmt([[
 		type {service_name} = ReturnType<typeof {ctor_name}>;
-		export default {service_name};
+		export default {exported_service_name};
 
 		export type {config_name} = AppConfigSubset;
 		export type {deps_name} = ServiceDeps;
@@ -52,6 +52,10 @@ return {
 		}}
 	]], {
 		service_name = i(1, 'Foo'),
+		exported_service_name = f(function(args)
+			local service_name = args[1][1]
+			return service_name
+		end, { 1 }),
 		ctor_name = f(function(args)
 			local service_name = args[1][1]
 			return 'create' .. service_name
@@ -75,4 +79,3 @@ return {
 		body = i(0, '')
 	}))
 }
-
