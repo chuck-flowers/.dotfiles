@@ -16,6 +16,10 @@ vim.o.autoindent = true
 vim.o.softtabstop = 4
 vim.o.shiftwidth = 4
 
+-- Configure search behavior
+vim.o.ignorecase = true
+vim.o.smartcase = true
+
 -- Configure the line wrapping behavior
 vim.o.wrap = false
 
