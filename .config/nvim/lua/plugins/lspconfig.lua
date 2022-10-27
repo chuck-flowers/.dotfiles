@@ -1,5 +1,8 @@
 return {
 	'neovim/nvim-lspconfig',
+	requires = {
+		'nanotee/sqls.nvim'
+	},
 	config = function()
 		local lspconfig = require('lspconfig')
 
@@ -33,7 +36,7 @@ return {
 				}
 			},
 			rust_analyzer = {},
-			sqlls = {},
+			sqls = { },
 			sumneko_lua = {
 				settings = {
 					Lua = {
@@ -72,6 +75,10 @@ return {
 		for lsp, settings in pairs(lsps) do
 			settings.on_attach = function (client, bufnr)
 				local opts = { noremap=true, silent=true }
+
+				if lsp == 'sqls' then
+					require('sqls').on_attach(client, bufnr)
+				end
 
 				local function buf_set_keymap(...)
 					vim.api.nvim_buf_set_keymap(bufnr, ...)
