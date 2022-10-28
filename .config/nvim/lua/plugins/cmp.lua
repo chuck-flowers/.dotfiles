@@ -5,7 +5,8 @@ return {
 		{ 'hrsh7th/cmp-nvim-lsp' },
 		{ 'saadparwaiz1/cmp_luasnip' },
 		{ 'L3MON4D3/LuaSnip' },
-		{ 'windwp/nvim-autopairs' }
+		{ 'windwp/nvim-autopairs' },
+		{ 'dcampos/cmp-emmet-vim' }
 	},
 	config = function()
 		local autopairs_cmp = require('nvim-autopairs.completion.cmp')
@@ -32,7 +33,8 @@ return {
 			sources = {
 				{ name = 'nvim_lsp' },
 				{ name = 'luasnip' },
-				{ name = 'orgmode' }
+				{ name = 'orgmode' },
+				{ name = 'emmet_vim' }
 			}
 		})
 	end
