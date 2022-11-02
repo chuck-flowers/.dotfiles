@@ -75,18 +75,20 @@ def build_screens():
 		padding=10
 	)
 
-	hdd = widget.DF(
+	rootHdd = widget.DF(
 		background=gruvbox_dark["darkYellow"],
 		format=' {r:.1f}%',
 		padding=10,
-		partition='/home',
+		partition='/',
 		visible_on_warn=False
 	)
 
-	gpu = widget.NvidiaSensors(
-		background=gruvbox_dark["darkGreen"],
-		format=' {temp}°C',
-		padding=10
+	homeHdd = widget.DF(
+		background=gruvbox_dark["darkYellow"],
+		format=' {r:.1f}%',
+		padding=10,
+		partition='/home',
+		visible_on_warn=False
 	)
 
 	current_layout = widget.CurrentLayout(
@@ -117,8 +119,8 @@ def build_screens():
 		compositor,
 		cpu,
 		ram,
-		hdd,
-		gpu
+        rootHdd,
+        homeHdd
 	]
 
 	bottomBar = [
