@@ -12,9 +12,13 @@ return {
 
 		ts_configs.setup({
 			ensure_installed = {
+				'bash',
+				'dockerfile',
+				'javascript',
 				'lua',
-				'query',
 				'org',
+				'query',
+				'rust',
 				'tsx',
 				'typescript'
 			},
