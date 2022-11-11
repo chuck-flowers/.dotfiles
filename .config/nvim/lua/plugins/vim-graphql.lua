@@ -1,4 +1,0 @@
-return {
-	'jparise/vim-graphql'
-}
-
