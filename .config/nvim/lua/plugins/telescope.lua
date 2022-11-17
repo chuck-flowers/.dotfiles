@@ -54,6 +54,10 @@ return {
 			load_plugin()
 			builtin.man_pages({})
 		end)
+		vim.keymap.set('n', '<Leader>fe', function ()
+			load_plugin()
+			builtin.filetypes({})
+		end)
 	end
 }
 
