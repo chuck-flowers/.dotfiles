@@ -3,7 +3,9 @@ return {
 	config = function()
 		local gruvbox = require 'gruvbox'
 
-		gruvbox.setup({})
+		gruvbox.setup({
+			transparent_mode = true
+		})
 
 		vim.opt.termguicolors = true
 		vim.o.background = 'dark'
