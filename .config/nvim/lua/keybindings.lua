@@ -18,6 +18,11 @@ vim.keymap.set('n', '<C-u>', '<C-u>M', { noremap = true })
 vim.keymap.set('n', 'n', 'nzz')
 vim.keymap.set('n', 'N', 'Nzz')
 
+-- Keybindings for terminal
+vim.keymap.set('n', '<leader>tt', '<cmd>terminal<CR>')
+vim.keymap.set('n', '<leader>ts', '<C-W>s<cmd>terminal<CR>')
+vim.keymap.set('n', '<leader>tv', '<C-W>v<cmd>terminal<CR>')
+
 -- Allows for reloading config
 vim.keymap.set('n', '<leader><leader>so', function ()
 	package.loaded = {}
