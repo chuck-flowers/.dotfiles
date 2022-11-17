@@ -63,7 +63,13 @@ return {
 			yamlls = {
 				settings = {
 					yaml = {
-						customTags = { '!GetAtt', '!Ref', '!Sub', '!Join sequence' },
+						customTags = {
+							'!FindInMap sequence',
+							'!GetAtt',
+							'!Join sequence',
+							'!Ref',
+							'!Sub'
+						},
 						schemas = {
 							['https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json'] = 'docker-compose*.yml'
 						}
