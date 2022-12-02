@@ -39,7 +39,7 @@ packer.startup({
 		-- Use each packer definition in the plugins folder
 		local plugin_config_files = ls_files(plugin_config_dir);
 		for _, pluginFile in ipairs(plugin_config_files) do
-			local pluginName = string.gsub(pluginFile, '.lua', '')
+			local pluginName = string.gsub(pluginFile, '%.lua$', '')
 			local pluginConfig = require('plugins/' .. pluginName)
 			use(pluginConfig)
 		end
