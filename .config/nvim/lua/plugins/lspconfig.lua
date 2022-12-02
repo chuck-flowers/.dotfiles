@@ -10,6 +10,7 @@ return {
 		capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 		local lsps = {
+			awk_ls = {},
 			bashls = {},
 			clangd = {},
 			dockerls = {},
