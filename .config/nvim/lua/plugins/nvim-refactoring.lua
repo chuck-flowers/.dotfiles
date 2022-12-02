@@ -4,6 +4,11 @@ return {
 		{ 'nvim-lua/plenary.nvim' },
 		{ 'nvim-treesitter/nvim-treesitter' }
 	},
+	ft = {
+		'javascript',
+		'python',
+		'typescript'
+	},
 	config = function()
 		local refactoring = require 'refactoring'
 
