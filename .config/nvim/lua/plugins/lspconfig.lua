@@ -21,6 +21,7 @@ return {
 			jsonls = {
 				capabilities = capabilities
 			},
+			marksman = {},
 			omnisharp = {
 				cmd = { 'omnisharp', '--languageserver', '--hostPID', tostring(pid) }
 			},
