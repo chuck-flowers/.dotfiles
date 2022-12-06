@@ -1,8 +1,8 @@
 vim.g.mapleader = " "
 
--- Cycle through diagnostics
-vim.keymap.set('n', '<C-l>', vim.diagnostic.goto_next, { noremap = true })
-vim.keymap.set('n', '<C-h>', vim.diagnostic.goto_prev, { noremap = true })
+-- Cycle through quick fix list
+vim.keymap.set('n', '<C-l>', '<cmd>cnext<CR>', { noremap = true })
+vim.keymap.set('n', '<C-h>', '<cmd>cprevious<CR>', { noremap = true })
 
 -- Move lines of text
 vim.keymap.set('n', '<C-j>', ':m+1<CR>==', { noremap = true })
