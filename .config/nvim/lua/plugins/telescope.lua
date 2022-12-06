@@ -58,6 +58,10 @@ return {
 			load_plugin()
 			builtin.filetypes({})
 		end)
+		vim.keymap.set('n', '<Leader>fd', function ()
+			load_plugin()
+			builtin.diagnostics({ bufnr = nil })
+		end)
 	end
 }
 
