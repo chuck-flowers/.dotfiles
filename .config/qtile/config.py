@@ -28,7 +28,7 @@ import os
 import subprocess
 from typing import List  # noqa: F401
 
-from libqtile import hook, layout
+from libqtile import qtile, hook, layout
 from libqtile.config import Match
 from libqtile.lazy import lazy
 
@@ -86,6 +86,7 @@ wmname = "LG3D"
 
 @hook.subscribe.startup_once
 def autostart():
-    subprocess.Popen(['picom', '-b'])
+    if qtile.core.name == "x11":
+        subprocess.Popen(['picom', '-b'])
     subprocess.Popen(['udiskie'])
 
