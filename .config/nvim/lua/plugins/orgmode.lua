@@ -15,17 +15,18 @@ return {
 			org_agenda_skip_deadline_if_done = true,
 			org_agenda_skip_scheduled_if_done = true,
 			org_agenda_start_on_weekday = 0,
-			org_agenda_templates = {
-				t = {
-					description = 'Task',
+			org_capture_templates = {
+				p = {
+					description = 'Personal Task',
 					template = '* TODO %?\n  SCHEDULED: %t',
-					target = '~/org/todos.org'
-
+					target = '~/org/todos.org',
+					headline = 'Personal Tasks'
 				},
-				j = {
-					description = 'Journal',
-					template = '*** %u\n  %?',
-					target = '~/org/journal-current-month.org'
+				w = {
+					description = 'Work Task',
+					template = '* TODO %?\n  SCHEDULED: %t',
+					target = '~/org/work.org',
+					headline = 'Unfiled Tasks'
 				}
 			},
 			org_custom_exports = {
