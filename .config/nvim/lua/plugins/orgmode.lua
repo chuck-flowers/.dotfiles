@@ -1,5 +1,5 @@
 return {
-	'chuck-flowers/orgmode',
+	'chuck-flowers/logging-config',
 	branch = 'master',
 	requires = {
 		{ 'nvim-treesitter/nvim-treesitter' }
