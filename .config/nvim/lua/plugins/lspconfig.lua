@@ -82,23 +82,53 @@ return {
 
 		for lsp, settings in pairs(lsps) do
 			settings.on_attach = function(client, bufnr)
-				local opts = { noremap = true, silent = true }
+				local packer = require 'packer'
+
+				local telescope_builtin = nil
+				local function load_telescope()
+					if telescope_builtin == nil then
+						telescope_builtin = require 'telescope.builtin'
+					end
+				end
 
 				if lsp == 'sqls' then
 					require('sqls').on_attach(client, bufnr)
 				end
 
-				local function buf_set_keymap(...)
-					vim.api.nvim_buf_set_keymap(bufnr, ...)
-				end
+				vim.keymap.set('n', 'gD', function()
+					vim.lsp.buf.declaration()
+				end)
 
-				buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-				buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-				buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-				buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-				buf_set_keymap('n', '<leader>lr', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-				buf_set_keymap('n', '<leader>la', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-				buf_set_keymap('n', '<leader>lf', '<cmd>lua vim.lsp.buf.format()<CR>', opts)
+				vim.keymap.set('n', 'gd', function()
+					vim.lsp.buf.definition()
+				end)
+
+				vim.keymap.set('n', 'gr', function()
+					vim.lsp.buf.references()
+				end)
+
+				vim.keymap.set('n', '<leader>fr', function ()
+					load_telescope()
+					telescope_builtin.lsp_references({
+						include_declaration = false
+					})
+				end)
+
+				vim.keymap.set('n', 'K', function()
+					vim.lsp.buf.hover()
+				end)
+
+				vim.keymap.set('n', '<leader>lr', function()
+					vim.lsp.buf.rename()
+				end)
+
+				vim.keymap.set('n', '<leader>la', function()
+					vim.lsp.buf.code_action()
+				end)
+
+				vim.keymap.set('n', '<leader>lf', function()
+					vim.lsp.buf.format()
+				end)
 			end
 
 			lspconfig[lsp].setup(settings)
