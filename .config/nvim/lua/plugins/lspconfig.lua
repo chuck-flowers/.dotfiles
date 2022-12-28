@@ -1,7 +1,8 @@
 return {
 	'neovim/nvim-lspconfig',
 	requires = {
-		'nanotee/sqls.nvim'
+		'nanotee/sqls.nvim',
+		'williamboman/mason-lspconfig.nvim'
 	},
 	config = function()
 		local lspconfig = require('lspconfig')
@@ -14,6 +15,7 @@ return {
 			bashls = {},
 			clangd = {},
 			dockerls = {},
+			eslint = {},
 			graphql = {},
 			html = {
 				capabilities = capabilities
