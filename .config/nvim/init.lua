@@ -10,6 +10,9 @@ vim.o.cursorline = true
 -- Enable syntax highlighting
 vim.cmd('syntax on')
 
+-- Configures the global status line
+vim.o.laststatus = 3
+
 -- Configure tabbing behavior
 vim.o.tabstop = 4
 vim.o.autoindent = true
@@ -23,3 +26,5 @@ vim.o.smartcase = true
 -- Configure the line wrapping behavior
 vim.o.wrap = false
 
+-- Configure terminal colors
+vim.o.termguicolors = true
