@@ -111,7 +111,7 @@ def build_screens():
 		padding=10
 	)
 
-	topBar = [
+	firstTopBar = [
 		widget.Spacer(),
 		window_name,
 		widget.Spacer(),
@@ -119,11 +119,11 @@ def build_screens():
 		compositor,
 		cpu,
 		ram,
-        rootHdd,
-        homeHdd
+		rootHdd,
+		homeHdd
 	]
 
-	bottomBar = [
+	firstBottomBar = [
 		current_layout,
 		group_box,
 		widget.Spacer(),
@@ -133,13 +133,34 @@ def build_screens():
 		date
 	]
 
+	secondTopBar = [
+		widget.Spacer(),
+		window_name,
+		widget.Spacer(),
+		check_updates,
+		compositor,
+		cpu,
+		ram,
+		rootHdd,
+		homeHdd
+	]
+
+	secondBottomBar = [
+		current_layout,
+		group_box,
+		widget.Spacer(),
+		clock,
+		widget.Spacer(),
+		date
+	]
+
 	return [
 		build_screen(
-			topBar,
-			bottomBar
+			firstTopBar,
+			firstBottomBar
 		),
 		build_screen(
-			topBar,
-			bottomBar
+			secondTopBar,
+			secondBottomBar
 		)
 	]
