@@ -1,6 +1,7 @@
 return {
 	'numToStr/Comment.nvim',
 	ft = {
+		'lua',
 		'typescript'
 	},
 	config = function()
