@@ -1,27 +1,37 @@
 return {
 	'feline-nvim/feline.nvim',
+	requires = {
+		'lewis6991/gitsigns.nvim'
+	},
 	config = function()
 		local feline = require 'feline'
-		local vi_mode = require 'feline.providers.vi_mode'
+		local git_provider = require 'feline.providers.git'
+		local file_provider = require 'feline.providers.file'
+		local lsp_provider = require 'feline.providers.lsp'
+		local mode_provider = require 'feline.providers.vi_mode'
 
 		local gruvbox = require 'gruvbox.palette'
 
+		-- Padding functions
+		local pad = function(text) return ' ' .. text .. ' ' end
+		local padStart = function(text) return ' ' .. text end
+		local padEnd = function(text) return text .. ' ' end
+
 		local components = {
-			branch = {
-				provider = 'git_branch',
-				right_sep = 'slant_left',
-				hl = {
-					fg = 'black',
-					bg = 'cyan'
-				}
-			},
 			errors = {
-				provider = 'diagnostic_errors',
-				left_sep = 'slant_left_2',
-				right_sep = 'slant_right',
+				provider = function()
+					local errors = lsp_provider.diagnostic_errors() or ''
+					if errors == '' then
+						return ''
+					end
+
+					return pad(' ' .. errors)
+				end,
+				-- left_sep = 'slant_left_2',
+				-- right_sep = 'slant_right',
 				hl = {
 					fg = 'red',
-					bg = 'black'
+					bg = 'NONE'
 				}
 			},
 			filename = {
@@ -29,7 +39,7 @@ return {
 				provider = {
 					name = 'file_info',
 					opts = {
-						type = 'relative-short'
+						type = 'unique'
 					}
 				}
 			},
@@ -37,57 +47,138 @@ return {
 				name = 'filetype',
 				provider = function()
 					local ft = vim.bo.filetype
-					if ft == '' then
-						return ' [none] '
-					else
-						return ' ' .. ft:lower() .. ' '
-					end
+					if ft == '' then ft = '[none]' end
+					return pad(ft)
 				end,
 				left_sep = 'slant_left_2',
 				right_sep = 'slant_right',
 				hl = {
 					bg = 'white',
-					fg = 'black'
+					fg = 'NONE'
+				}
+			},
+			gitBranch = {
+				provider = function()
+					local branch = git_provider.git_branch() or ''
+					if branch == '' then
+						return ''
+					end
+
+					return pad(branch)
+				end,
+				left_sep = 'slant_left',
+				hl = {
+					fg = 'NONE',
+					bg = 'cyan'
+				}
+			},
+			gitLinesAdded = {
+				provider = function()
+					local lines = git_provider.git_diff_added() or ''
+					if lines == '' then
+						return ''
+					end
+
+					return pad(' ' .. lines)
+				end,
+				left_sep = 'slant_left',
+				right_sep = 'slant_right_2',
+				hl = {
+					fg = 'NONE',
+					bg = 'green'
+				}
+			},
+			gitLinesChanged = {
+				provider = function()
+					local lines = git_provider.git_diff_changed() or ''
+					if lines == '' then
+						return ''
+					end
+
+					return pad(' ' .. lines)
+				end,
+				left_sep = 'slant_left',
+				right_sep = 'slant_right_2',
+				hl = {
+					fg = 'NONE',
+					bg = 'yellow'
+				}
+			},
+			gitLinesRemoved = {
+				provider = function()
+					local lines = git_provider.git_diff_removed() or ''
+					if lines == '' then
+						return ''
+					end
+
+					return pad(' ' .. lines)
+				end,
+				left_sep = 'slant_left',
+				right_sep = 'slant_right_2',
+				hl = {
+					fg = 'NONE',
+					bg = 'red'
 				}
 			},
 			hints = {
-				provider = 'diagnostic_hints',
-				left_sep = 'slant_left_2',
-				right_sep = 'slant_right',
+				provider = function()
+					local hints = lsp_provider.diagnostic_hints() or ''
+					if hints == '' then
+						return ''
+					end
+
+					return pad(' ' .. hints)
+				end,
+				-- left_sep = 'slant_left_2',
+				-- right_sep = 'slant_right',
 				hl = {
 					fg = 'white',
-					bg = 'black'
+					bg = 'NONE'
 				}
 			},
 			info = {
-				provider = 'diagnostic_info',
-				left_sep = 'slant_left_2',
-				right_sep = 'slant_right',
+				provider = function()
+					local info = lsp_provider.diagnostic_info() or ''
+					if info == '' then
+						return ''
+					end
+
+					return pad(' ' .. info)
+				end,
+				-- left_sep = 'slant_left_2',
+				-- right_sep = 'slant_right',
 				hl = {
 					fg = 'cyan',
-					bg = 'black'
+					bg = 'NONE'
 				}
 			},
 			mode = {
 				name = 'mode',
 				provider = function()
-					return ' ' .. vi_mode.get_vim_mode() .. ' '
+					return ' ' .. mode_provider.get_vim_mode() .. ' '
 				end,
 				right_sep = 'slant_right',
 				hl = function()
 					return {
-						fg = 'black',
-						bg = vi_mode.get_mode_color()
+						fg = 'NONE',
+						bg = mode_provider.get_mode_color()
 					}
 				end
 			},
 			warnings = {
-				provider = 'diagnostic_warnings',
-				left_sep = 'slant_left_2',
-				right_sep = 'slant_right',
+				provider = function()
+					local warnings = lsp_provider.diagnostic_warnings() or ''
+					if warnings == '' then
+						return ''
+					end
+
+					return pad(' ' .. warnings)
+				end,
+				-- left_sep = 'slant_left_2',
+				-- right_sep = 'slant_right',
 				hl = {
 					fg = 'yellow',
-					bg = 'black'
+					bg = 'NONE'
 				}
 			}
 		}
@@ -105,7 +196,10 @@ return {
 				components.filename
 			},
 			right = {
-				components.branch
+				components.gitLinesAdded,
+				components.gitLinesChanged,
+				components.gitLinesRemoved,
+				components.gitBranch
 			}
 		}
 
@@ -124,8 +218,8 @@ return {
 			},
 			theme = {
 				fg = gruvbox.light0,
-				bg = gruvbox.dark0,
-				black = gruvbox.dark0,
+				bg = 'NONE',
+				NONE = gruvbox.dark0,
 				skyblue = gruvbox.bright_blue,
 				cyan = gruvbox.neutral_blue,
 				green = gruvbox.bright_green,
