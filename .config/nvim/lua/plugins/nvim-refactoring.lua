@@ -5,8 +5,15 @@ return {
 		{ 'nvim-treesitter/nvim-treesitter' }
 	},
 	ft = {
+		'c',
+		'cpp',
+		'go',
+		'java',
 		'javascript',
+		'lua',
+		'php',
 		'python',
+		'ruby',
 		'typescript'
 	},
 	config = function()
