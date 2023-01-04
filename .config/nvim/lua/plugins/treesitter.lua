@@ -12,17 +12,30 @@ return {
 
 		ts_configs.setup({
 			ensure_installed = {
+				'awk',
 				'bash',
+				'c',
+				'c_sharp',
 				'css',
 				'dockerfile',
+				'dot',
+				'gdscript',
+				'graphql',
+				'help',
 				'html',
 				'javascript',
+				'jq',
+				'json',
 				'lua',
+				'markdown',
 				'org',
+				'python',
 				'query',
 				'rust',
 				'tsx',
-				'typescript'
+				'typescript',
+				'vue',
+				'yaml'
 			},
 			highlight = {
 				enable = true,
