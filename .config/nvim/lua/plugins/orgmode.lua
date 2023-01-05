@@ -54,8 +54,14 @@ return {
 				}
 			},
 			org_default_notes_file = '~/org/notes.org',
-			org_indent_mode = 'indent'
+			org_indent_mode = 'indent',
+			org_todo_keywords = {
+				'TODO(t)',
+				'WAIT(w)',
+				'|',
+				'DONE(d)',
+				'CANCELLED(c)'
+			}
 		})
 	end
 }
-
