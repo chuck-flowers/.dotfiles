@@ -60,8 +60,8 @@ keys = [
     Key(
         [mod],
         "space",
-        lazy.layout.next(),
-        desc="Move window focus to other window"
+        lazy.screen.toggle_group(),
+        desc="Toggle to last visited group"
     ),
 
     # Move windows
