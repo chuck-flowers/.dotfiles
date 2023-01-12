@@ -15,6 +15,7 @@ return {
 			bashls = {},
 			clangd = {},
 			dockerls = {},
+			dotls = {},
 			eslint = {},
 			graphql = {},
 			html = {
