@@ -31,6 +31,7 @@ return {
 				'org',
 				'python',
 				'query',
+				'sql',
 				'rust',
 				'tsx',
 				'typescript',
