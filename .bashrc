@@ -32,7 +32,12 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# Define program defaults
-export BROWSER=brave
+# Define the default browser
+if command -v wsl-open > /dev/null 2>&1; then
+	export BROWSER=wsl-open
+else
+	export BROWSER=brave
+fi
+
 export EDITOR=nvim
 
