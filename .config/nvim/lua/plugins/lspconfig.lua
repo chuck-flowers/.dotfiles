@@ -125,6 +125,10 @@ return {
 					vim.lsp.buf.rename()
 				end)
 
+				vim.keymap.set('n', '<leader>ld', function ()
+					vim.diagnostic.open_float()
+				end)
+
 				vim.keymap.set('n', '<leader>la', function()
 					vim.lsp.buf.code_action()
 				end)
