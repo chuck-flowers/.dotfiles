@@ -4,7 +4,9 @@ return {
 		'cpp',
 		'lua',
 		'make',
-		'typescript'
+		'sh',
+		'typescript',
+		'yaml'
 	},
 	config = function()
 		local Comment = require('Comment')
