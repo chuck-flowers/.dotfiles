@@ -1,6 +1,6 @@
 return {
 	'chuck-flowers/orgmode',
-	branch = 'logging-config',
+	branch = 'date-searching',
 	requires = {
 		{ 'nvim-treesitter/nvim-treesitter' }
 	},
