@@ -3,6 +3,7 @@ return {
 	ft = {
 		'cpp',
 		'lua',
+		'make',
 		'typescript'
 	},
 	config = function()
