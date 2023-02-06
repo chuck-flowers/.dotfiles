@@ -6,8 +6,9 @@ return {
 		local luasnip_lua_loader = require('luasnip.loaders.from_lua')
 
 		-- Load the snippets from files
+		local snippet_dir = vim.fn.stdpath('config') .. '/lua/plugins/luasnip/snippets'
 		luasnip_lua_loader.load({
-			paths = './lua/plugins/luasnip/snippets'
+			paths = snippet_dir
 		})
 
 		local function safe_jump(offset)
