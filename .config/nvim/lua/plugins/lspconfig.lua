@@ -1,7 +1,6 @@
 return {
 	'neovim/nvim-lspconfig',
 	dependencies = {
-		'nanotee/sqls.nvim',
 		'williamboman/mason-lspconfig.nvim'
 	},
 	config = function()
