@@ -7,7 +7,6 @@ return {
 	config = function()
 		local feline = require 'feline'
 		local git_provider = require 'feline.providers.git'
-		local file_provider = require 'feline.providers.file'
 		local lsp_provider = require 'feline.providers.lsp'
 		local mode_provider = require 'feline.providers.vi_mode'
 
@@ -15,8 +14,6 @@ return {
 
 		-- Padding functions
 		local pad = function(text) return ' ' .. text .. ' ' end
-		local padStart = function(text) return ' ' .. text end
-		local padEnd = function(text) return text .. ' ' end
 		local components = {
 			errors = {
 				provider = function()
@@ -27,8 +24,6 @@ return {
 
 					return pad(' ' .. errors)
 				end,
-				-- left_sep = 'slant_left_2',
-				-- right_sep = 'slant_right',
 				hl = {
 					fg = 'red',
 					bg = 'NONE'
@@ -129,8 +124,6 @@ return {
 
 					return pad(' ' .. hints)
 				end,
-				-- left_sep = 'slant_left_2',
-				-- right_sep = 'slant_right',
 				hl = {
 					fg = 'white',
 					bg = 'NONE'
@@ -145,8 +138,6 @@ return {
 
 					return pad(' ' .. info)
 				end,
-				-- left_sep = 'slant_left_2',
-				-- right_sep = 'slant_right',
 				hl = {
 					fg = 'cyan',
 					bg = 'NONE'
@@ -174,8 +165,6 @@ return {
 
 					return pad(' ' .. warnings)
 				end,
-				-- left_sep = 'slant_left_2',
-				-- right_sep = 'slant_right',
 				hl = {
 					fg = 'yellow',
 					bg = 'NONE'
