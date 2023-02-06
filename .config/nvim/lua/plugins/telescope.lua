@@ -1,14 +1,14 @@
 return {
 	'nvim-telescope/telescope.nvim',
-	requires = {
+	dependencies = {
 		{ 'nvim-lua/plenary.nvim' },
 		{ 'nvim-tree/nvim-web-devicons' },
 		{ 'nvim-telescope/telescope-project.nvim' }
 	},
-	module = 'telescope',
-	keys = {
-		{ 'n', '<leader>f' },
-	},
+	-- module = 'telescope',
+	-- keys = {
+	-- 	{ 'n', '<leader>f' },
+	-- },
 	config = function()
 		print('Configuring telescope')
 
@@ -24,7 +24,7 @@ return {
 				}
 			}
 		})
-		
+
 		vim.keymap.set('n', '<Leader>ff', function ()
 			builtin.find_files({ hidden = true })
 		end)

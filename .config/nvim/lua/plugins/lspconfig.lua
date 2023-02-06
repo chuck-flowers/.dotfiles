@@ -1,6 +1,6 @@
 return {
 	'neovim/nvim-lspconfig',
-	requires = {
+	dependencies = {
 		'nanotee/sqls.nvim',
 		'williamboman/mason-lspconfig.nvim'
 	},
@@ -85,8 +85,6 @@ return {
 
 		for lsp, settings in pairs(lsps) do
 			settings.on_attach = function(client, bufnr)
-				local packer = require 'packer'
-
 				local telescope_builtin = nil
 				local function load_telescope()
 					if telescope_builtin == nil then

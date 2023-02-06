@@ -1,7 +1,7 @@
 return {
 	'chuck-flowers/orgmode',
 	branch = 'date-searching',
-	requires = {
+	dependencies = {
 		{ 'nvim-treesitter/nvim-treesitter' }
 	},
 	config = function()

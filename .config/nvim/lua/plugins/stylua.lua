@@ -1,7 +1,7 @@
 return {
 	'ckipp01/stylua-nvim',
 	ft = { 'lua' },
-	requires = {
+	dependencies = {
 		'nvim-lua/plenary.nvim',
 	},
 	config = function()

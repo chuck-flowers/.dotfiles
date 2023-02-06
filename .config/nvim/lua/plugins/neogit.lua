@@ -1,6 +1,6 @@
 return {
 	'TimUntersberger/neogit',
-	requires = { 'nvim-lua/plenary.nvim' },
+	dependencies = { 'nvim-lua/plenary.nvim' },
 	config = function()
 		vim.api.nvim_set_keymap('n', '<Leader>gs', '<cmd>lua require("neogit").open()<CR>', { noremap = true })
 		vim.api.nvim_set_keymap('n', '<Leader>gc', '<cmd>lua require("neogit").open({ "commit" })<CR>', { noremap = true })

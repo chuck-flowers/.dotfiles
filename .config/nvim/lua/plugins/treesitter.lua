@@ -1,7 +1,7 @@
 return {
 	'nvim-treesitter/nvim-treesitter',
 	run = ':TSUpdate',
-	requires = {
+	dependencies = {
 		'nvim-treesitter/nvim-treesitter-context',
 		'nvim-treesitter/nvim-treesitter-textobjects',
 		'nvim-treesitter/playground'

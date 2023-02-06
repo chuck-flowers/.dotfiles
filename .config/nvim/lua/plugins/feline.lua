@@ -1,7 +1,8 @@
 return {
 	'feline-nvim/feline.nvim',
-	requires = {
-		'lewis6991/gitsigns.nvim'
+	dependencies = {
+		'lewis6991/gitsigns.nvim',
+		'nvim-tree/nvim-web-devicons'
 	},
 	config = function()
 		local feline = require 'feline'
@@ -16,7 +17,6 @@ return {
 		local pad = function(text) return ' ' .. text .. ' ' end
 		local padStart = function(text) return ' ' .. text end
 		local padEnd = function(text) return text .. ' ' end
-
 		local components = {
 			errors = {
 				provider = function()
