@@ -6,7 +6,8 @@ return {
 		{ 'saadparwaiz1/cmp_luasnip' },
 		{ 'L3MON4D3/LuaSnip' },
 		{ 'windwp/nvim-autopairs' },
-		{ 'dcampos/cmp-emmet-vim' }
+		{ 'dcampos/cmp-emmet-vim' },
+		{ 'mattn/emmet-vim' }
 	},
 	config = function()
 		local autopairs_cmp = require('nvim-autopairs.completion.cmp')
@@ -26,7 +27,7 @@ return {
 				}
 			},
 			snippet = {
-				expand = function (args)
+				expand = function(args)
 					luasnip.lsp_expand(args.body)
 				end
 			},
@@ -39,4 +40,3 @@ return {
 		})
 	end
 }
-
