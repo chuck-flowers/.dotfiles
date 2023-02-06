@@ -29,3 +29,6 @@ vim.keymap.set('n', '<leader><leader>so', function ()
 	vim.cmd('source ~/.config/nvim/init.lua')
 end)
 
+-- Adds keybinding for lazy.nvim
+vim.keymap.set('n', '<leader>p', '<cmd>Lazy<CR>')
+

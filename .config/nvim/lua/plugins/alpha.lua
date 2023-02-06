@@ -4,6 +4,42 @@ local bookmark_defs = {
 	{ key = 'o', file = '~/org/notes.org' }
 }
 
+local function create_bookmark_buttons()
+	local bookmark_buttons = {}
+
+	for _, def in ipairs(bookmark_defs) do
+		table.insert(bookmark_buttons, {
+			type = 'button',
+			val = ': ' .. def.file,
+			on_press = function()
+				local key = vim.api.nvim_replace_termcodes(def.key, true, false, true)
+				vim.api.nvim_feedkeys(key, "normal", false)
+			end,
+			opts = {
+				position = 'left',
+				hl = 'Tag',
+				shortcut = def.key,
+				keymap = {
+					"n",
+					def.key,
+					'<cmd>e ' .. def.file .. ' <CR>:cd %:h<CR>',
+					{
+						noremap = false,
+						silent = true,
+						nowait = true
+					}
+				}
+			}
+		})
+	end
+
+	return bookmark_buttons
+end
+
+local function create_project_buttons()
+
+end
+
 return {
 	'goolord/alpha-nvim',
 	config = function()
@@ -32,6 +68,20 @@ return {
 						position = 'center'
 					}
 				}
+			}
+		}
+
+		local BOOKMARKS = {
+			type = 'group',
+			val = {
+				{ type = 'text', val = 'Bookmarks', opts = { hl = 'Type' } },
+				{
+					type = 'group',
+					val = create_bookmark_buttons()
+				}
+			},
+			opts = {
+				spacing = INTRA_SECTION_SPACING
 			}
 		}
 
