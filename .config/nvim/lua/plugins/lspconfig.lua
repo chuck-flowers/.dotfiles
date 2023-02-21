@@ -23,6 +23,21 @@ return {
 			jsonls = {
 				capabilities = capabilities
 			},
+			lua_ls = {
+				settings = {
+					Lua = {
+						runtime = {
+							version = 'LuaJIT'
+						},
+						diagnostics = {
+							globals = { 'vim' }
+						},
+						workspace = {
+							library = vim.api.nvim_get_runtime_file('', true)
+						}
+					}
+				}
+			},
 			marksman = {},
 			omnisharp = {
 				cmd = { 'omnisharp', '--languageserver', '--hostPID', tostring(pid) }
@@ -41,21 +56,6 @@ return {
 			},
 			rust_analyzer = {},
 			sqls = {},
-			sumneko_lua = {
-				settings = {
-					Lua = {
-						runtime = {
-							version = 'LuaJIT'
-						},
-						diagnostics = {
-							globals = { 'vim' }
-						},
-						workspace = {
-							library = vim.api.nvim_get_runtime_file('', true)
-						}
-					}
-				}
-			},
 			tsserver = {
 				init_options = {
 					preferences = {
