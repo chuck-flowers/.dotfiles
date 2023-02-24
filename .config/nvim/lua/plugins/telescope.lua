@@ -6,8 +6,6 @@ return {
 		{ 'nvim-telescope/telescope-project.nvim' }
 	},
 	config = function()
-		print('Configuring telescope')
-
 		local telescope = require 'telescope'
 
 		telescope.load_extension('project')
@@ -19,7 +17,6 @@ return {
 				}
 			}
 		})
-
 	end,
 	keys = {
 		{
