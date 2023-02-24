@@ -1,24 +1,4 @@
 return {
-	s('export_function', fmt([[
-		export function {name}({params}): {return_type} {{
-			{body}
-		}}
-	]], {
-		name = i(1, 'name'),
-		params = i(2, ''),
-		return_type = i(3, 'void'),
-		body = i(0, '')
-	})),
-	s('export_async_function', fmt([[
-		export async function {name}({props}): Promise<{return_type}> {{
-			{body}
-		}}
-	]], {
-		name = i(1, 'foo'),
-		props = i(2, ''),
-		return_type = i(3, 'void'),
-		body = i(0, '')
-	})),
 	s('fn_service', fmt([[
 		type {service_name} = ReturnType<typeof {ctor_name}>;
 		export default {exported_service_name};
