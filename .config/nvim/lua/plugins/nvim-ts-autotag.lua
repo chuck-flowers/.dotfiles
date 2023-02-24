@@ -5,6 +5,8 @@ return {
 	},
 	ft = {
 		'html',
+		'jsx',
+		'tsx',
 		'xml'
 	},
 	config = function ()
