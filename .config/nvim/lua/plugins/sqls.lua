@@ -1,7 +1,7 @@
 return {
 	'nanotee/sqls.nvim',
-	config = function()
-		vim.keymap.set('n', '<leader>r', '<Plug>(sqls-execute-query)')
-	end,
-	ft = { 'sql' }
+	ft = { 'sql' },
+	keys = {
+		{ '<leader>r', '<cmd>SqlsExecuteQuery<cr>', 'n', desc = 'Execute query' }
+	}
 }
