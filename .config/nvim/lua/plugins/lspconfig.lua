@@ -13,6 +13,9 @@ return {
 			awk_ls = {},
 			bashls = {},
 			clangd = {},
+			cssls = {
+				capabilities = capabilities
+			},
 			dockerls = {},
 			dotls = {},
 			eslint = {},
@@ -56,6 +59,7 @@ return {
 			},
 			rust_analyzer = {},
 			sqls = {},
+			svelte = {},
 			tsserver = {
 				init_options = {
 					preferences = {
