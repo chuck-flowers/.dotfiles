@@ -19,50 +19,15 @@ return {
 		})
 	end,
 	keys = {
-		{
-			'<leader>ff', function()
-				require('telescope.builtin').find_files()
-			end, desc = "Find File"
-		},
-		{
-			'<Leader>fb', function()
-				require('telescope.builtin').buffers({})
-			end
-		},
-		{
-			'<Leader>ft', function()
-				require('telescope.builtin').live_grep({})
-			end
-		},
-		{
-			'<Leader>fh', function()
-				require('telescope.builtin').help_tags({})
-			end
-		},
-		{
-			'<Leader>fp', function()
-				require('telescope').extensions.project.project({})
-			end
-		},
-		{
-			'<Leader>fs', function()
-				require('telescope.builtin').lsp_dynamic_workspace_symbols({})
-			end
-		},
-		{
-			'<Leader>fm', function()
-				require('telescope.builtin').man_pages({})
-			end
-		},
-		{
-			'<Leader>fe', function()
-				require('telescope.builtin').filetypes({})
-			end
-		},
-		{
-			'<Leader>fd', function()
-				require('telescope.builtin').diagnostics({ bufnr = nil })
-			end
-		}
+		{ '<leader>ff', '<cmd>Telescope find_files hidden=true<cr>' },
+		{ '<leader>fb', '<cmd>Telescope buffers<cr>' },
+		{ '<leader>ft', '<cmd>Telescope live_grep<cr>' },
+		{ '<leader>fh', '<cmd>Telescope help_tags<cr>' },
+		{ '<leader>fp', '<cmd>Telescope project <cr>' },
+		{ '<leader>fs', '<cmd>Telescope lsp_dynamic_workspace_symbols<cr>' },
+		{ '<leader>fm', '<cmd>Telescope man_pages<cr>' },
+		{ '<leader>fe', '<cmd>Telescope filetypes<cr>' },
+		{ '<leader>fd', '<cmd>Telescope diagnostics<cr>' },
+		{ '<leader>fk', '<cmd>Telescope keymaps<cr>' }
 	}
 }
