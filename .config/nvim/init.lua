@@ -28,6 +28,10 @@ vim.o.wrap = false
 -- Configure terminal colors
 vim.o.termguicolors = true
 
+-- Configure splitting behavior
+vim.o.splitbelow = true
+vim.o.splitright = true
+
 local lazypath = vim.fn.stdpath('data') .. 'lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
