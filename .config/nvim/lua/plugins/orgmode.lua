@@ -1,6 +1,6 @@
 return {
 	'chuck-flowers/orgmode',
-	branch = 'date-searching',
+	branch = 'master',
 	dependencies = {
 		{ 'nvim-treesitter/nvim-treesitter' }
 	},
