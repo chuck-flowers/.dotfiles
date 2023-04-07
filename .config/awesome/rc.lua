@@ -49,8 +49,6 @@ beautiful.init(gears.filesystem.get_themes_dir() .. 'gruvbox/theme.lua')
 
 -- This is used later as the default terminal and editor to run.
 terminal = 'kitty'
-editor = os.getenv('EDITOR') or 'nano'
-editor_cmd = terminal .. ' -e ' .. editor
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -84,8 +82,6 @@ awful.layout.layouts = {
 -- Create a launcher widget and a main menu
 myawesomemenu = {
    { 'hotkeys', function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
-   { 'manual', terminal .. ' -e man awesome' },
-   { 'edit config', editor_cmd .. ' ' .. awesome.conffile },
    { 'restart', awesome.restart },
    { 'quit', function() awesome.quit() end },
 }
