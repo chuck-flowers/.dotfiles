@@ -58,7 +58,7 @@ return {
 				}
 			},
 			rust_analyzer = {},
-			sqls = {},
+			sqlls = {},
 			svelte = {},
 			tsserver = {
 				init_options = {
@@ -93,10 +93,6 @@ return {
 					if telescope_builtin == nil then
 						telescope_builtin = require 'telescope.builtin'
 					end
-				end
-
-				if lsp == 'sqls' then
-					require('sqls').on_attach(client, bufnr)
 				end
 
 				vim.keymap.set('n', 'gD', function()
