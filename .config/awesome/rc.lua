@@ -270,6 +270,14 @@ local globalkeys = gears.table.join(
     -- Standard program
     awful.key({ modkey,           }, 'Return', function () awful.spawn(terminal) end,
               {description = 'open a terminal', group = 'launcher'}),
+    awful.key({ modkey,           }, 'z', function () awful.spawn('brave') end,
+              {description = 'launch Brave', group = 'launcher'}),
+    awful.key({ modkey,           }, 'x', function () awful.spawn('pcmanfm') end,
+              {description = 'launch Brave', group = 'launcher'}),
+    awful.key({ modkey,           }, 'c', function () awful.spawn('steam') end,
+              {description = 'launch Brave', group = 'launcher'}),
+    awful.key({ modkey,           }, 'v', function () awful.spawn(terminal .. ' -e nvim') end,
+              {description = 'launch Brave', group = 'launcher'}),
     awful.key({ modkey, 'Control' }, 'r', awesome.restart,
               {description = 'reload awesome', group = 'awesome'}),
     awful.key({ modkey, 'Shift'   }, 'q', awesome.quit,
@@ -308,16 +316,6 @@ local globalkeys = gears.table.join(
     awful.key({ modkey },            'r',     function () awful.screen.focused().mypromptbox:run() end,
               {description = 'run prompt', group = 'launcher'}),
 
-    awful.key({ modkey }, 'x',
-              function ()
-                  awful.prompt.run {
-                    prompt       = 'Run Lua code: ',
-                    textbox      = awful.screen.focused().mypromptbox.widget,
-                    exe_callback = awful.util.eval,
-                    history_path = awful.util.get_cache_dir() .. '/history_eval'
-                  }
-              end,
-              {description = 'lua execute prompt', group = 'awesome'}),
     -- Menubar
     awful.key({ modkey }, 'p', function() menubar.show() end,
               {description = 'show the menubar', group = 'launcher'})
