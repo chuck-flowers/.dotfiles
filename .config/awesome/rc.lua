@@ -12,7 +12,6 @@ local wibox = require 'wibox'
 local beautiful = require 'beautiful'
 -- Notification library
 local naughty = require 'naughty'
-local menubar = require 'menubar'
 local hotkeys_popup = require 'awful.hotkeys_popup'
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
@@ -46,6 +45,9 @@ end
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init(gears.filesystem.get_themes_dir() .. 'gruvbox/theme.lua')
+
+local bling = require 'bling'
+local app_launcher = bling.widget.app_launcher()
 
 -- This is used later as the default terminal and editor to run.
 local terminal = 'kitty'
@@ -93,10 +95,6 @@ local mymainmenu = awful.menu({ items = { { 'awesome', myawesomemenu, beautiful.
 
 local mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
                                      menu = mymainmenu })
-
--- Menubar configuration
-menubar.utils.terminal = terminal -- Set the terminal for applications that require it
--- }}}
 
 -- Keyboard map indicator and switcher
 local mykeyboardlayout = awful.widget.keyboardlayout()
@@ -313,8 +311,8 @@ local globalkeys = gears.table.join(
               {description = 'restore minimized', group = 'client'}),
 
     -- Menubar
-    awful.key({ modkey }, 'r', function() menubar.show() end,
-              {description = 'show the menubar', group = 'launcher'})
+    awful.key({ modkey }, 'r', function() app_launcher:toggle() end,
+              {description = 'show app launcher', group = 'launcher'})
 )
 
 local clientkeys = gears.table.join(
