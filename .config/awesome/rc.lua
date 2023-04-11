@@ -46,11 +46,13 @@ end
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init(gears.filesystem.get_themes_dir() .. 'gruvbox/theme.lua')
 
-local bling = require 'bling'
-local app_launcher = bling.widget.app_launcher()
-
 -- This is used later as the default terminal and editor to run.
 local terminal = 'kitty'
+
+local bling = require 'bling'
+local app_launcher = bling.widget.app_launcher({
+	terminal = terminal .. ' -e '
+})
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
