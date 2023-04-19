@@ -26,6 +26,13 @@ if awesome.startup_errors then
                      text = awesome.startup_errors })
 end
 
+-- Automatically start background programs
+awful.spawn.with_shell(
+	'if (xrdb -query | grep -q "^awesome\\.started:\\s*true$"); then exit; fi;' ..
+	'xrdb -merge <<< "awesome.started:true";' ..
+	'type dex && dex --environment Awesome --autostart'
+)
+
 -- Handle runtime errors after startup
 do
     local in_error = false
