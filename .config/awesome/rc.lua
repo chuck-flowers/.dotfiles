@@ -317,7 +317,10 @@ local globalkeys = gears.table.join(
 
     -- Menubar
     awful.key({ modkey }, 'r', function() app_launcher:toggle() end,
-              {description = 'show app launcher', group = 'launcher'})
+              {description = 'show app launcher', group = 'launcher'}),
+
+	-- Media Keys
+	awful.key({}, 'XF86AudioPlay', function () awful.spawn('playerctl play-pause') end, { description = 'Play/Pause' })
 )
 
 local clientkeys = gears.table.join(
