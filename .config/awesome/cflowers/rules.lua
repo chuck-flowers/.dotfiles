@@ -3,7 +3,9 @@ local beautiful = require 'beautiful'
 local gears = require 'gears'
 local ruled = require 'ruled'
 
-local modkey = 'Mod4'
+local keys = require 'cflowers.keys'
+
+local modkey = keys.modkey
 
 local clientbuttons = gears.table.join(
     awful.button({ }, 1, function (c)
