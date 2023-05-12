@@ -16,6 +16,7 @@ local hotkeys_popup = require 'awful.hotkeys_popup'
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require 'awful.hotkeys_popup.keys'
+local ruled = require 'ruled'
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -436,24 +437,24 @@ local clientbuttons = gears.table.join(
 root.keys(globalkeys)
 -- }}}
 
--- {{{ Rules
--- Rules to apply to new clients (through the 'manage' signal).
-awful.rules.rules = {
-    -- All clients will match this rule.
-    { rule = { },
-      properties = { border_width = beautiful.border_width,
-                     border_color = beautiful.border_normal,
-                     focus = awful.client.focus.filter,
-                     raise = true,
-                     keys = clientkeys,
-                     buttons = clientbuttons,
-                     screen = awful.screen.preferred,
-                     placement = awful.placement.no_overlap+awful.placement.no_offscreen
-     }
-    },
+-- All clients will match this rule.
+ruled.client.append_rule {
+	rule = { },
+	properties = {
+		border_width = beautiful.border_width,
+		border_color = beautiful.border_normal,
+		focus = awful.client.focus.filter,
+		raise = true,
+		keys = clientkeys,
+		buttons = clientbuttons,
+		screen = awful.screen.preferred,
+		placement = awful.placement.no_overlap+awful.placement.no_offscreen
+	}
+}
 
-    -- Floating clients.
-    { rule_any = {
+-- Floating clients.
+ruled.client.append_rule {
+	rule_any = {
         instance = {
           'DTA',  -- Firefox addon DownThemAll.
           'copyq',  -- Includes session name in class.
@@ -481,18 +482,30 @@ awful.rules.rules = {
           'ConfigManager',  -- Thunderbird's about:config.
           'pop-up',       -- e.g. Google Chrome's (detached) Developer Tools.
         }
-      }, properties = { floating = true }},
+	},
+	properties = {
 
-    -- Add titlebars to normal clients and dialogs
-    { rule_any = {type = { 'normal', 'dialog' }
-      }, properties = { titlebars_enabled = true }
-    },
-
-    -- Set Firefox to always map on the tag named '2' on screen 1.
-    -- { rule = { class = 'Firefox' },
-    --   properties = { screen = 1, tag = '2' } },
+	}
 }
--- }}}
+
+-- Add titlebars to normal clients and dialogs
+ruled.client.append_rule {
+	rule_any = {
+		type = { 'normal', 'dialog' }
+	},
+	properties = {
+		titlebars_enabled = true
+	}
+}
+
+ruled.client.append_rule {
+	rule = {
+		class = "steam"
+	},
+	properties = {
+		titlebars_enabled = false
+	}
+}
 
 -- {{{ Signals
 -- Signal function to execute when a new client appears.
