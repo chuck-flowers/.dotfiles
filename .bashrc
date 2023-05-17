@@ -3,17 +3,17 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# Define Extend the path
-PATH=~/.local/bin:$PATH
+# Set Environment Variables
+source "$HOME/.config/bash/variables"
 
 # Include aliases if they exist
-test -e "./.bash_aliases" && source "./.bash_aliases"
+test -e "$HOME/.config/bash/aliases" && source "$HOME/.config/bash/aliases" 
 
 # Include bash functions if they exist
-test -e "./.bash_functions" && source "./.bash_functions"
+test -e "$HOME/.config/bash/functions" && source "$HOME/.config/bash/functions"
 
 # Include rust in the environment if it exists
-test -e "./.cargo/env" && source "./.cargo/env"
+test -e "$HOME/.cargo/env" && source "$HOME/.cargo/env"
 
 # Add bash completions
 test -e /etc/bash_completion && source /etc/bash_completion
