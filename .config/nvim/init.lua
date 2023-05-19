@@ -25,8 +25,9 @@ vim.o.smartcase = true
 -- Configure the line wrapping behavior
 vim.o.wrap = false
 
--- Configure terminal colors
+-- Configure terminal
 vim.o.termguicolors = true
+vim.o.shell = '/usr/bin/env bash --login'
 
 -- Configure splitting behavior
 vim.o.splitbelow = true
