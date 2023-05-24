@@ -1,4 +1,24 @@
 return {
+	s('class_service', fmt([[
+		export interface {iname} {{
+			{idef}
+		}}
+
+		export default class {cname} implements {iname} {{
+			constructor(
+
+			) {{
+
+			}}
+		}}
+	]], {
+		cname = i(1, 'Service'),
+		iname = f(function(args)
+			local service_name = args[1][1]
+			return 'I' .. service_name
+		end, { 1 }),
+		idef = i(0, '')
+	})),
 	s('fn_service', fmt([[
 		type {service_name} = ReturnType<typeof {ctor_name}>;
 		export default {exported_service_name};
