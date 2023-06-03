@@ -1,0 +1,67 @@
+@define-color gb-dark-black #282828;
+@define-color gb-dark-red #cc241d;
+@define-color gb-dark-green #98971a;
+@define-color gb-dark-yellow #d79921;
+@define-color gb-dark-blue #458588;
+@define-color gb-dark-purple #b16286;
+@define-color gb-dark-aqua #689d6a;
+@define-color gb-dark-white #a89984;
+@define-color gb-dark-orange #d65d0e;
+
+@define-color gb-light-black #928374;
+@define-color gb-light-red #fb4934;
+@define-color gb-light-green #b8bb26;
+@define-color gb-light-yellow #fabd2f;
+@define-color gb-light-blue #83a598;
+@define-color gb-light-purple #d3869b;
+@define-color gb-light-aqua #8ec07c;
+@define-color gb-light-white #ebdbb2;
+@define-color gb-light-orange #fe8019;
+
+* {
+	font-family: Fira Code Nerd Font;
+	font-size: 14pt;
+}
+
+#window {
+
+}
+
+#outer-box {
+	
+}
+
+#input {
+
+}
+
+#scroll {
+
+}
+
+#inner-box {
+
+}
+
+#entry {
+	background-color: @gb-dark-black;
+	padding: 16px 0;
+}
+
+#entry:selected {
+	outline: none;
+}
+
+#text {
+	color: @gb-light-white;
+	padding: 4px 8px;
+}
+
+#text:selected {
+	color: @gb-light-yellow;
+}
+
+#img {
+	margin-left: 4px;
+}
+

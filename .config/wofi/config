@@ -1,0 +1,15 @@
+show=drun
+
+# Search Configuration
+insensitive = true
+
+# Image Configuration
+allow_images = true
+image_size = 64
+
+# Key Bindings
+key_expand = Control_L-space
+
+# Layout
+columns = 3
+
