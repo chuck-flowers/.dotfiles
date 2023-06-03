@@ -1,0 +1,94 @@
+@define-color gb-dark-black #282828;
+@define-color gb-dark-red #cc241d;
+@define-color gb-dark-green #98971a;
+@define-color gb-dark-yellow #d79921;
+@define-color gb-dark-blue #458588;
+@define-color gb-dark-purple #b16286;
+@define-color gb-dark-aqua #689d6a;
+@define-color gb-dark-white #a89984;
+@define-color gb-dark-orange #d65d0e;
+
+@define-color gb-light-black #928374;
+@define-color gb-light-red #fb4934;
+@define-color gb-light-green #b8bb26;
+@define-color gb-light-yellow #fabd2f;
+@define-color gb-light-blue #83a598;
+@define-color gb-light-purple #d3869b;
+@define-color gb-light-aqua #8ec07c;
+@define-color gb-light-white #ebdbb2;
+@define-color gb-light-orange #fe8019;
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: Fira Code Nerd Font;
+    font-size: 14pt;
+    min-height: 0;
+}
+
+window#waybar {
+    background: @gb-dark-black;
+    border-bottom: 3px solid @gb-light-yellow;
+    color: @gb-light-white;
+}
+
+tooltip {
+  background: @gb-dark-black;
+  border: 1px solid @gb-light-white;
+}
+
+tooltip label {
+  color: @gb-light-white;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background: transparent;
+    color: @gb-light-white;
+    border-bottom: 3px solid transparent;
+}
+
+#workspaces button.focused {
+    background: #64727D;
+    border-bottom: 3px solid @gb-light-white;
+}
+
+#mode, #clock, #battery {
+    padding: 0 10px;
+}
+
+#mode {
+    background: #64727D;
+    border-bottom: 3px solid @gb-light-white;
+}
+
+#clock {
+    background-color: @gb-dark-white;
+}
+
+#battery {
+    background-color: #ffffff;
+    color: @gb-dark-black;
+}
+
+#battery.charging {
+    color: @gb-light-white;
+    background-color: #26A65B;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: @gb-dark-black;
+    }
+}
+
+#battery.warning:not(.charging) {
+    background: #f53c3c;
+    color: @gb-light-white;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
