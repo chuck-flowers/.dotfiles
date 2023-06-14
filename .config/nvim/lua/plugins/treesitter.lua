@@ -21,7 +21,6 @@ return {
 				'dot',
 				'gdscript',
 				'graphql',
-				'help',
 				'html',
 				'javascript',
 				'jq',
