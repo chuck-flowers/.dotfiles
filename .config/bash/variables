@@ -16,3 +16,6 @@ export INPUTRC="$XDG_CONFIG_HOME/readline/inputrc"
 export AWS_SHARED_CREDENTIALS_FILE="$XDG_CONFIG_HOME/aws/credentials"
 export AWS_CONFIG_FILE="$XDG_CONFIG_HOME/aws/config"
 
+# Bash Configuration
+export HISTFILE="${XDG_STATE_HOME}/bash/history"
+
