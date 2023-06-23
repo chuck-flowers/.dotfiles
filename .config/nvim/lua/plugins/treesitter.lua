@@ -25,6 +25,7 @@ return {
 				'javascript',
 				'jq',
 				'json',
+				'jsonc',
 				'lua',
 				'markdown',
 				'org',
