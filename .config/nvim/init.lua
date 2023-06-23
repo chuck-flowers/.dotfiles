@@ -17,6 +17,7 @@ vim.o.tabstop = 4
 vim.o.autoindent = true
 vim.o.softtabstop = 4
 vim.o.shiftwidth = 4
+vim.o.shiftround = true
 
 -- Configure search behavior
 vim.o.ignorecase = true
