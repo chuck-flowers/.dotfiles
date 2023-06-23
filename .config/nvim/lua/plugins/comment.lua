@@ -6,6 +6,7 @@ return {
 		'make',
 		'sh',
 		'typescript',
+		'typescriptreact',
 		'yaml'
 	},
 	config = function()
