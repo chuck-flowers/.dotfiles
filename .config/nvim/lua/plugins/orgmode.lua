@@ -1,6 +1,6 @@
 return {
 	'chuck-flowers/orgmode',
-	branch = 'master',
+	branch = 'log-config-parsing',
 	dependencies = {
 		{ 'nvim-treesitter/nvim-treesitter' }
 	},
