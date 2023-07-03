@@ -6,6 +6,7 @@ return {
 		'nvim-treesitter/nvim-treesitter-textobjects',
 		'nvim-treesitter/playground'
 	},
+	build = ':TSUpdate',
 	config = function()
 		local ts_configs = require('nvim-treesitter.configs')
 		local ts_context = require('treesitter-context')
