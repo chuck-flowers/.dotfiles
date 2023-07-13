@@ -18,7 +18,11 @@ return {
 			},
 			dockerls = {},
 			dotls = {},
-			eslint = {},
+			eslint = {
+				on_attach = function(client, bufnr)
+					client.server_capabilities.documentFormattingProvider = true
+				end
+			},
 			graphql = {},
 			html = {
 				capabilities = capabilities
@@ -87,6 +91,7 @@ return {
 		}
 
 		for lsp, settings in pairs(lsps) do
+			local custom_on_attach = settings.on_attach
 			settings.on_attach = function(client, bufnr)
 				local telescope_builtin = nil
 				local function load_telescope()
@@ -107,7 +112,7 @@ return {
 					vim.lsp.buf.references()
 				end)
 
-				vim.keymap.set('n', '<leader>fr', function ()
+				vim.keymap.set('n', '<leader>fr', function()
 					load_telescope()
 					telescope_builtin.lsp_references({
 						include_declaration = false
@@ -122,7 +127,7 @@ return {
 					vim.lsp.buf.rename()
 				end)
 
-				vim.keymap.set('n', '<leader>ld', function ()
+				vim.keymap.set('n', '<leader>ld', function()
 					vim.diagnostic.open_float()
 				end)
 
@@ -133,10 +138,11 @@ return {
 				vim.keymap.set('n', '<leader>lf', function()
 					vim.lsp.buf.format()
 				end)
+
+				if custom_on_attach then custom_on_attach(client, bufnr) end
 			end
 
 			lspconfig[lsp].setup(settings)
 		end
 	end
 }
-
