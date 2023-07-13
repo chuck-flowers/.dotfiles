@@ -34,6 +34,13 @@ vim.o.shell = '/usr/bin/env bash --login'
 vim.o.splitbelow = true
 vim.o.splitright = true
 
+vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
+	pattern = { '*.js', '*.jsx', '*.lua', '*.ts', '*.tsx' },
+	callback = function()
+		vim.lsp.buf.format()
+	end
+})
+
 local lazypath = vim.fn.stdpath('data') .. 'lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
