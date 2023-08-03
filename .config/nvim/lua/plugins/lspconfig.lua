@@ -19,8 +19,19 @@ return {
 			dockerls = {},
 			dotls = {},
 			eslint = {
-				on_attach = function(client, bufnr)
+				on_attach = function(client)
 					client.server_capabilities.documentFormattingProvider = true
+					vim.api.nvim_create_autocmd('BufWritePre', {
+						buffer = 0,
+						desc = 'Auto lint with ESLint',
+						callback = function()
+							vim.lsp.buf.format({
+								filter = function(c)
+									return c.name == 'eslint'
+								end
+							})
+						end
+					})
 				end
 			},
 			graphql = {},
