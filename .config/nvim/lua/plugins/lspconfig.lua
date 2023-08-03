@@ -39,7 +39,16 @@ return {
 				capabilities = capabilities
 			},
 			jsonls = {
-				capabilities = capabilities
+				capabilities = capabilities,
+				on_attach = function()
+					vim.api.nvim_create_autocmd('BufWritePre', {
+						buffer = 0,
+						desc = 'Autoformat JSON files',
+						callback = function()
+							vim.lsp.buf.format()
+						end
+					})
+				end
 			},
 			lua_ls = {
 				settings = {
