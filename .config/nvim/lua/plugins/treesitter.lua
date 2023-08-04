@@ -29,6 +29,7 @@ return {
 				'jsonc',
 				'lua',
 				'markdown',
+				'mermaid',
 				'org',
 				'python',
 				'query',
@@ -76,4 +77,3 @@ return {
 		ts_context.setup()
 	end
 }
-
