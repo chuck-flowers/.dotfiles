@@ -12,7 +12,17 @@ return {
 		local lsps = {
 			awk_ls = {},
 			bashls = {},
-			clangd = {},
+			clangd = {
+				on_attach = function()
+					vim.api.nvim_create_autocmd('BufWritePre', {
+						buffer = 0,
+						desc = 'Auto lint C files',
+						callback = function()
+							vim.lsp.buf.format()
+						end
+					})
+				end
+			},
 			cssls = {
 				capabilities = capabilities
 			},
