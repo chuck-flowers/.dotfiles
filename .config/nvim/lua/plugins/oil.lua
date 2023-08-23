@@ -4,14 +4,12 @@ return {
 		"nvim-tree/nvim-web-devicons"
 	},
 	config = function()
-		local oil = require('oil')
-
-		oil.setup()
+		require('oil').setup()
 	end,
 	keys = {
 		{
 			'<leader>o.', function()
-				require('oil').open_float()
+				require('oil').open()
 			end
 		}
 	}
