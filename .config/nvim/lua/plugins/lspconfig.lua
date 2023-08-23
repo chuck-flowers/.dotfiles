@@ -121,7 +121,9 @@ return {
 		lspconfig.marksman.setup({})
 		lspconfig.sqlls.setup({})
 		lspconfig.svelte.setup({})
-		lspconfig.tsserver.setup({})
+		lspconfig.tsserver.setup({
+			on_attach = function() common_keybindings() end
+		})
 		lspconfig.yamlls.setup({
 			settings = {
 				yaml = {
