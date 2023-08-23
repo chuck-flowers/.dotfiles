@@ -132,6 +132,9 @@ return {
 						'!Ref',
 						'!Sub'
 					},
+					schemaStore = {
+						enable = true
+					},
 					schemas = {
 						['https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json'] = 'docker-compose*.yml'
 					}
