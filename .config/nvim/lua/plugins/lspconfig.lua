@@ -100,19 +100,6 @@ return {
 			end
 		})
 		lspconfig.lua_ls.setup({
-			settings = {
-				-- Lua = {
-				-- 	runtime = {
-				-- 		version = 'LuaJIT'
-				-- 	},
-				-- 	diagnostics = {
-				-- 		globals = { 'vim' }
-				-- 	},
-				-- 	workspace = {
-				-- 		library = vim.api.nvim_get_runtime_file('', true)
-				-- 	}
-				-- }
-			},
 			on_attach = function(_, bufnr)
 				common_keybindings()
 				register_autoformat(bufnr, 'Lua')
