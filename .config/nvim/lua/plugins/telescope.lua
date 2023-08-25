@@ -1,12 +1,15 @@
 return {
 	'nvim-telescope/telescope.nvim',
 	dependencies = {
+		{ 'folke/trouble.nvim' },
 		{ 'nvim-lua/plenary.nvim' },
+		{ 'nvim-telescope/telescope-project.nvim' },
 		{ 'nvim-tree/nvim-web-devicons' },
-		{ 'nvim-telescope/telescope-project.nvim' }
 	},
 	config = function()
 		local telescope = require 'telescope'
+		local actions = require 'telescope.actions'
+		local trouble = require 'trouble.providers.telescope'
 
 		telescope.load_extension('project')
 		telescope.setup({
@@ -15,6 +18,10 @@ return {
 					'node_modules',
 					'%.git/'
 				}
+			},
+			mappings = {
+				i = { ['<c-t>'] = trouble.open_with_trouble },
+				n = { ['<c-t>'] = trouble.open_with_trouble },
 			}
 		})
 	end,

@@ -1,9 +1,5 @@
 vim.g.mapleader = " "
 
--- Cycle through quick fix list
-vim.keymap.set('n', '<C-l>', '<cmd>cnext<CR>zz', { noremap = true })
-vim.keymap.set('n', '<C-h>', '<cmd>cprevious<CR>zz', { noremap = true })
-
 -- Move lines of text
 vim.keymap.set('n', '<C-j>', ':m+1<CR>==', { noremap = true })
 vim.keymap.set('n', '<C-k>', ':m-2<CR>==', { noremap = true })
@@ -24,11 +20,10 @@ vim.keymap.set('n', '<leader>ts', '<C-W>s<cmd>terminal<CR>')
 vim.keymap.set('n', '<leader>tv', '<C-W>v<cmd>terminal<CR>')
 
 -- Allows for reloading config
-vim.keymap.set('n', '<leader><leader>so', function ()
+vim.keymap.set('n', '<leader><leader>so', function()
 	package.loaded = {}
 	vim.cmd('source ~/.config/nvim/init.lua')
 end)
 
 -- Adds keybinding for lazy.nvim
 vim.keymap.set('n', '<leader>p', '<cmd>Lazy<CR>')
-
