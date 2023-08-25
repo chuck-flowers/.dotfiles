@@ -7,10 +7,6 @@ return {
 		require('oil').setup()
 	end,
 	keys = {
-		{
-			'<leader>o.', function()
-				require('oil').open()
-			end
-		}
+		{ '<leader>x.', function() require('oil').open() end }
 	}
 }
