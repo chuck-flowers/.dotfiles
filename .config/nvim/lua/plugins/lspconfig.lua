@@ -1,14 +1,14 @@
 local function common_keybindings()
 	vim.keymap.set('n', 'gD', function()
-		vim.lsp.buf.definition()
+		require('trouble').open('lsp_definitions')
 	end)
 
 	vim.keymap.set('n', 'gd', function()
-		vim.lsp.buf.implementation()
+		require('trouble').open('lsp_implementations')
 	end)
 
 	vim.keymap.set('n', 'gr', function()
-		vim.lsp.buf.references()
+		require('trouble').open('lsp_references')
 	end)
 
 	vim.keymap.set('n', 'K', function()
