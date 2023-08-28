@@ -38,6 +38,7 @@ return {
 				'tsx',
 				'typescript',
 				'vue',
+				'xml',
 				'yaml'
 			},
 			highlight = {
