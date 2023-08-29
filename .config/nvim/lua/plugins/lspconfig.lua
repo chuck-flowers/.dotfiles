@@ -1,9 +1,9 @@
 local function common_keybindings()
-	vim.keymap.set('n', 'gD', function()
+	vim.keymap.set('n', 'gd', function()
 		require('trouble').open('lsp_definitions')
 	end)
 
-	vim.keymap.set('n', 'gd', function()
+	vim.keymap.set('n', 'gD', function()
 		require('trouble').open('lsp_implementations')
 	end)
 
