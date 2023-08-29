@@ -99,6 +99,7 @@ return {
 				register_autoformat(bufnr, 'JSON')
 			end
 		})
+		lspconfig.lemminx.setup({})
 		lspconfig.lua_ls.setup({
 			on_attach = function(_, bufnr)
 				common_keybindings()
