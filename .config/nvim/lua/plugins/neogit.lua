@@ -5,9 +5,7 @@ return {
 		'nvim-telescope/telescope.nvim',
 		'sindrets/diffview.nvim'
 	},
-	config = function()
-		require('neogit').setup()
-	end,
+	opts = {},
 	keys = {
 		{
 			'<leader>gs',
