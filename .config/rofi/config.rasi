@@ -1,14 +1,15 @@
+@import "/usr/share/rofi/themes/gruvbox-dark.rasi"
+
 configuration {
 	show-icons: true;
 }
 
-@import "/usr/share/rofi/themes/gruvbox-dark.rasi"
-
 element-icon {
-	size: 3em;
+	size: 2em;
 }
 
 element-text {
-	padding: 1em;
+	padding: 0.5em;
 	vertical-align: 0.5;
 }
+
