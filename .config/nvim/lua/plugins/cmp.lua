@@ -17,6 +17,7 @@ return {
 		cmp.event:on('confirm_done', autopairs_cmp.on_confirm_done())
 
 		cmp.setup({
+			enabled = true,
 			mapping = {
 				['<C-p>'] = cmp.mapping.select_prev_item(),
 				['<C-n>'] = cmp.mapping.select_next_item(),
@@ -25,6 +26,10 @@ return {
 					behavior = cmp.ConfirmBehavior.Replace,
 					select = true
 				}
+			},
+			window = {
+				completion = cmp.config.window.bordered(),
+				documentation = cmp.config.window.bordered()
 			},
 			snippet = {
 				expand = function(args)
