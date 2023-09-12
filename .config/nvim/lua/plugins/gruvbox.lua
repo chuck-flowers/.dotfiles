@@ -1,5 +1,6 @@
 return {
-	'ellisonleao/gruvbox.nvim',
+	'chuck-flowers/gruvbox.nvim',
+	branch = 'neogit',
 	config = function()
 		local gruvbox = require 'gruvbox'
 
@@ -12,4 +13,3 @@ return {
 		vim.cmd('colorscheme gruvbox')
 	end
 }
-
