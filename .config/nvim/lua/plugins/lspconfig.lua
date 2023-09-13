@@ -113,20 +113,20 @@ return {
 			on_attach = function() common_keybindings() end
 		})
 		lspconfig.yamlls.setup({
+			capabilities = capabilities,
 			settings = {
 				yaml = {
+					completion = true,
 					customTags = {
 						'!FindInMap sequence',
-						'!GetAtt',
+						'!GetAtt scalar',
 						'!Join sequence',
-						'!Ref',
-						'!Sub'
-					},
-					schemaStore = {
-						enable = true
+						'!Ref scalar',
+						'!Sub scalar'
 					},
 					schemas = {
-						['https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json'] = 'docker-compose*.yml'
+						['https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json'] = 'docker-compose*.yml',
+						['https://raw.githubusercontent.com/awslabs/goformation/master/schema/cloudformation.schema.json'] = '*.cf.yml',
 					}
 				}
 			}
