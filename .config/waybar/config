@@ -6,7 +6,7 @@
 	"spacing": 24,
 	// Choose the order of the modules
 	"modules-left": [
-		"wlr/workspaces"
+		"hyprland/workspaces"
 		// "custom/media"
 	],
 	"modules-center": [
@@ -21,7 +21,7 @@
 		"tray"
 	],
 	// Modules configuration
-	"wlr/workspaces": {
+	"hyprland/workspaces": {
 		"active-only": false,
 		"all-outputs": true
 	},
