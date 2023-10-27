@@ -3,14 +3,14 @@ return {
 	dependencies = {
 		"nvim-tree/nvim-web-devicons"
 	},
-	config = function()
-		require('oil').setup({
-			view_options = {
-				show_hidden = true
-			}
-		})
-	end,
+	opts = {
+		view_options = {
+			show_hidden = true
+		}
+	},
 	keys = {
-		{ '<leader>x.', function() require('oil').open() end }
+		{ '<leader>xx', '<cmd>Oil<CR>' },
+		{ '<leader>xs', '<C-W>s<cmd>Oil<CR>' },
+		{ '<leader>xv', '<C-W>v<cmd>Oil<CR>' },
 	}
 }
