@@ -134,6 +134,7 @@ return {
 					schemas = {
 						['https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json'] = 'docker-compose*.yml',
 						['https://raw.githubusercontent.com/awslabs/goformation/master/schema/cloudformation.schema.json'] = '*.cf.yml',
+						kubernetes = '*.k8s.yml'
 					}
 				}
 			}
