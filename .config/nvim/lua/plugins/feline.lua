@@ -1,6 +1,7 @@
 return {
 	'feline-nvim/feline.nvim',
 	dependencies = {
+		'ellisonleao/gruvbox.nvim',
 		'lewis6991/gitsigns.nvim',
 		'nvim-tree/nvim-web-devicons'
 	},
@@ -10,7 +11,7 @@ return {
 		local lsp_provider = require 'feline.providers.lsp'
 		local mode_provider = require 'feline.providers.vi_mode'
 
-		local gruvbox = require 'gruvbox.palette'
+		local gruvbox = require('gruvbox').palette
 
 		-- Padding functions
 		local pad = function(text) return ' ' .. text .. ' ' end
