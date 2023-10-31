@@ -58,11 +58,11 @@ return {
 		'williamboman/mason-lspconfig.nvim'
 	},
 	config = function()
-		local lspconfig = require('lspconfig')
-
 		-- Build out the custom capabilities
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
 		capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+		require('lspconfig.ui.windows').default_options.border = 'single';
 
 		vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
 			vim.lsp.handlers.hover, {
@@ -71,17 +71,17 @@ return {
 			}
 		)
 
-		lspconfig.awk_ls.setup({})
-		lspconfig.bashls.setup({})
-		lspconfig.cssls.setup({ capabilities = capabilities })
-		lspconfig.clangd.setup({
+		require('lspconfig').awk_ls.setup({})
+		require('lspconfig').bashls.setup({})
+		require('lspconfig').cssls.setup({ capabilities = capabilities })
+		require('lspconfig').clangd.setup({
 			on_attach = function(_, bufnr)
 				common_keybindings()
 				register_autoformat(bufnr, 'C/C++')
 			end
 		})
-		lspconfig.dockerls.setup({})
-		lspconfig.eslint.setup({
+		require('lspconfig').dockerls.setup({})
+		require('lspconfig').eslint.setup({
 			on_attach = function(client)
 				client.server_capabilities.documentFormattingProvider = true
 				vim.api.nvim_create_autocmd('BufWritePre', {
@@ -97,29 +97,29 @@ return {
 				})
 			end
 		})
-		lspconfig.html.setup({
+		require('lspconfig').html.setup({
 			capabilities = capabilities
 		})
-		lspconfig.jsonls.setup({
+		require('lspconfig').jsonls.setup({
 			capabilities = capabilities,
 			on_attach = function(_, bufnr)
 				register_autoformat(bufnr, 'JSON')
 			end
 		})
-		lspconfig.lemminx.setup({})
-		lspconfig.lua_ls.setup({
+		require('lspconfig').lemminx.setup({})
+		require('lspconfig').lua_ls.setup({
 			on_attach = function(_, bufnr)
 				common_keybindings()
 				register_autoformat(bufnr, 'Lua')
 			end
 		})
-		lspconfig.marksman.setup({})
-		lspconfig.sqlls.setup({})
-		lspconfig.svelte.setup({})
-		lspconfig.tsserver.setup({
+		require('lspconfig').marksman.setup({})
+		require('lspconfig').sqlls.setup({})
+		require('lspconfig').svelte.setup({})
+		require('lspconfig').tsserver.setup({
 			on_attach = function() common_keybindings() end
 		})
-		lspconfig.yamlls.setup({
+		require('lspconfig').yamlls.setup({
 			capabilities = capabilities,
 			settings = {
 				yaml = {
