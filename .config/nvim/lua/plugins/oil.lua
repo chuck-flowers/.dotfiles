@@ -10,7 +10,10 @@ return {
 	},
 	keys = {
 		{ '<leader>xx', '<cmd>Oil<CR>' },
+		{ '<leader>xX', '<cmd>Oil .<CR>' },
 		{ '<leader>xs', '<C-W>s<cmd>Oil<CR>' },
+		{ '<leader>xS', '<C-W>s<cmd>Oil .<CR>' },
 		{ '<leader>xv', '<C-W>v<cmd>Oil<CR>' },
+		{ '<leader>xV', '<C-W>v<cmd>Oil .CR>' },
 	}
 }
