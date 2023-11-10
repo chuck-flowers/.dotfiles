@@ -19,8 +19,8 @@ return {
 					'%.git/'
 				},
 				mappings = {
-					i = { ['<C-t>'] = trouble.open_with_trouble },
-					n = { ['<C-t>'] = trouble.open_with_trouble },
+					i = { ['<C-t>'] = trouble.smart_open_with_trouble },
+					n = { ['<C-t>'] = trouble.smart_open_with_trouble },
 				}
 			}
 		})
