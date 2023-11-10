@@ -1,5 +1,5 @@
 return {
-	s('class_service', fmt([[
+	s('iclass', fmt([[
 		export interface {iname} {{
 			{idef}
 		}}
@@ -18,6 +18,17 @@ return {
 			return 'I' .. service_name
 		end, { 1 }),
 		idef = i(0, '')
+	})),
+	s('sclass', fmt([[
+		class {cname} extends {pname} {{
+			constructor() {{
+				{ctor}
+			}}
+		}}
+	]], {
+		cname = i(1, 'Class'),
+		pname = i(2, 'Parent'),
+		ctor = i(0, ''),
 	})),
 	s('fn_service', fmt([[
 		type {service_name} = ReturnType<typeof {ctor_name}>;
