@@ -1,22 +1,17 @@
 return {
-	s('env_config_schema', fmt([[
+	s('eslintrc', fmt([[
 		{{
-			"$schema": "http://json-schema.org/draft-07/schema#",
-			"properties": {{
-				"NODE_ENV": {{
-					"type": "string",
-					"enum": [
-						"production",
-						"staging",
-						"development",
-						"local"
-					],
-					"default": "local"
-				}}
-			}},
-			"required": [
-				"NODE_ENV"
-			]
+			"$schema": "https://json.schemastore.org/eslintrc.json"
 		}}
-	]], {}))
+	]], {})),
+	s('npm-package', fmt([[
+		{{
+			"$schema": "https://json.schemastore.org/package.json"
+		}}
+	]], {})),
+	s('tsconfig', fmt([[
+		{{
+			"$schema": "https://json.schemastore.org/tsconfig.json"
+		}}
+	]], {})),
 }
