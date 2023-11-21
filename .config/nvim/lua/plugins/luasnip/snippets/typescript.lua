@@ -12,7 +12,14 @@ return {
 			}}
 		}}
 	]], {
-		cname = i(1, 'Service'),
+		cname = d(1, function(args, snip)
+			local filename = snip.env.TM_FILENAME
+			local class_name = filename:gsub('%..+', '')
+
+			return sn(nil, {
+				i(1, class_name)
+			})
+		end),
 		iname = f(function(args)
 			local service_name = args[1][1]
 			return 'I' .. service_name
@@ -26,7 +33,14 @@ return {
 			}}
 		}}
 	]], {
-		cname = i(1, 'Class'),
+		cname = d(1, function(args, snip)
+			local filename = snip.env.TM_FILENAME
+			local class_name = filename:gsub('%..+', '')
+
+			return sn(nil, {
+				i(1, class_name)
+			})
+		end),
 		pname = i(2, 'Parent'),
 		ctor = i(0, ''),
 	})),
