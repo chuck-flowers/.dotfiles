@@ -44,45 +44,34 @@ return {
 		pname = i(2, 'Parent'),
 		ctor = i(0, ''),
 	})),
-	s('fn_service', fmt([[
-		type {service_name} = ReturnType<typeof {ctor_name}>;
-		export default {exported_service_name};
-
-		export type {config_name} = AppConfigSubset;
-		export type {deps_name} = ServiceDeps;
-
-		export function {ctor_name}(config: {config_name}, deps: {deps_name}) {{
-			const {{
-
-			}} = deps;
-
-			const service = {{
-				{body}
-			}};
-			
-			return service;
+	s('eclass', fmt([[
+		class {ename} extends Error {{
+			constructor({ctor_args}) {{
+				super({super_ctor_args});
+				{ctor_impl}
+			}}
+			{message_impl}
 		}}
 	]], {
-		service_name = i(1, 'Foo'),
-		exported_service_name = f(function(args)
-			local service_name = args[1][1]
-			return service_name
-		end, { 1 }),
-		ctor_name = f(function(args)
-			local service_name = args[1][1]
-			return 'create' .. service_name
-		end, { 1 }),
-		config_name = f(function(args)
-			local service_name = args[1][1]
-			return service_name .. 'Config'
-		end, { 1 }),
-		deps_name = f(function(args)
-			local service_name = args[1][1]
-			return service_name .. 'Deps'
-		end, { 1 }),
-		body = i(0, '')
+		ename = i(1, 'CustomError'),
+		ctor_args = i(2, ''),
+		super_ctor_args = i(3, ''),
+		ctor_impl = i(4, ''),
+		message_impl = c(5, {
+			d(nil, function()
+				return sn(nil, fmt([[
+
+					get message(): string {{
+						return `{message_string}`;
+					}}
+				]], {
+					message_string = i(1, ''),
+				}))
+			end),
+			i(nil, '')
+		})
 	})),
-	s('jest_test', fmt([[
+	s('vitest', fmt([[
 		it('{test_name}', () => {{
 			{body}
 		}});
