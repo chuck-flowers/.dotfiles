@@ -2,6 +2,7 @@ return {
 	'numToStr/Comment.nvim',
 	ft = {
 		'cpp',
+		'dockerfile',
 		'lua',
 		'make',
 		'sh',
@@ -15,4 +16,3 @@ return {
 		Comment.setup()
 	end
 }
-
