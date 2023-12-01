@@ -80,7 +80,7 @@
 				""
 			]
 		},
-		"on-click": "pavucontrol"
+		"on-click": "flatpak run --user org.pulseaudio.pavucontrol"
 	},
 	"custom/media": {
 		"format": "{icon} {}",
