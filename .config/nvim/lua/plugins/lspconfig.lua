@@ -81,6 +81,13 @@ return {
 			end
 		})
 		require('lspconfig').dockerls.setup({})
+		require('lspconfig').elixirls.setup({
+			cmd = { vim.fn.stdpath('data') .. '/mason/bin/elixir-ls' },
+			on_attach = function(_, bufnr)
+				common_keybindings()
+				register_autoformat(bufnr, 'Elixir')
+			end
+		})
 		require('lspconfig').eslint.setup({
 			on_attach = function(client)
 				client.server_capabilities.documentFormattingProvider = true
