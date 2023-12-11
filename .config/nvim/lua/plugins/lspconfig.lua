@@ -27,10 +27,6 @@ local function common_keybindings()
 		vim.lsp.buf.code_action()
 	end)
 
-	vim.keymap.set('n', '<leader>lf', function()
-		vim.lsp.buf.format()
-	end)
-
 	vim.keymap.set('n', '<leader>lc', function()
 		vim.lsp.buf.incoming_calls()
 	end)
