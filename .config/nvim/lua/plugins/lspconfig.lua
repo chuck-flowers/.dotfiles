@@ -32,7 +32,7 @@ local function common_keybindings()
 	end)
 
 	vim.keymap.set('n', '<leader>lC', function()
-		vim.lsp.buf.incoming_calls()
+		vim.lsp.buf.outgoing_calls()
 	end)
 end
 
