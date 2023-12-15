@@ -101,7 +101,11 @@ return {
 			end
 		})
 		require('lspconfig').html.setup({
-			capabilities = capabilities
+			capabilities = capabilities,
+			on_attach = function(_, bufnr)
+				common_keybindings()
+				register_autoformat(bufnr, 'HTML')
+			end
 		})
 		require('lspconfig').jsonls.setup({
 			capabilities = capabilities,
