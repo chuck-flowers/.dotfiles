@@ -122,7 +122,12 @@ return {
 		})
 		require('lspconfig').marksman.setup({})
 		require('lspconfig').sqlls.setup({})
-		require('lspconfig').svelte.setup({})
+		require('lspconfig').svelte.setup({
+			on_attach = function(bufnr)
+				common_keybindings()
+				register_autoformat(bufnr, 'Svelte')
+			end
+		})
 		require('lspconfig').tsserver.setup({
 			on_attach = function() common_keybindings() end
 		})
