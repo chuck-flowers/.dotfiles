@@ -44,7 +44,10 @@ return {
 				provider = function()
 					local ft = vim.bo.filetype
 					if ft == '' then ft = '[none]' end
-					return pad(ft)
+
+					local lsp_client_names = lsp_provider.lsp_client_names()
+
+					return pad(ft .. ' (' .. lsp_client_names .. ')')
 				end,
 				left_sep = 'slant_left_2',
 				right_sep = 'slant_right',
