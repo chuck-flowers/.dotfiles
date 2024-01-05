@@ -47,7 +47,17 @@ return {
 
 					local lsp_client_names = lsp_provider.lsp_client_names()
 
-					return pad(ft .. ' (' .. lsp_client_names .. ')')
+					--- @type string[]
+					local clients = {}
+					for c in string.gmatch(lsp_client_names, '[^ ]+') do
+						table.insert(clients, c)
+					end
+
+					if #clients > 0 then
+						return pad(ft .. ' (󱘖 ' .. #clients .. ')')
+					else
+						return pad(ft)
+					end
 				end,
 				left_sep = 'slant_left_2',
 				right_sep = 'slant_right',
