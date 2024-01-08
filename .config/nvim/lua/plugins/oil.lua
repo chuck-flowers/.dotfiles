@@ -4,8 +4,15 @@ return {
 		"nvim-tree/nvim-web-devicons"
 	},
 	opts = {
+		columns = {
+			"icon",
+			"permissions",
+		},
+		keymaps = {
+			["T"] = "actions.open_terminal"
+		},
 		view_options = {
-			show_hidden = true
+			show_hidden = true,
 		}
 	},
 	keys = {
