@@ -1,15 +1,21 @@
 return {
 	'chuck-flowers/orgmode',
-	branch = 'log-config-parsing',
+	branch = 'master',
 	dependencies = {
-		{ 'nvim-treesitter/nvim-treesitter' }
+		{ 'nvim-treesitter/nvim-treesitter', lazy = true }
 	},
+	event = 'VeryLazy',
 	config = function()
-		local orgmode = require('orgmode')
+		require('orgmode').setup_ts_grammar()
 
-		orgmode.setup_ts_grammar()
+		require('nvim-treesitter.configs').setup({
+			hightlight = {
+				enable = true,
+			},
+			ensure_installed = { 'org' },
+		})
 
-		orgmode.setup({
+		require('orgmode').setup({
 			calendar_week_start_day = 0,
 			org_agenda_files = '~/org/**/*',
 			org_agenda_span = 'day',
@@ -35,11 +41,12 @@ return {
 					label = 'Export to Custom HTML',
 					action = function(exporter)
 						local current_file = vim.api.nvim_buf_get_name(0)
-						local target = vim.fn.fnamemodify(current_file, ':p:r')..'.html'
-						local command = { 'pandoc', '-L', 'diagram-generator.lua', '-s', '--self-contained', current_file, '-o', target }
+						local target = vim.fn.fnamemodify(current_file, ':p:r') .. '.html'
+						local command = { 'pandoc', '-L', 'diagram-generator.lua', '-s', '--self-contained', current_file,
+							'-o', target }
 						local on_success = function(output)
 							print('Success!')
-							vim.api.nvim_echo({{ table.concat(output, '\n') }}, true, {})
+							vim.api.nvim_echo({ { table.concat(output, '\n') } }, true, {})
 							vim.fn.system({
 								'xdg-open',
 								target
@@ -47,14 +54,14 @@ return {
 						end
 						local on_error = function(err)
 							print('Error!')
-							vim.api.nvim_echo({{ table.concat(err, '\n'), 'ErrorMsg' }}, true, {})
+							vim.api.nvim_echo({ { table.concat(err, '\n'), 'ErrorMsg' } }, true, {})
 						end
 						return exporter(command, target, on_success, on_error)
 					end
 				}
 			},
 			org_default_notes_file = '~/org/notes.org',
-			org_indent_mode = 'indent',
+			org_startup_indented = true,
 			org_todo_keywords = {
 				'TODO(t)',
 				'WAIT(w)',
