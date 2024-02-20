@@ -1,15 +1,17 @@
 return {
 	s('iclass', fmt([[
-		export interface {iname} {{
-			{idef}
-		}}
+		export type {iname} = Pick<{ref_cname}, keyof {ref_cname}>;
 
 		export default class {cname} implements {iname} {{
+			{class_fields}
+
 			constructor(
-
+				{ctor_args}
 			) {{
-
+				{ctor_impl}
 			}}
+
+			{class_methods}
 		}}
 	]], {
 		cname = d(1, function(args, snip)
@@ -24,7 +26,11 @@ return {
 			local service_name = args[1][1]
 			return 'I' .. service_name
 		end, { 1 }),
-		idef = i(0, '')
+		ref_cname = f(function(args) return args[1][1] end, { 1 }),
+		ctor_args = i(2, ''),
+		class_fields = i(3, ''),
+		ctor_impl = i(4, ''),
+		class_methods = i(5, ''),
 	})),
 	s('sclass', fmt([[
 		class {cname} extends {pname} {{
