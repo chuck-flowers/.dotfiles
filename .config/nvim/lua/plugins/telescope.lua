@@ -7,20 +7,26 @@ return {
 		{ 'nvim-tree/nvim-web-devicons' },
 	},
 	config = function()
-		local telescope = require 'telescope'
-		local actions = require 'telescope.actions'
-		local trouble = require 'trouble.providers.telescope'
-
-		telescope.load_extension('project')
-		telescope.setup({
+		require('telescope').load_extension('project')
+		require('telescope').setup({
 			defaults = {
 				file_ignore_patterns = {
 					'node_modules',
 					'%.git/'
 				},
 				mappings = {
-					i = { ['<C-t>'] = trouble.smart_open_with_trouble },
-					n = { ['<C-t>'] = trouble.smart_open_with_trouble },
+					i = {
+						['<C-q>'] = function(prompt_bufnr)
+							require('telescope.actions').smart_send_to_qflist(prompt_bufnr)
+							require('trouble').open('quickfix')
+						end,
+					},
+					n = {
+						['<C-q>'] = function(prompt_bufnr)
+							require('telescope.actions').smart_send_to_qflist(prompt_bufnr)
+							require('trouble').open('quickfix')
+						end,
+					},
 				}
 			}
 		})
