@@ -1,4 +1,4 @@
-# Configure history behavior
+# History
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
@@ -8,6 +8,6 @@ autoload -U compinit
 compinit
 zstyle ':completion:*' menu select
 
-# Prompt
-export PROMPT="[%F{yellow}%n%f@%m %1d] $ "
+source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/aliases"
+source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/prompt"
 

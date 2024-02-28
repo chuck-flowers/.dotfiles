@@ -1,0 +1,5 @@
+local user='%F{yellow}%n'
+local host='%m%f %1d'
+local p='%0(?.%F{green}%#%f.%F{red}%#%f)'
+
+export PROMPT="[$user@$host] $p "
