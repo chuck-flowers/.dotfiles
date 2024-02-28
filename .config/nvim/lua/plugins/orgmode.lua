@@ -25,13 +25,13 @@ return {
 			org_capture_templates = {
 				p = {
 					description = 'Personal Task',
-					template = '* TODO %?\n  SCHEDULED: %t',
+					template = '* TODO %?\nSCHEDULED: %t',
 					target = '~/org/todos.org',
 					headline = 'Personal Tasks'
 				},
 				w = {
 					description = 'Work Task',
-					template = '* TODO %?\n  SCHEDULED: %t',
+					template = '* TODO %?\nSCHEDULED: %t',
 					target = '~/org/work.org',
 					headline = 'Unfiled Tasks'
 				}
