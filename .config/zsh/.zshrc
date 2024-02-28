@@ -8,4 +8,6 @@ autoload -U compinit
 compinit
 zstyle ':completion:*' menu select
 
+# Prompt
+export PROMPT="[%F{yellow}%n%f@%m %1d] $ "
 
