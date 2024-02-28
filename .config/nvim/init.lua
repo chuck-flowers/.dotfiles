@@ -34,6 +34,22 @@ vim.o.shell = '/usr/bin/env zsh --login'
 vim.o.splitbelow = true
 vim.o.splitright = true
 
+-- Configure clipboard when on WSL
+if os.getenv('WSL_DISTRO_NAME') ~= nil then
+	vim.g.clipboard = {
+		name = 'WSL Clipboard',
+		copy = {
+			["+"] = { "clip.exe" },
+			["*"] = { "clip.exe" }
+		},
+		paste = {
+			["+"] = { "bash", "-c", "powershell.exe -Command Get-Clipboard | tr -d '\r'" }
+		}
+	}
+end
+
+require('editorconfig')
+
 local lazypath = vim.fn.stdpath('data') .. 'lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
@@ -46,8 +62,6 @@ if not vim.loop.fs_stat(lazypath) then
 	})
 end
 vim.opt.rtp:prepend(lazypath)
-
-require('editorconfig')
 
 require('lazy').setup('plugins', {
 	ui = {
