@@ -1,5 +1,26 @@
-local user='%F{yellow}%n'
-local host='%m%f %1d'
+setopt prompt_subst
+
+#########
+# BASIC #
+#########
+
+local session='%F{yellow}%n@%m%f'
+local dir='%3~'
 local p='%0(?.%F{green}%#%f.%F{red}%#%f)'
 
-export PROMPT="[$user@$host] $p "
+#######
+# GIT #
+#######
+
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' formats ' (%F{blue}%b%f%c%u)'
+zstyle ':vcs_info:git:*' actionformats ' (%F{blue}%b%f | %a%c%u)'
+zstyle ':vcs_info:git:*' stagedstr ' %F{green}+%f'
+zstyle ':vcs_info:git:*' unstagedstr ' %F{red}*%f'
+precmd_functions+=(vcs_info)
+local gitStatus='${vcs_info_msg_0_}'
+
+export PROMPT="[$session $dir]$gitStatus $p "
+
