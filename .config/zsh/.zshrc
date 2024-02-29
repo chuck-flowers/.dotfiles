@@ -8,6 +8,5 @@ autoload -U compinit
 compinit
 zstyle ':completion:*' menu select
 
-source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/aliases"
-source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/prompt"
-
+source "$ZDOTDIR/aliases"
+source "$ZDOTDIR/prompt"
