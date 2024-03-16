@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 setopt prompt_subst
 
 #########
@@ -12,15 +14,71 @@ local p='%0(?.%F{green}%#%f.%F{red}%#%f)'
 # GIT #
 #######
 
-autoload -Uz vcs_info
-zstyle ':vcs_info:*' enable git
-zstyle ':vcs_info:git:*' check-for-changes true
-zstyle ':vcs_info:git:*' formats ' (%F{blue}%b%f%c%u)'
-zstyle ':vcs_info:git:*' actionformats ' (%F{blue}%b%f | %a%c%u)'
-zstyle ':vcs_info:git:*' stagedstr ' %F{green}+%f'
-zstyle ':vcs_info:git:*' unstagedstr ' %F{red}*%f'
-precmd_functions+=(vcs_info)
-local gitStatus='${vcs_info_msg_0_}'
+function git_info() {
+
+	# Fetch the status if available
+	local git_status
+	git_status="$(git status --porcelain=v2 --branch 2>/dev/null)"
+	if [[ $? -ne 0 ]]; then
+		git_info_msg_0_=''
+		return
+	fi
+
+	local branch="%F{blue}$(echo "$git_status" | grep -E '^# branch\.head' | sed -E 's/^# branch\.head //')%f"
+
+	local unstaged="$(echo $git_status | grep -E '^1 \.M' | wc --lines)"
+	if [[ "$unstaged" -eq 0 ]]; then
+		unstaged=''
+	else
+		unstaged=" %F{yellow}$unstaged%f"
+	fi
+
+	local staged="$(echo $git_status | grep -E '^1 M.' | wc --lines)"
+	if [[ "$staged" -eq 0 ]]; then
+		staged=''
+	else
+		staged=" %F{green}$staged%f"
+	fi
+
+	local untracked="$(echo $git_status | grep -E '^\?' | wc --lines)"
+	if [[ "$untracked" -eq 0 ]]; then
+		untracked=''
+	else
+		untracked=" %F{cyan}${untracked}%f"
+	fi
+
+	local unpulled="$(git log --oneline HEAD..@{upstream} | wc --lines)"
+	if [[ "$unpulled" -eq 0 ]]; then
+		unpulled=''
+	else
+		unpulled=" %F{red}${unpulled}%f"
+	fi
+
+	local unpushed="$(git log --oneline @{upstream}..HEAD | wc --lines)"
+	if [[ "$unpushed" -eq 0 ]]; then
+		unpushed=''
+	else
+		unpushed=" %F{red}${unpushed}%f"
+	fi
+
+	# Branch info
+	git_info_msg_0_="${branch}"
+
+	# Working directory changes
+	if [[ $staged != "" || $unstaged != "" || $untracked != "" ]]; then
+		git_info_msg_0_="$git_info_msg_0_ |${staged}${unstaged}${untracked}"
+	fi
+
+	# Remote changes
+	if [[ $unpulled != "" || $unpushed != "" ]]; then
+		git_info_msg_0_="$git_info_msg_0_ |${unpulled}${unpushed}"
+	fi
+
+	git_info_msg_0_=" ($git_info_msg_0_)"
+}
+
+precmd_functions+=(git_info)
+local gitStatus='${git_info_msg_0_}'
 
 export PROMPT="[$session $dir]$gitStatus $p "
 
