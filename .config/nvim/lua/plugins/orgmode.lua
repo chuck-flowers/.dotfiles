@@ -1,5 +1,5 @@
 return {
-	'chuck-flowers/orgmode',
+	'nvim-orgmode/orgmode',
 	branch = 'master',
 	dependencies = {
 		{ 'nvim-treesitter/nvim-treesitter', lazy = true }
