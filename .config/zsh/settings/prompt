@@ -30,35 +30,35 @@ function git_info() {
 	if [[ "$unstaged" -eq 0 ]]; then
 		unstaged=''
 	else
-		unstaged=" %F{yellow}$unstaged%f"
+		unstaged=" %F{yellow} $unstaged%f"
 	fi
 
 	local staged="$(echo $git_status | grep -E '^1 M.' | wc --lines)"
 	if [[ "$staged" -eq 0 ]]; then
 		staged=''
 	else
-		staged=" %F{green}$staged%f"
+		staged=" %F{green} $staged%f"
 	fi
 
 	local untracked="$(echo $git_status | grep -E '^\?' | wc --lines)"
 	if [[ "$untracked" -eq 0 ]]; then
 		untracked=''
 	else
-		untracked=" %F{cyan}${untracked}%f"
+		untracked=" %F{cyan} ${untracked}%f"
 	fi
 
 	local unpulled="$(git log --oneline HEAD..@{upstream} | wc --lines)"
 	if [[ "$unpulled" -eq 0 ]]; then
 		unpulled=''
 	else
-		unpulled=" %F{red}${unpulled}%f"
+		unpulled=" %F{red} ${unpulled}%f"
 	fi
 
 	local unpushed="$(git log --oneline @{upstream}..HEAD | wc --lines)"
 	if [[ "$unpushed" -eq 0 ]]; then
 		unpushed=''
 	else
-		unpushed=" %F{red}${unpushed}%f"
+		unpushed=" %F{red} ${unpushed}%f"
 	fi
 
 	# Branch info
