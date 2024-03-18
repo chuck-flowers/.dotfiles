@@ -1,12 +1,14 @@
+#!/usr/bin/env zsh
+
+function apply_settings() {
+	source "$ZDOTDIR/settings/$1"
+}
+
+setopt nobeep
+
 # History
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+apply_settings 'aliases'
+apply_settings 'completion'
+apply_settings 'history'
+apply_settings 'prompt'
 
-# Completion
-autoload -U compinit
-compinit
-zstyle ':completion:*' menu select
-
-source "$ZDOTDIR/aliases"
-source "$ZDOTDIR/prompt"
