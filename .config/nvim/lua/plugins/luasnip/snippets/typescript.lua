@@ -77,7 +77,7 @@ return {
 			i(nil, '')
 		})
 	})),
-	s('error:noimpl', fmt([[
+	s('error:todo', fmt([[
 		throw new Error('Not implemented')
 	]], {})),
 	s('zod:object:infered', fmt([[
