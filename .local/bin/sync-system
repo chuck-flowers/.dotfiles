@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+# Update system
+command -v zypper > /dev/null 2>&1 && sudo zypper dist-upgrade --no-confirm
+command -v yay > /dev/null 2>&1 && yay --noconfirm
+command -v pacman > /dev/null 2>&1 && sudo pacman -Syu --noconfirm
+command -v apt-get > /dev/null 2>&1 && apt-get update -y && apt-get upgrade
+
+# Run git maintenance
+git for-each-repo --config=maintenance.repo maintenance run
+
+# Prune docker
+docker image ls --filter 'reference=*.amazonaws.com/*' --format '{{.Repository}}:{{.Tag}}' | xargs docker rmi
+docker image ls --filter 'reference=cdkasset-*' --format '{{.Repository}}:{{.Tag}}' | xargs docker rmi
+docker image ls --filter 'reference=*.amazonaws.com/*' --format '{{.Repository}}:{{.Tag}}' | xargs docker rmi
+docker system prune --force
+
+# Update all docker hub images
+for image in $(docker image ls --filter 'reference=*' --format '{{.Repository}}:{{.Tag}}'); do
+	docker pull "$image"
+done
+
