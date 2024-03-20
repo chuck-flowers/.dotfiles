@@ -47,14 +47,14 @@ function git_info() {
 		untracked=" %F{cyan} ${untracked}%f"
 	fi
 
-	local unpulled="$(git log --oneline HEAD..@{upstream} | wc --lines)"
+	local unpulled="$(git log --oneline HEAD..@{upstream} 2>/dev/null | wc --lines)"
 	if [[ "$unpulled" -eq 0 ]]; then
 		unpulled=''
 	else
 		unpulled=" %F{red} ${unpulled}%f"
 	fi
 
-	local unpushed="$(git log --oneline @{upstream}..HEAD | wc --lines)"
+	local unpushed="$(git log --oneline @{upstream}..HEAD 2>/dev/null | wc --lines)"
 	if [[ "$unpushed" -eq 0 ]]; then
 		unpushed=''
 	else
