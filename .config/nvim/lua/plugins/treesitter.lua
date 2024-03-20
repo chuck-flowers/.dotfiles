@@ -7,10 +7,7 @@ return {
 	},
 	build = ':TSUpdate',
 	config = function()
-		local ts_configs = require('nvim-treesitter.configs')
-		local ts_context = require('treesitter-context')
-
-		ts_configs.setup({
+		require('nvim-treesitter.configs').setup({
 			ensure_installed = {
 				'awk',
 				'bash',
@@ -36,6 +33,7 @@ return {
 				'rust',
 				'tsx',
 				'typescript',
+				'vimdoc',
 				'vue',
 				'xml',
 				'yaml'
@@ -74,6 +72,6 @@ return {
 			}
 		})
 
-		ts_context.setup()
+		require('treesitter-context').setup()
 	end
 }
