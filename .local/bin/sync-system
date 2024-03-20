@@ -10,9 +10,9 @@ command -v apt-get > /dev/null 2>&1 && apt-get update -y && apt-get upgrade
 git for-each-repo --config=maintenance.repo maintenance run
 
 # Prune docker
+docker container prune -f
 docker image ls --filter 'reference=*.amazonaws.com/*' --format '{{.Repository}}:{{.Tag}}' | xargs docker rmi
 docker image ls --filter 'reference=cdkasset-*' --format '{{.Repository}}:{{.Tag}}' | xargs docker rmi
-docker image ls --filter 'reference=*.amazonaws.com/*' --format '{{.Repository}}:{{.Tag}}' | xargs docker rmi
 docker system prune --force
 
 # Update all docker hub images
