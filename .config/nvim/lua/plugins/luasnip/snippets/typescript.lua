@@ -1,4 +1,31 @@
 return {
+	s('class:error', fmt([[
+		class {ename} extends Error {{
+			constructor({ctor_args}) {{
+				super({super_ctor_args});
+				{ctor_impl}
+			}}
+			{message_impl}
+		}}
+	]], {
+		ename = i(1, 'CustomError'),
+		ctor_args = i(2, ''),
+		super_ctor_args = i(3, ''),
+		ctor_impl = i(4, ''),
+		message_impl = c(5, {
+			d(nil, function()
+				return sn(nil, fmt([[
+
+					get message(): string {{
+						return `{message_string}`;
+					}}
+				]], {
+					message_string = i(1, ''),
+				}))
+			end),
+			i(nil, '')
+		})
+	})),
 	s('class:interface', fmt([[
 		export type {iname} = Pick<{ref_cname}, keyof {ref_cname}>;
 
@@ -50,36 +77,25 @@ return {
 		pname = i(2, 'Parent'),
 		ctor = i(0, ''),
 	})),
-	s('class:error', fmt([[
-		class {ename} extends Error {{
-			constructor({ctor_args}) {{
-				super({super_ctor_args});
-				{ctor_impl}
-			}}
-			{message_impl}
-		}}
-	]], {
-		ename = i(1, 'CustomError'),
-		ctor_args = i(2, ''),
-		super_ctor_args = i(3, ''),
-		ctor_impl = i(4, ''),
-		message_impl = c(5, {
-			d(nil, function()
-				return sn(nil, fmt([[
-
-					get message(): string {{
-						return `{message_string}`;
-					}}
-				]], {
-					message_string = i(1, ''),
-				}))
-			end),
-			i(nil, '')
-		})
-	})),
 	s('error:todo', fmt([[
 		throw new Error('Not implemented')
 	]], {})),
+	s('test:node', fmt([[
+		test('{test_name}', () => {{
+			{body}
+		}})
+	]], {
+		test_name = i(1, 'Test'),
+		body = i(0, ''),
+	})),
+	s('test:vitest', fmt([[
+		it('{test_name}', () => {{
+			{body}
+		}});
+	]], {
+		test_name = i(1, 'Test'),
+		body = i(0, '')
+	})),
 	s('zod:object:infered', fmt([[
 		type {inferred_type} = z.infer<typeof {schema_name_ref}>;
 		const {schema_name} = z.object({{
@@ -98,20 +114,4 @@ return {
 		schema_name_ref = f(function(args) return args[1][1] end, { 1 }),
 		object_props = i(0, ''),
 	})),
-	s('test:node', fmt([[
-		test('{test_name}', () => {{
-			{body}
-		}})
-	]], {
-		test_name = i(1, 'Test'),
-		body = i(0, ''),
-	})),
-	s('test:vitest', fmt([[
-		it('{test_name}', () => {{
-			{body}
-		}});
-	]], {
-		test_name = i(1, 'Test'),
-		body = i(0, '')
-	}))
 }
