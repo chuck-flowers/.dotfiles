@@ -7,7 +7,6 @@ return {
 		{ 'nvim-tree/nvim-web-devicons' },
 	},
 	config = function()
-		require('telescope').load_extension('project')
 		require('telescope').setup({
 			defaults = {
 				file_ignore_patterns = {
@@ -28,8 +27,15 @@ return {
 						end,
 					},
 				}
-			}
+			},
+			extensions = {
+				project = {
+					hidden_files = true,
+				}
+			},
 		})
+
+		require('telescope').load_extension('project')
 	end,
 	keys = {
 		{ '<leader>ff', '<cmd>Telescope find_files hidden=true<cr>' },
