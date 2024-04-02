@@ -6,6 +6,8 @@ function apply_settings() {
 
 setopt nobeep
 
+REPORTTIME=1
+
 # History
 apply_settings 'aliases'
 apply_settings 'completion'
