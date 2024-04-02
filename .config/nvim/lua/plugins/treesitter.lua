@@ -26,7 +26,6 @@ return {
 				'lua',
 				'markdown',
 				'mermaid',
-				'org',
 				'python',
 				'query',
 				'sql',

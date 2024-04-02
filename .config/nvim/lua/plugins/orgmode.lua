@@ -1,20 +1,8 @@
 return {
 	'nvim-orgmode/orgmode',
 	branch = 'master',
-	dependencies = {
-		{ 'nvim-treesitter/nvim-treesitter', lazy = true }
-	},
 	event = 'VeryLazy',
 	config = function()
-		require('orgmode').setup_ts_grammar()
-
-		require('nvim-treesitter.configs').setup({
-			hightlight = {
-				enable = true,
-			},
-			ensure_installed = { 'org' },
-		})
-
 		require('orgmode').setup({
 			calendar_week_start_day = 0,
 			org_agenda_files = '~/org/**/*',
