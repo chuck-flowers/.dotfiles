@@ -9,14 +9,26 @@ command -v apt-get > /dev/null 2>&1 && apt-get update -y && apt-get upgrade
 # Run git maintenance
 git for-each-repo --config=maintenance.repo maintenance run
 
-# Prune docker
+# Rebase org and .dotfiles
+git --git-dir="$HOME/org/.git" --work-tree="$HOME/org" fetch --all \
+	&& git --git-dir="$HOME/org/.git" --work-tree="$HOME/org" rebase origin/master master
+git --git-dir="$HOME/.dotfiles/.git" --work-tree="$HOME/.dotfiles" fetch --all \
+	&& git --git-dir="$HOME/.dotfiles/.git" --work-tree="$HOME/.dotfiles" rebase origin/master master
+
+# Delete all containers
 docker container prune -f
-docker image ls --filter 'reference=*.amazonaws.com/*' --format '{{.Repository}}:{{.Tag}}' | xargs docker rmi
-docker image ls --filter 'reference=cdkasset-*' --format '{{.Repository}}:{{.Tag}}' | xargs docker rmi
-docker system prune --force
+
+# Remove all AWS image artifacts
+cat \
+	<(docker image ls --filter 'reference=*.amazonaws.com/*' --format '{{.Repository}}:{{.Tag}}') \
+	<(docker image ls --filter 'reference=cdkasset-*' --format '{{.Repository}}:{{.Tag}}') \
+	| xargs -I _ docker rmi _
 
 # Update all docker hub images
 for image in $(docker image ls --filter 'reference=*' --format '{{.Repository}}:{{.Tag}}'); do
 	docker pull "$image"
 done
+
+# Remove unused images/build cache
+docker system prune --force
 
