@@ -7,3 +7,6 @@ if test -d "$HOME/.local/bin"; then
 	export PATH="$HOME/.local/bin:$PATH"
 fi
 
+# NVM configuration
+[ -s "$HOME/.nvm" ] && source "$HOME/.nvm/nvm.sh"
+
