@@ -81,8 +81,13 @@ return {
 		throw new Error('Not implemented')
 	]], {})),
 	s('log:trace', fmt([[
-		this.logger.debug({log_content});
+		{log_call}.debug({log_content});
 	]], {
+		log_call = c(1, {
+			t('this.logger'),
+			t('logger'),
+			t('console'),
+		}),
 		log_content = f(function()
 			-- Find the first parent method node
 			local node = vim.treesitter.get_node()
