@@ -88,7 +88,7 @@ return {
 			local node = vim.treesitter.get_node()
 			while node ~= nil do
 				local type = node:type()
-				if type == 'method_definition' or type == 'function_definition' then
+				if type == 'method_definition' or type == 'function_declaration' then
 					break
 				end
 
