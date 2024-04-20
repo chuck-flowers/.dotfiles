@@ -1,5 +1,5 @@
 return {
-	s('react_fn_cmp', fmt([[
+	s('react:cmp:s', fmt([[
 		export type {props_name} = {{}}
 		export default function {component_name} (props: {props_name}) {{
 			{body}
@@ -18,5 +18,22 @@ return {
 			})
 		end),
 		body = i(0, 'return null;')
-	}))
+	})),
+	s('react:state', fmt([[
+		const [{value}, {setter}] = React.useState({init});
+	]], {
+		value = i(1, 'value'),
+		setter = f(function(args)
+			--- @type string
+			local name = args[1][1]
+			if name:match('^is[A-Z]') then
+				name = 'TODO'
+			end
+
+			return 'set' .. name:sub(1, 1):upper() .. name:sub(1);
+		end, { 1 }),
+		init = c(2, {
+			i(nil, "''")
+		}),
+	})),
 }
