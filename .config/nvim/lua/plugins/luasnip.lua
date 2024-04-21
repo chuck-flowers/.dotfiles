@@ -4,8 +4,10 @@ return {
 		-- Load the snippets from files
 		local snippet_dir = vim.fn.stdpath('config') .. '/lua/plugins/luasnip/snippets'
 		require('luasnip.loaders.from_lua').load({
-			paths = snippet_dir
+			paths = { snippet_dir }
 		})
+
+		require('luasnip').filetype_extend('typescriptreact', { 'typescript' })
 
 		local function safe_jump(offset)
 			if require('luasnip').jumpable(offset) then
