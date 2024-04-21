@@ -22,7 +22,7 @@ return {
 				['<C-p>'] = cmp.mapping.select_prev_item(),
 				['<C-n>'] = cmp.mapping.select_next_item(),
 				['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
-				['<CR>'] = cmp.mapping.confirm {
+				['<C-y>'] = cmp.mapping.confirm {
 					behavior = cmp.ConfirmBehavior.Replace,
 					select = true
 				}
