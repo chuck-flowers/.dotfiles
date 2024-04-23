@@ -8,30 +8,26 @@ return {
 		{ 'windwp/nvim-autopairs' },
 	},
 	config = function()
-		local autopairs_cmp = require('nvim-autopairs.completion.cmp')
-		local cmp = require('cmp')
-		local luasnip = require('luasnip')
+		require('cmp').event:on('confirm_done', require('nvim-autopairs.completion.cmp').on_confirm_done())
 
-		cmp.event:on('confirm_done', autopairs_cmp.on_confirm_done())
-
-		cmp.setup({
+		require('cmp').setup({
 			enabled = true,
 			mapping = {
-				['<C-p>'] = cmp.mapping.select_prev_item(),
-				['<C-n>'] = cmp.mapping.select_next_item(),
-				['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
-				['<C-y>'] = cmp.mapping.confirm {
-					behavior = cmp.ConfirmBehavior.Replace,
+				['<C-p>'] = require('cmp').mapping.select_prev_item(),
+				['<C-n>'] = require('cmp').mapping.select_next_item(),
+				['<C-Space>'] = require('cmp').mapping(require('cmp').mapping.complete(), { 'i', 'c' }),
+				['<C-y>'] = require('cmp').mapping.confirm {
+					behavior = require('cmp').ConfirmBehavior.Replace,
 					select = true
 				}
 			},
 			window = {
-				completion = cmp.config.window.bordered(),
-				documentation = cmp.config.window.bordered()
+				completion = require('cmp').config.window.bordered(),
+				documentation = require('cmp').config.window.bordered()
 			},
 			snippet = {
 				expand = function(args)
-					luasnip.lsp_expand(args.body)
+					require('luasnip').lsp_expand(args.body)
 				end
 			},
 			sources = {
