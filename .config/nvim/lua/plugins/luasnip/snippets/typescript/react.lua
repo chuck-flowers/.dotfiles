@@ -27,13 +27,20 @@ local state = s('react:state', fmt([[
 		--- @type string
 		local name = args[1][1]
 		if name:match('^is[A-Z]') then
-			name = 'TODO'
+			name = name:sub(3)
 		end
 
-		return 'set' .. name:sub(1, 1):upper() .. name:sub(1);
+		return 'set' .. name:sub(1, 1):upper() .. name:sub(2);
 	end, { 1 }),
 	init = c(2, {
-		i(nil, "''")
+		i(nil, "''"),
+		sn(nil, fmt([[
+			() => {{
+				{body}
+			}}
+		]], {
+			body = i(1, 'return \'\';')
+		}))
 	}),
 }))
 
