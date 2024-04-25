@@ -19,6 +19,9 @@ vim.keymap.set('n', '<leader>tt', '<cmd>terminal<CR>')
 vim.keymap.set('n', '<leader>ts', '<C-W>s<cmd>terminal<CR>')
 vim.keymap.set('n', '<leader>tv', '<C-W>v<cmd>terminal<CR>')
 
+-- Keybindings for expression register
+vim.keymap.set('v', '<C-r>=', 'c<C-R>=<C-R>"<CR><ESC>')
+
 -- Allows for reloading config
 vim.keymap.set('n', '<leader><leader>so', function()
 	package.loaded = {}
