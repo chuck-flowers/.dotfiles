@@ -51,7 +51,8 @@ return {
 	'neovim/nvim-lspconfig',
 	dependencies = {
 		'folke/neodev.nvim',
-		'williamboman/mason-lspconfig.nvim'
+		'williamboman/mason-lspconfig.nvim',
+		'nanotee/sqls.nvim'
 	},
 	config = function()
 		-- Build out the custom capabilities
@@ -121,7 +122,14 @@ return {
 			end
 		})
 		require('lspconfig').marksman.setup({})
-		require('lspconfig').sqlls.setup({})
+		require('lspconfig').sqls.setup({
+			capabilities = capabilities,
+			on_attach = function(client, bufnr)
+				vim.keymap.set('n', '<leader>ee', ':SqlsExecute')
+				require('sqls').on_attach(client, bufnr)
+				register_autoformat(bufnr, 'SQL')
+			end
+		})
 		require('lspconfig').svelte.setup({
 			on_attach = function(bufnr)
 				common_keybindings()
