@@ -37,7 +37,11 @@ local trace = s('log:trace', fmt([[
 			end
 		end
 
-		return "'" .. name .. "', { " .. table.concat(params, ', ') .. " }"
+		if (#params > 0) then
+			return "'" .. name .. "', { " .. table.concat(params, ', ') .. " }"
+		else
+			return "'" .. name .. "'"
+		end
 	end, {}),
 }))
 

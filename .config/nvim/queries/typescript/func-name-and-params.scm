@@ -6,9 +6,9 @@
 [
  (method_definition
    name: (_) @name
-   (formal_parameters (required_parameter (identifier)* @params)))
+   parameters: (formal_parameters (required_parameter (identifier) @params)*))
  (function_declaration
    name: (_) @name
-   (formal_parameters (required_parameter (identifier)* @params)))
+   parameters: (formal_parameters (required_parameter (identifier) @params)*))
 ]
 
