@@ -1,3 +1,9 @@
+local object = s('zod:object', fmt([[z.object({{
+	{object_props}
+}})]], {
+	object_props = i(1, '')
+}))
+
 local object_inferred = s('zod:object:infered', fmt([[
 		type {inferred_type} = z.infer<typeof {schema_name_ref}>;
 		const {schema_name} = z.object({{
@@ -18,5 +24,6 @@ local object_inferred = s('zod:object:infered', fmt([[
 }))
 
 return {
-	object_inferred
+	object,
+	object_inferred,
 }
