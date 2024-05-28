@@ -14,4 +14,9 @@ return {
 			"$schema": "https://json.schemastore.org/tsconfig.json"
 		}}
 	]], {})),
+	s('schema', fmt([[
+		{{
+			"$schema": "https://json-schema.org/draft-07/schema#"
+		}}
+	]], {}))
 }
