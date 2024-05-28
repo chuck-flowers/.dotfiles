@@ -1,4 +1,3 @@
-require('autocmd')
 require('keybindings')
 
 -- Show line numbers
