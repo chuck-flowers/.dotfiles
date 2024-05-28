@@ -85,6 +85,12 @@ function M.keymaps(client, bufnr)
 			vim.lsp.buf.outgoing_calls()
 		end)
 	end
+
+	if server_capabilities.signatureHelpProvider then
+		vim.keymap.set('n', '<leader>ls', function()
+			vim.lsp.buf.signature_help()
+		end)
+	end
 end
 
 return M
