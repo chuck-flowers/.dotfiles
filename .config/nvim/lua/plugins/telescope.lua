@@ -4,6 +4,7 @@ return {
 		{ 'folke/trouble.nvim' },
 		{ 'nvim-lua/plenary.nvim' },
 		{ 'nvim-telescope/telescope-project.nvim' },
+		{ 'nvim-telescope/telescope-ui-select.nvim' },
 		{ 'nvim-tree/nvim-web-devicons' },
 	},
 	config = function()
@@ -41,11 +42,15 @@ return {
 			extensions = {
 				project = {
 					hidden_files = true,
+				},
+				['ui-select'] = {
+
 				}
 			},
 		})
 
 		require('telescope').load_extension('project')
+		require('telescope').load_extension('ui-select')
 	end,
 	keys = {
 		{ '<leader>ff', '<cmd>Telescope find_files hidden=true<cr>' },
