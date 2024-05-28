@@ -59,7 +59,7 @@ function M.keymaps(client, bufnr)
 	end
 
 	if server_capabilities.renameProvider then
-		vim.keymap.set('n', '<leader>lr', function()
+		vim.keymap.set('n', '<leader>rr', function()
 			vim.lsp.buf.rename()
 		end)
 	end
