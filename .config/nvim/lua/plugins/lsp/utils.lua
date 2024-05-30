@@ -17,13 +17,17 @@ function M.autoformat(client, bufnr)
 		return
 	end
 
-	vim.api.nvim_create_autocmd('BufWritePre', {
-		buffer = bufnr,
-		desc = 'Auto format file with ' .. client.name,
-		callback = function()
-			vim.lsp.buf.format()
-		end
-	})
+	if client.server_capabilities.documentFormattingProvider then
+		vim.api.nvim_create_autocmd('BufWritePre', {
+			buffer = bufnr,
+			desc = 'Auto format file with ' .. client.name,
+			callback = function()
+				vim.lsp.buf.format({
+					id = client.id
+				})
+			end
+		})
+	end
 end
 
 --- @param client vim.lsp.Client
