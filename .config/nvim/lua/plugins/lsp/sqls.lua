@@ -4,6 +4,6 @@ require('lspconfig').sqls.setup({
 		require('plugins.lsp.utils').on_attach(client, bufnr)
 		require('sqls').on_attach(client, bufnr)
 
-		vim.keymap.set('n', '<leader>ee', ':SqlsExecute')
+		vim.keymap.set('n', '<leader>ee', ':SqlsExecuteQuery<cr>')
 	end
 })
