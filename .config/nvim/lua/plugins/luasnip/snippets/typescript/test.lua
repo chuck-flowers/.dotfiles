@@ -1,5 +1,5 @@
 local node = s('test:node', fmt([[
-		test('{test_name}', () => {{
+		await test('{test_name}', () => {{
 			{body}
 		}})
 	]], {
