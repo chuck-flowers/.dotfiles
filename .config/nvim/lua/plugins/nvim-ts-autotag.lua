@@ -5,13 +5,9 @@ return {
 	},
 	ft = {
 		'html',
-		'jsx',
-		'tsx',
+		'javascriptreact',
+		'typescriptreact',
 		'xml'
 	},
-	config = function ()
-		local ts_autotag = require 'nvim-ts-autotag'
-
-		ts_autotag.setup({})
-	end
+	opts = {}
 }
