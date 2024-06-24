@@ -8,6 +8,7 @@ return {
 		})
 
 		require('luasnip').filetype_extend('typescriptreact', { 'typescript' })
+		require('luasnip').filetype_extend('helm', { 'yaml' })
 
 		local function safe_jump(offset)
 			if require('luasnip').jumpable(offset) then
