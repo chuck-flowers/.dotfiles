@@ -17,7 +17,8 @@ require('lspconfig').yamlls.setup({
 				['https://json.schemastore.org/chart.json'] = 'Chart.yaml',
 				['https://raw.githubusercontent.com/awslabs/goformation/master/schema/cloudformation.schema.json'] =
 				'*.cf.yml',
-				kubernetes = '*.k8s.yml'
+				kubernetes = '*.k8s.yml',
+				['https://json.schemastore.org/prometheus.json'] = 'prometheus.yml'
 			}
 		}
 	}
