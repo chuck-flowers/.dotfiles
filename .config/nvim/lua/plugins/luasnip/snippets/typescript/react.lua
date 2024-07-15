@@ -1,6 +1,6 @@
 local component_func = s('react:component:func', fmt([[
 		export type {props_name} = {{}}
-		export default function {component_name} (props: {props_name}) {{
+		export default function {component_name}(props: {props_name}) {{
 			{body}
 		}}
 	]], {
