@@ -10,11 +10,13 @@ return {
 		'go',
 		'java',
 		'javascript',
+		'javascriptreact',
 		'lua',
 		'php',
 		'python',
 		'ruby',
-		'typescript'
+		'typescript',
+		'typescriptreact',
 	},
 	config = function()
 		local refactoring = require 'refactoring'
