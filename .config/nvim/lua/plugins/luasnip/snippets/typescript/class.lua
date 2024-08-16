@@ -28,7 +28,6 @@ local class_error = s('class:error', fmt([[
 
 local class_interface = s('class:interface', fmt([[
 		export type {iname} = Pick<{ref_cname}, keyof {ref_cname}>;
-
 		export default class {cname} implements {iname} {{
 			{class_fields}
 
