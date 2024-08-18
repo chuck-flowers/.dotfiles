@@ -17,3 +17,4 @@ apply_settings 'prompt'
 # Enable vi mode 
 bindkey -v
 
+ZELLIJ_AUTO_EXIT=true eval "$(zellij setup --generate-auto-start zsh)"
