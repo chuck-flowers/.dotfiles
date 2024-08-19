@@ -20,7 +20,6 @@ keybinds clear-defaults=true {
 		bind "Ctrl s" { SwitchToMode "Normal"; }
 		bind "d" { Detach; }
 
-
         bind "s" {
             LaunchOrFocusPlugin "session-manager" {
                 floating true
@@ -31,12 +30,14 @@ keybinds clear-defaults=true {
 	}
 
 	tab {
-		bind "Ctrl t" { SwitchToMode "Normal"; }
+		bind "Ctrl t" "Enter" { SwitchToMode "Normal"; }
 
+		// Management
         bind "n" { NewTab; SwitchToMode "Normal"; }
         bind "r" { SwitchToMode "RenameTab"; TabNameInput 0; }
 		bind "x" { CloseTab; SwitchToMode "Normal"; }
 
+		// Navigation
         bind "h" { GoToPreviousTab; }
         bind "l" { GoToNextTab; }
 	}
