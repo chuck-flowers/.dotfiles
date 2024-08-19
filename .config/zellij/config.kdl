@@ -40,6 +40,12 @@ keybinds clear-defaults=true {
         bind "h" { GoToPreviousTab; }
         bind "l" { GoToNextTab; }
 	}
+
+    renametab {
+        bind "Enter" { SwitchToMode "Normal"; }
+
+        bind "Esc" { UndoRenameTab; SwitchToMode "Tab"; }
+    }
 }
 
 theme "Gruvbox Dark"
