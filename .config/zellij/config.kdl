@@ -49,6 +49,34 @@ keybinds clear-defaults=true {
     }
 }
 
+plugins {
+	header location="https://github.com/dj95/zjstatus/releases/latest/download/zjstatus.wasm" {
+		format_left   "{mode} #[fg=#89B4FA,bold]{session}"
+		format_center "{tabs}"
+		format_right  "{notifications}"
+		format_space  ""
+
+		border_enabled  "false"
+		border_char     "─"
+		border_format   "#[fg=#6C7086]{char}"
+		border_position "top"
+
+		hide_frame_for_single_pane "true"
+
+		mode_normal     "#[bg=green] NORMAL "
+		mode_tab        "#[bg=yellow] TAB "
+		mode_session    "#[bg=yellow] SESSION "
+		mode_rename_tab "#[bg=red] RTAB "
+
+		tab_normal   "#[fg=blue] {name} "
+		tab_active   "#[fg=green,bold,italic] {name} "
+
+		notification_format_unread           "#[fg=black,bg=red,blink] #[fg=white,bg=black] {message}"
+		notification_format_no_notifications "#[fg=blue,dim]   "
+		notification_show_interval           "10"
+	}
+}
+
 theme "Gruvbox Dark"
 themes {
 	"Gruvbox Dark" {
