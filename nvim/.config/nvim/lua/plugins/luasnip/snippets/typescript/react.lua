@@ -83,6 +83,16 @@ local effect = s('react:effect', fmt([[
 	impl = i(0),
 }));
 
+local memo = s('react:memo', fmt([[
+	const {name} = React.useMemo(() => {{
+		{impl}
+	}}, [{deps}]);
+]], {
+	name = i(1),
+	deps = i(2),
+	impl = i(3)
+}))
+
 local state = s('react:state', fmt([[
 		const [{value}, {setter}] = React.useState({init});
 	]], {
@@ -112,5 +122,6 @@ return {
 	component_func,
 	context,
 	effect,
+	memo,
 	state,
 }
