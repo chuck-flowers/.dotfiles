@@ -27,7 +27,7 @@ vim.o.wrap = false
 
 -- Configure terminal
 vim.o.termguicolors = true
-vim.o.shell = '/usr/bin/env zsh --login'
+vim.o.shell = '/usr/bin/env zsh --interactive'
 
 -- Configure splitting behavior
 vim.o.splitbelow = true
