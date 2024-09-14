@@ -13,7 +13,7 @@ end
 --- @param client vim.lsp.Client
 --- @param bufnr integer
 function M.autoformat(client, bufnr)
-	if client.name == 'tsserver' or client.name == 'sqls' then
+	if client.name == 'ts_ls' or client.name == 'sqls' then
 		return
 	end
 
