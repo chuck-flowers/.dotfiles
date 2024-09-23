@@ -1,7 +1,0 @@
-.config/gh/hosts.yml
-.config/qtile/__pycache__
-.config/nvim/lazy-lock.json
-.config/nvim/plugin/packer_compiled.lua
-.config/zsh/.zcompdump
-.local/share/nvim/site/pack
-
