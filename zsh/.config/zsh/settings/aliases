@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 alias df='df -h'
 alias dotfiles="stow -d ~/.dotfiles"
 alias less='less -R'
