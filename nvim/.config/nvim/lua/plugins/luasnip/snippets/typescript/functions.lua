@@ -1,3 +1,11 @@
+local arrow = s('function:arrow', fmt([[
+	({args}) => {{
+		{impl}
+	}}
+]], {
+	args = i(1),
+	impl = i(0),
+}))
 local func = s('function', fmt([[
 	function {name}({params}) {{
 		{impl}
@@ -9,6 +17,6 @@ local func = s('function', fmt([[
 }))
 
 return {
+	arrow,
 	func
 }
-
