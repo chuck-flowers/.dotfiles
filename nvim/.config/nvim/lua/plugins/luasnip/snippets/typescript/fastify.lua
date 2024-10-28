@@ -14,6 +14,28 @@ local plugin = s('fastify:plugin', fmt([[
 	impl = i(0, ''),
 }))
 
+local handler = s('fastify:route', fmt([[
+	app.{method}('{path}', {{
+		schema: {{
+
+		}},
+	}}, async (req, res) => {{
+		{handler}
+		return res.status(200).send();
+	}});;
+]], {
+	method = c(1, {
+		i(nil, 'get'),
+		i(nil, 'post'),
+		i(nil, 'put'),
+		i(nil, 'patch'),
+		i(nil, 'delete')
+	}),
+	path = i(2, '/'),
+	handler = i(0, ''),
+}))
+
 return {
 	plugin,
+	handler,
 }
