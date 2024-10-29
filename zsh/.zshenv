@@ -3,6 +3,11 @@ export ZDOTDIR=${XDG_CONFIG_HOME:-$HOME/.config/zsh}
 # NVM configuration
 [ -s "$HOME/.nvm" ] && source "$HOME/.nvm/nvm.sh"
 
+# Go
+if test -d "$HOME/go/bin"; then
+	export PATH="$HOME/go/bin:$PATH"
+fi
+
 # PNPM
 export PNPM_HOME="/home/cflowers/.local/share/pnpm"
 case ":$PATH:" in
