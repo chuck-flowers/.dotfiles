@@ -8,6 +8,11 @@ if test -d "$HOME/go/bin"; then
 	export PATH="$HOME/go/bin:$PATH"
 fi
 
+# Rust
+if test -d "$HOME/.cargo/bin"; then
+	export PATH="$HOME/.cargo/bin:$PATH";
+fi
+
 # PNPM
 export PNPM_HOME="/home/cflowers/.local/share/pnpm"
 case ":$PATH:" in
