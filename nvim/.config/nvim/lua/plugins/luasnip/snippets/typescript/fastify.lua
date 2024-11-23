@@ -1,4 +1,7 @@
-local plugin = s('fastify:plugin', fmt([[
+local plugin = s(
+	"fastify:plugin",
+	fmt(
+		[[
 	import type {{ FastifyPluginAsync }} from 'fastify';
 	import fastifyPlugin from 'fastify-plugin';
 
@@ -8,13 +11,19 @@ local plugin = s('fastify:plugin', fmt([[
 
 	export default fastifyPlugin({name_ref});
 
-]], {
-	name = i(1, 'myPlugin'),
-	name_ref = rep(1),
-	impl = i(0, ''),
-}))
+]],
+		{
+			name = i(1, "myPlugin"),
+			name_ref = rep(1),
+			impl = i(0, ""),
+		}
+	)
+)
 
-local handler = s('fastify:route', fmt([[
+local handler = s(
+	"fastify:route",
+	fmt(
+		[[
 	app.{method}('{path}', {{
 		schema: {{
 
@@ -23,17 +32,20 @@ local handler = s('fastify:route', fmt([[
 		{handler}
 		return res.status(200).send();
 	}});;
-]], {
-	method = c(1, {
-		i(nil, 'get'),
-		i(nil, 'post'),
-		i(nil, 'put'),
-		i(nil, 'patch'),
-		i(nil, 'delete')
-	}),
-	path = i(2, '/'),
-	handler = i(0, ''),
-}))
+]],
+		{
+			method = c(1, {
+				i(nil, "get"),
+				i(nil, "post"),
+				i(nil, "put"),
+				i(nil, "patch"),
+				i(nil, "delete"),
+			}),
+			path = i(2, "/"),
+			handler = i(0, ""),
+		}
+	)
+)
 
 return {
 	plugin,

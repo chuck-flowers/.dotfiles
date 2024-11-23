@@ -1,17 +1,35 @@
 return {
-	s('eslintrc', fmt([[
+	s(
+		"eslintrc",
+		fmt(
+			[[
 		{{
 			"$schema": "https://json.schemastore.org/eslintrc.json"
 		}}
-	]], {})),
-	s('npm-package', fmt([[
+	]],
+			{}
+		)
+	),
+	s(
+		"npm-package",
+		fmt(
+			[[
 		{{
 			"$schema": "https://json.schemastore.org/package.json"
 		}}
-	]], {})),
-	s('tsconfig', fmt([[
+	]],
+			{}
+		)
+	),
+	s(
+		"tsconfig",
+		fmt(
+			[[
 		{{
 			"$schema": "https://json.schemastore.org/tsconfig.json"
 		}}
-	]], {})),
+	]],
+			{}
+		)
+	),
 }

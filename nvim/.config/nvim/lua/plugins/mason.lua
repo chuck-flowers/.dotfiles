@@ -1,12 +1,11 @@
 return {
-	'williamboman/mason.nvim',
+	"williamboman/mason.nvim",
 	config = function()
-		local mason = require 'mason'
+		local mason = require("mason")
 		mason.setup({
 			ui = {
-				border = 'rounded'
-			}
+				border = "rounded",
+			},
 		})
-	end
+	end,
 }
-

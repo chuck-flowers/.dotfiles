@@ -1,6 +1,6 @@
 return {
-	'towolf/vim-helm',
+	"towolf/vim-helm",
 	filetype = {
-		'yaml'
-	}
+		"yaml",
+	},
 }

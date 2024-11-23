@@ -1,29 +1,29 @@
 return {
-	'NeogitOrg/neogit',
+	"NeogitOrg/neogit",
 	dependencies = {
-		'nvim-lua/plenary.nvim',
-		'nvim-telescope/telescope.nvim',
-		'sindrets/diffview.nvim'
+		"nvim-lua/plenary.nvim",
+		"nvim-telescope/telescope.nvim",
+		"sindrets/diffview.nvim",
 	},
 	opts = {},
 	keys = {
 		{
-			'<leader>gs',
+			"<leader>gs",
 			function()
-				require('neogit').open()
-			end
+				require("neogit").open()
+			end,
 		},
 		{
-			'<leader>gc',
+			"<leader>gc",
 			function()
 				require("neogit").open({ "commit" })
-			end
+			end,
 		},
 		{
-			'<leader>gl',
+			"<leader>gl",
 			function()
 				require("neogit").open({ "log" })
-			end
-		}
-	}
+			end,
+		},
+	},
 }

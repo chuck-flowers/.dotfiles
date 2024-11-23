@@ -1,20 +1,32 @@
-local node = s('test:node', fmt([[
+local node = s(
+	"test:node",
+	fmt(
+		[[
 		await test('{test_name}', () => {{
 			{body}
 		}})
-	]], {
-	test_name = i(1, 'Test'),
-	body = i(0, ''),
-}))
+	]],
+		{
+			test_name = i(1, "Test"),
+			body = i(0, ""),
+		}
+	)
+)
 
-local vitest = s('test:vitest', fmt([[
+local vitest = s(
+	"test:vitest",
+	fmt(
+		[[
 		it('{test_name}', () => {{
 			{body}
 		}});
-	]], {
-	test_name = i(1, 'Test'),
-	body = i(0, '')
-}))
+	]],
+		{
+			test_name = i(1, "Test"),
+			body = i(0, ""),
+		}
+	)
+)
 
 return {
 	node,

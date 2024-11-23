@@ -1,14 +1,14 @@
 return {
-	'ellisonleao/gruvbox.nvim',
+	"ellisonleao/gruvbox.nvim",
 	config = function()
-		local gruvbox = require 'gruvbox'
+		local gruvbox = require("gruvbox")
 
 		gruvbox.setup({
-			transparent_mode = true
+			transparent_mode = true,
 		})
 
 		vim.opt.termguicolors = true
-		vim.o.background = 'dark'
-		vim.cmd('colorscheme gruvbox')
-	end
+		vim.o.background = "dark"
+		vim.cmd("colorscheme gruvbox")
+	end,
 }

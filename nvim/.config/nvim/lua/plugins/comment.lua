@@ -1,18 +1,18 @@
 return {
-	'numToStr/Comment.nvim',
+	"numToStr/Comment.nvim",
 	ft = {
-		'cpp',
-		'dockerfile',
-		'lua',
-		'make',
-		'sh',
-		'typescript',
-		'typescriptreact',
-		'yaml'
+		"cpp",
+		"dockerfile",
+		"lua",
+		"make",
+		"sh",
+		"typescript",
+		"typescriptreact",
+		"yaml",
 	},
 	config = function()
-		local Comment = require('Comment')
+		local Comment = require("Comment")
 
 		Comment.setup()
-	end
+	end,
 }

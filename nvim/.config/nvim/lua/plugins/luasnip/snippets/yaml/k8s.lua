@@ -1,5 +1,8 @@
 return {
-	s('k8s:metadata', fmta([[
+	s(
+		"k8s:metadata",
+		fmta(
+			[[
 		metadata:
 		  name: '<name>'
 		  labels:
@@ -7,8 +10,11 @@ return {
 		    app.kubernetes.io/component: '<component>'
 		    app.kubernetes.io/instance: '{{ .Release.Name }}'
 		    app.kubernetes.io/version: '{{ .Chart.AppVersion }}'
-	]], {
-		name = i(1, 'name'),
-		component = i(2, 'component')
-	}))
+	]],
+			{
+				name = i(1, "name"),
+				component = i(2, "component"),
+			}
+		)
+	),
 }
