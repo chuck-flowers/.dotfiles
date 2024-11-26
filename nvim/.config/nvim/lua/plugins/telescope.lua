@@ -3,7 +3,6 @@ return {
 	dependencies = {
 		{ "folke/trouble.nvim" },
 		{ "nvim-lua/plenary.nvim" },
-		{ "nvim-telescope/telescope-project.nvim" },
 		{ "nvim-telescope/telescope-ui-select.nvim" },
 		{ "nvim-tree/nvim-web-devicons" },
 	},
@@ -40,14 +39,10 @@ return {
 				},
 			},
 			extensions = {
-				project = {
-					hidden_files = true,
-				},
 				["ui-select"] = {},
 			},
 		})
 
-		require("telescope").load_extension("project")
 		require("telescope").load_extension("ui-select")
 	end,
 	keys = {
@@ -57,7 +52,6 @@ return {
 		{ "<leader>fb", "<cmd>Telescope buffers<cr>" },
 		{ "<leader>ft", "<cmd>Telescope live_grep<cr>" },
 		{ "<leader>fh", "<cmd>Telescope help_tags<cr>" },
-		{ "<leader>fp", "<cmd>Telescope project <cr>" },
 		{ "<leader>fs", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>" },
 		{ "<leader>fm", "<cmd>Telescope man_pages<cr>" },
 		{ "<leader>fe", "<cmd>Telescope filetypes<cr>" },
