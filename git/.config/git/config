@@ -15,8 +15,6 @@
 	lb = log --decorate --oneline --graph
 	rd = rebase -i master
 	rr = rebase -i origin
-	permission-reset = !git diff -p -R --no-ext-diff --no-color --diff-filter=M | grep -E \"^(diff|(old|new) mode)\" --color=never | git apply
-	permission-reset = !git diff -p -R --no-ext-diff --no-color --diff-filter=M | grep -E \"^(diff|(old|new) mode)\" --color=never | git apply
 [diff]
 	tool = nvimdiff
 [difftool "nvimdiff"]
