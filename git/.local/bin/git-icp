@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+if _commits="$(git log --no-decorate --oneline --graph "$@" | fzf)"; then
+	echo "$_commits" | while read -r _star _commit _message; do
+		echo "$_commit"
+	done | xargs git cherry-pick
+else
+	echo "No commits selected; aborting" >&2
+fi

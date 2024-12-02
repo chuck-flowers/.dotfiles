@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if _selection=$(git lb --no-decorate --oneline --graph "$@" | fzf); then
+	read -r _star _commit _message <<< "$_selection";
+	git show "$_commit"
+fi
+
