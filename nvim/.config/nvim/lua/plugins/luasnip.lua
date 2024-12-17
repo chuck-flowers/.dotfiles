@@ -1,5 +1,6 @@
 return {
 	"L3MON4D3/LuaSnip",
+	version = '2.3.0',
 	config = function()
 		-- Load the snippets from files
 		local snippet_dir = vim.fn.stdpath("config") .. "/lua/plugins/luasnip/snippets"
