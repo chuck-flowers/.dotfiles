@@ -31,7 +31,7 @@ local handler = s(
 	}}, async (req, res) => {{
 		{handler}
 		return res.status(200).send();
-	}});;
+	}});
 ]],
 		{
 			method = c(1, {

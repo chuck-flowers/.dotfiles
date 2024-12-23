@@ -1,7 +1,6 @@
 return {
 	"nvim-telescope/telescope.nvim",
 	dependencies = {
-		{ "folke/trouble.nvim" },
 		{ "nvim-lua/plenary.nvim" },
 		{ "nvim-telescope/telescope-ui-select.nvim" },
 		{ "nvim-tree/nvim-web-devicons" },
@@ -17,13 +16,13 @@ return {
 					i = {
 						["<C-q>"] = function(prompt_bufnr)
 							require("telescope.actions").smart_send_to_qflist(prompt_bufnr)
-							require("trouble").open("quickfix")
+							vim.cmd(':copen')
 						end,
 					},
 					n = {
 						["<C-q>"] = function(prompt_bufnr)
 							require("telescope.actions").smart_send_to_qflist(prompt_bufnr)
-							require("trouble").open("quickfix")
+							vim.cmd(':copen')
 						end,
 					},
 				},

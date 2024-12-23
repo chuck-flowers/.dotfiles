@@ -40,7 +40,7 @@ function M.keymaps(client, bufnr)
 
 	if server_capabilities.definitionProvider then
 		vim.keymap.set("n", "gd", function()
-			require("trouble").open("lsp_definitions")
+			vim.lsp.buf.definition()
 		end, {
 			buffer = bufnr,
 		})
@@ -48,7 +48,7 @@ function M.keymaps(client, bufnr)
 
 	if server_capabilities.implementationProvider then
 		vim.keymap.set("n", "gD", function()
-			require("trouble").open("lsp_implementations")
+			vim.lsp.buf.implementation()
 		end, {
 			buffer = bufnr,
 		})
@@ -56,7 +56,7 @@ function M.keymaps(client, bufnr)
 
 	if server_capabilities.referencesProvider then
 		vim.keymap.set("n", "gr", function()
-			require("trouble").open("lsp_references")
+			vim.lsp.buf.references()
 		end, {
 			buffer = bufnr,
 		})
