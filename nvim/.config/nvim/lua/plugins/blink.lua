@@ -1,15 +1,13 @@
 return {
 	'saghen/blink.cmp',
-	version = '0.7.6',
+	version = '0.8.2',
 	dependencies = {
 		'L3MON4D3/LuaSnip'
 	},
 	opts = {
 		keymap = { preset = 'default' },
 		sources = {
-			completion = {
-				enabled_providers = { 'lsp', 'path', 'luasnip', 'buffer' },
-			},
+			default = { 'lsp', 'path', 'luasnip', 'buffer' },
 		},
 		snippets = {
 			expand = function(snippet) require('luasnip').lsp_expand(snippet) end,
