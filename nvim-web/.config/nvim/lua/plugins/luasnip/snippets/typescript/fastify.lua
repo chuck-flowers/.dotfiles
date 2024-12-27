@@ -1,3 +1,21 @@
+local declare = s(
+	"fastify:declare",
+	fmt([[
+		declare module 'fastify' {{
+			interface FastifyInstance {{
+				{instance}
+			}}
+
+			interface FastifyRequest {{
+				{request}
+			}}
+		}}
+	]], {
+		instance = i(1, ''),
+		request = i(2, ''),
+	})
+)
+
 local plugin = s(
 	"fastify:plugin",
 	fmt(
@@ -48,6 +66,7 @@ local handler = s(
 )
 
 return {
+	declare,
 	plugin,
 	handler,
 }
