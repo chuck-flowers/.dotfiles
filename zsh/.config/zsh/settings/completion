@@ -4,6 +4,7 @@ autoload -U compinit
 compinit
 zstyle ':completion:*' menu select
 
+command -v docker >& /dev/null && source <(docker completion zsh)
 command -v helm >& /dev/null && source <(helm completion zsh)
 command -v k9s >& /dev/null && source <(k9s completion zsh)
 command -v kubectl >& /dev/null && source <(kubectl completion zsh)
