@@ -38,14 +38,6 @@ function M.keymaps(client, bufnr)
 		return
 	end
 
-	if server_capabilities.definitionProvider then
-		vim.keymap.set("n", "gd", function()
-			vim.lsp.buf.definition()
-		end, {
-			buffer = bufnr,
-		})
-	end
-
 	if server_capabilities.implementationProvider then
 		vim.keymap.set("n", "gD", function()
 			vim.lsp.buf.implementation()
@@ -57,14 +49,6 @@ function M.keymaps(client, bufnr)
 	if server_capabilities.referencesProvider then
 		vim.keymap.set("n", "gr", function()
 			vim.lsp.buf.references()
-		end, {
-			buffer = bufnr,
-		})
-	end
-
-	if server_capabilities.hoverProvider then
-		vim.keymap.set("n", "K", function()
-			vim.lsp.buf.hover()
 		end, {
 			buffer = bufnr,
 		})
