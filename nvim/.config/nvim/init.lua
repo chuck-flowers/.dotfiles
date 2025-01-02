@@ -1,5 +1,3 @@
-require("keybindings")
-
 -- Show line numbers
 vim.o.number = true
 vim.o.relativenumber = true
@@ -48,6 +46,16 @@ if os.getenv("WSL_DISTRO_NAME") ~= nil then
 end
 
 require("editorconfig")
+
+-- Keybindings
+vim.g.mapleader = " "
+local keybind_dir = vim.fn.stdpath("config") .. "/lua/key-bindings"
+local keybind_files = vim.split(vim.fn.glob(keybind_dir .. "/*"), "\n", { trimempty = true })
+for _, file in ipairs(keybind_files) do
+	local mod_file = file:sub(#keybind_dir + 2)
+	local mod_name = "key-bindings." .. mod_file:sub(0, #mod_file - 4)
+	require(mod_name)
+end
 
 local lazypath = vim.fn.stdpath("data") .. "lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then

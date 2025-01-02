@@ -1,0 +1,6 @@
+vim.keymap.set("n", "<C-f>", "<C-f>M", { noremap = true })
+vim.keymap.set("n", "<C-b>", "<C-b>M", { noremap = true })
+vim.keymap.set("n", "<C-d>", "<C-d>M", { noremap = true })
+vim.keymap.set("n", "<C-u>", "<C-u>M", { noremap = true })
+vim.keymap.set("n", "n", "nzz")
+vim.keymap.set("n", "N", "Nzz")
