@@ -27,3 +27,5 @@
 	autoSetupMerge = always
 [merge]
 	ff = only
+[push]
+	followTags = true
