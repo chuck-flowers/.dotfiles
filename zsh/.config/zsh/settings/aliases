@@ -2,6 +2,7 @@
 
 alias df='df -h'
 alias dotfiles="stow -d ~/.dotfiles"
+alias k='kubectl'
 alias less='less -R'
 alias ll='ls -Al --color=auto'
 alias ls='ls -A --color=auto'
