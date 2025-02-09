@@ -10,7 +10,7 @@ if ! command -v slides >& /dev/null; then
 	exit 1;
 fi
 
-awk -f - ~/org/work.org <<'EOF' | pandoc --from org --to markdown | sed -E 's/^#//;2,$s/^#/---\n#/' | slides
+awk -f - ~/org/work.org <<'EOF' | pandoc --from org --to markdown-smart | sed -E 's/^#//;2,$s/^#/---\n#/' | slides
 BEGIN {
 	isFound = 0;
 	print "#+options: H:6"
