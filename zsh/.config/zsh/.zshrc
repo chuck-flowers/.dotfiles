@@ -17,4 +17,8 @@ apply_settings 'prompt'
 # Enable vi mode 
 bindkey -v
 
+# Enable FZF integration
+command -v fzf >& /dev/null && source <(fzf --zsh)
+
+# Launch Zellij
 ZELLIJ_AUTO_EXIT=true eval "$(zellij setup --generate-auto-start zsh)"
