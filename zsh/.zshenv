@@ -1,36 +1,47 @@
-export ZDOTDIR=${XDG_CONFIG_HOME:-$HOME/.config/zsh}
+#!/usr/bin/env zsh
 
-# NVM configuration
-[ -s "$HOME/.nvm" ] && source "$HOME/.nvm/nvm.sh"
+# ZSH Configuration
+export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
+fpath=($HOME/.local/share/zsh/site-functions/ $fpath)
 
-# Go
+# Custom Executables
+if test -d "$HOME/.local/bin"; then
+	export PATH="$HOME/.local/bin:$PATH"
+fi
+
+# Go Executables
 if test -d "$HOME/go/bin"; then
 	export PATH="$HOME/go/bin:$PATH"
 fi
 
-# Rust
+# Kubernetes Kubectl Plugins
+if test -d "$HOME/.krew/bin"; then
+	export PATH="$HOME/.krew/bin:$PATH"
+fi
+
+# NVM Executables
+if test -d "$HOME/.nvm"; then
+	source "$HOME/.nvm/nvm.sh"
+fi
+
+# PNPM Executables
+export PNPM_HOME="$HOME/.local/share/pnpm"
+if test -d "$PNPM_HOME"; then
+	export PATH="$PNPM_HOME:$PATH"
+fi
+
+# Rust Executables
 if test -d "$HOME/.cargo/bin"; then
 	export PATH="$HOME/.cargo/bin:$PATH";
 fi
 
-# PNPM
-export PNPM_HOME="$HOME/.local/share/pnpm"
-case ":$PATH:" in
-	*":$PNPM_HOME:"*) ;;
-	*) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-
-export EDITOR=nvim
-
-# Browser
+# Default Browser
 if command -v wsl-open >& /dev/null; then
 	export BROWSER=wsl-open
 else
 	export BROWSER=brave
 fi
 
-# Custom Executables
-if test -d "$HOME/.local/bin"; then
-	export PATH="$HOME/.local/bin:$PATH"
-fi
+# Default Editor
+export EDITOR=nvim
 
