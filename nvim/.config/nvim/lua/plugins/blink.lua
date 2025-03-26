@@ -1,6 +1,6 @@
 return {
 	"saghen/blink.cmp",
-	version = "0.14.0",
+	version = "1.*",
 	dependencies = {
 		"L3MON4D3/LuaSnip",
 	},
