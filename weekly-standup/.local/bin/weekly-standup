@@ -10,7 +10,7 @@ if ! command -v slides >& /dev/null; then
 	exit 1;
 fi
 
-awk -f - ~/org/work.org <<'EOF' | pandoc --from org --to markdown-smart | sed -E 's/^#//;2,$s/^#/---\n#/' | slides
+awk -f /dev/fd/3 3<<'EOF1' ~/org/work.org | sed -E 's/^\*//' | pandoc --from org --to markdown-smart | awk -f /dev/fd/4 4<<'EOF2' | slides
 BEGIN {
 	isFound = 0;
 	print "#+options: H:6"
@@ -29,6 +29,22 @@ isFound == 1 && $0 ~ /^\*\* TODO/ {
 isFound == 1 && $0 !~ /DEADLINE|^:/ {
 	print;
 }
+EOF1
 
-EOF
+BEGIN {
+	isInside = false
+}
 
+/^```/ {
+	isInside = !isInside
+}
+
+/^#/ && !isInside {
+	print "---";
+}
+
+/^/ {
+	print $0;
+}
+
+EOF2
