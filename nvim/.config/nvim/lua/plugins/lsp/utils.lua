@@ -38,61 +38,13 @@ function M.keymaps(client, bufnr)
 		return
 	end
 
-	if server_capabilities.implementationProvider then
-		vim.keymap.set("n", "gD", function()
-			vim.lsp.buf.implementation()
-		end, {
-			buffer = bufnr,
-		})
-	end
-
-	if server_capabilities.referencesProvider then
-		vim.keymap.set("n", "gr", function()
-			vim.lsp.buf.references()
-		end, {
-			buffer = bufnr,
-		})
-	end
-
-	if server_capabilities.renameProvider then
-		vim.keymap.set("n", "<leader>rr", function()
-			vim.lsp.buf.rename()
-		end, {
-			buffer = bufnr,
-		})
-	end
-
-	if server_capabilities.diagnosticProvider then
-		vim.keymap.set("n", "<leader>ld", function()
-			vim.diagnostic.open_float()
-		end, {
-			buffer = bufnr,
-		})
-	end
-
-	if server_capabilities.codeActionProvider then
-		vim.keymap.set("n", "<leader>la", function()
-			vim.lsp.buf.code_action()
-		end, {
-			buffer = bufnr,
-		})
-	end
-
 	if server_capabilities.callHierarchyProvider then
-		vim.keymap.set("n", "<leader>lc", function()
+		vim.keymap.set("n", "grc", function()
 			vim.lsp.buf.incoming_calls()
 		end)
 
-		vim.keymap.set("n", "<leader>lC", function()
+		vim.keymap.set("n", "grC", function()
 			vim.lsp.buf.outgoing_calls()
-		end, {
-			buffer = bufnr,
-		})
-	end
-
-	if server_capabilities.signatureHelpProvider then
-		vim.keymap.set("n", "<leader>ls", function()
-			vim.lsp.buf.signature_help()
 		end, {
 			buffer = bufnr,
 		})
