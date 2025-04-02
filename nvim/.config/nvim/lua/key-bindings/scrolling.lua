@@ -7,11 +7,11 @@ vim.keymap.set("n", "n", "nzz")
 vim.keymap.set("n", "N", "Nzz")
 
 vim.keymap.set("n", "]d", function()
-	vim.diagnostic.goto_next()
+	vim.diagnostic.jump({ count = 1, float = true })
 	vim.cmd('norm zz')
 end)
 
 vim.keymap.set("n", "[d", function()
-	vim.diagnostic.goto_prev()
+	vim.diagnostic.jump({ count = -1, float = true })
 	vim.cmd('norm zz')
 end)
