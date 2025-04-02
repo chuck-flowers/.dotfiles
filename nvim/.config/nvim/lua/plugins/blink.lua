@@ -18,9 +18,6 @@ return {
 		},
 		signature = {
 			enabled = true,
-			window = {
-				border = "rounded",
-			},
 		},
 		snippets = {
 			preset = "luasnip",

@@ -31,6 +31,9 @@ vim.o.shell = "/usr/bin/env zsh --interactive"
 vim.o.splitbelow = true
 vim.o.splitright = true
 
+-- Windows
+vim.o.winborder = "rounded"
+
 -- Configure clipboard when on WSL
 if os.getenv("WSL_DISTRO_NAME") ~= nil then
 	vim.g.clipboard = {
@@ -70,8 +73,4 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("plugins", {
-	ui = {
-		border = "rounded",
-	},
-})
+require("lazy").setup("plugins")
