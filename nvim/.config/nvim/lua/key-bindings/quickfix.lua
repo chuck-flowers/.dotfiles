@@ -1,4 +1,5 @@
-local function toggle_qf()
+-- Toggle the quickfix list
+vim.keymap.set('n', '<leader>vv', function()
 	local is_open = false
 
 	local win_ids = vim.api.nvim_list_wins()
@@ -16,11 +17,8 @@ local function toggle_qf()
 	else
 		vim.cmd('copen')
 	end
-end
+end)
 
-vim.keymap.set('n', '<leader>vv', toggle_qf)
 vim.keymap.set('n', '<leader>vd', function()
 	vim.diagnostic.setqflist({ open = true })
 end)
-vim.keymap.set('n', ']q', '<cmd>:cnext<cr>zz')
-vim.keymap.set('n', '[q', '<cmd>:cprev<cr>zz')
