@@ -409,4 +409,4 @@ session_serialization true
 // 
 // support_kitty_keyboard_protocol false
 
-show_startup_tips true
+show_startup_tips false
