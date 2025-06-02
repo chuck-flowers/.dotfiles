@@ -1,4 +1,5 @@
-require("lspconfig").yamlls.setup({
+vim.lsp.enable('yamlls')
+vim.lsp.config('yamlls', {
 	capabilities = require("plugins.lsp.utils").client_capabilities,
 	on_attach = require("plugins.lsp.utils").on_attach,
 	settings = {
