@@ -1,18 +1,21 @@
 local component_func = s(
-	"react:component:func",
+	"react:component",
 	fmt(
 		[[
-		export type {props_name} = {{}}
+		export interface {props_name} {{
+			{props_body}
+		}}
+
 		export default function {component_name}(props: {props_name}) {{
-			{body}
+			{component_body}
 		}}
 	]],
 		{
 			props_name = f(function(args)
 				local component_name = args[1][1]
 				return component_name .. "Props"
-			end, { 1 }),
-			component_name = d(1, function(args, snip)
+			end, { 2 }),
+			component_name = d(2, function(args, snip)
 				local filename = snip.env.TM_FILENAME
 				local component_name = filename:gsub("%..+", "")
 
@@ -20,7 +23,8 @@ local component_func = s(
 					i(1, component_name),
 				})
 			end),
-			body = i(0, "return null;"),
+			props_body = i(1, ''),
+			component_body = i(0, "return null;"),
 		}
 	)
 )
