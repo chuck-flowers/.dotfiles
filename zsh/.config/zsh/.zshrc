@@ -14,8 +14,6 @@ apply_settings 'completion'
 apply_settings 'history'
 apply_settings 'prompt'
 
-# Enable vi mode 
-bindkey -v
 
 # Enable FZF integration
 command -v fzf >& /dev/null && source <(fzf --zsh)
