@@ -20,6 +20,7 @@ vim.lsp.config('yamlls', {
 				"*.cf.yml",
 				kubernetes = "*.k8s.yml",
 				["https://json.schemastore.org/prometheus.json"] = "prometheus.yml",
+				["https://json.schemastore.org/github-workflow.json"] = "/.github/worksflows/*.yml"
 			},
 		},
 	},
