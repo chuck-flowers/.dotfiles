@@ -1,0 +1,31 @@
+layout {
+    pane size=1 borderless=true {
+        plugin location="https://github.com/dj95/zjstatus/releases/latest/download/zjstatus.wasm" {
+			format_left   "#[fg=#89B4FA,bold]{session} {tabs}"
+			format_right  "{command_gh_notifications}"
+			format_space  ""
+
+			border_enabled  "false"
+			border_char     "─"
+			border_format   "#[fg=#6C7086]{char}"
+			border_position "top"
+
+			hide_frame_for_single_pane "true"
+
+			mode_normal  "#[bg=blue] "
+			mode_tmux    "#[bg=#ffc387] "
+
+			tab_normal   "#[bg=#282828,fg=yellow] {name} "
+			tab_active   "#[bg=yellow,fg=#282828,bold] {name} "
+
+			command_gh_notifications_command     "bash -c 'gh api /notifications | jq \". | length\""
+			command_gh_notifications_format      "#[fg=yellow]   {stdout} "
+			command_gh_notifications_interval    "10"
+			command_gh_notifications_rendermode  "static"
+		}
+    }
+    pane
+    pane size=1 borderless=true {
+        plugin location="status-bar"
+    }
+}
