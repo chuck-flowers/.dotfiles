@@ -10,6 +10,7 @@
 	autoStash = true
 [pull]
 	ff = only
+	rebase = true
 [alias]
 	l = log --all --decorate --oneline --graph
 	lb = log --decorate --oneline --graph
