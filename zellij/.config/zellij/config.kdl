@@ -245,7 +245,7 @@ plugins {
 
 		command_gh_notifications_command     "bash -c 'gh api /notifications | jq \". | length\""
 		command_gh_notifications_format      "#[fg=yellow]   {stdout} "
-		command_gh_notifications_interval    "10"
+		command_gh_notifications_interval    "60"
 		command_gh_notifications_rendermode  "static"
 	}
 }
