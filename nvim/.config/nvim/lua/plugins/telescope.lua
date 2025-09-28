@@ -47,7 +47,7 @@ return {
 	keys = {
 		{ "<leader>ff", "<cmd>Telescope find_files hidden=true<cr>" },
 		{ "<leader>fo", "<cmd>Telescope find_files cwd=~/org hidden=true<cr>" },
-		{ "<leader>fc", "<cmd>Telescope find_files cwd=~/.config/nvim hidden=true<cr>" },
+		{ "<leader>fc", "<cmd>Telescope find_files cwd=~/.config hidden=true follow=true<cr>" },
 		{ "<leader>fb", "<cmd>Telescope buffers<cr>" },
 		{ "<leader>ft", "<cmd>Telescope live_grep<cr>" },
 		{ "<leader>fh", "<cmd>Telescope help_tags<cr>" },
