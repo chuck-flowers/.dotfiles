@@ -9,10 +9,10 @@ return {
 	config = function()
 		require('package-info').setup({
 			package_manager = 'pnpm',
-			colors = {
-				up_to_date = require('gruvbox').palette.dark_green,
-				outdated = require('gruvbox').palette.faded_yellow,
-				invalid = require('gruvbox').palette.dark_red,
+			highlights = {
+				up_to_date = { fg = require('gruvbox').palette.dark_green },
+				outdated = { fg = require('gruvbox').palette.faded_yellow },
+				invalid = { fg = require('gruvbox').palette.dark_red },
 			},
 		})
 
