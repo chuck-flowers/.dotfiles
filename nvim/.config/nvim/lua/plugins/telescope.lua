@@ -52,7 +52,7 @@ return {
 		{ "<leader>ft", "<cmd>Telescope live_grep<cr>" },
 		{ "<leader>fh", "<cmd>Telescope help_tags<cr>" },
 		{ "<leader>fs", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>" },
-		{ "<leader>fm", "<cmd>Telescope man_pages<cr>" },
+		{ "<leader>fm", "<cmd>Telescope man_pages sections=ALL<cr>" },
 		{ "<leader>fe", "<cmd>Telescope filetypes<cr>" },
 		{ "<leader>fd", "<cmd>Telescope diagnostics<cr>" },
 		{ "<leader>fk", "<cmd>Telescope keymaps<cr>" },
