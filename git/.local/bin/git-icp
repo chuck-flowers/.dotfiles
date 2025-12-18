@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if _commits="$(git log --no-decorate --oneline --graph "$@" | fzf)"; then
+if _commits="$(git log --no-decorate --oneline --graph "$@" | fzf --multi)"; then
 	echo "$_commits" | while read -r _star _commit _message; do
 		echo "$_commit"
 	done | xargs git cherry-pick
