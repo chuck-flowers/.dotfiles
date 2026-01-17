@@ -1,0 +1,3 @@
+#!/usr/bin/env zsh
+
+command -v fzf >& /dev/null && source <(fzf --zsh)
