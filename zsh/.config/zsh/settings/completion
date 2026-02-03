@@ -3,8 +3,16 @@
 fpath+="${HOME}/.local/share/zsh/site-functions/"
 
 # Generate any missing completion scripts
-_commands=(docker flux helm k9s kubectl pnpm)
-for _command in ${_commands}; do
+_commands=(
+	docker
+	flux
+	helm
+	k9s
+	kubectl
+	pnpm
+)
+
+for _command in ${_commands[@]}; do
 	_completion_path="${HOME}/.local/share/zsh/site-functions/_$_command";
 	if command -v "$_command" >& /dev/null && [[ $(command -v "$_command") -nt "$_completion_path" ]]; then
 		"$_command" completion zsh > "$_completion_path"
