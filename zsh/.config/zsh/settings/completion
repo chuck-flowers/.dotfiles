@@ -6,6 +6,7 @@ fpath+="${HOME}/.local/share/zsh/site-functions/"
 _commands=(
 	docker
 	flux
+	grype
 	helm
 	k9s
 	kubectl
