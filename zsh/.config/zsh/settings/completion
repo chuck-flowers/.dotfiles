@@ -14,7 +14,14 @@ _commands=(
 
 for _command in ${_commands[@]}; do
 	_completion_path="${HOME}/.local/share/zsh/site-functions/_$_command";
-	if command -v "$_command" >& /dev/null && [[ $(command -v "$_command") -nt "$_completion_path" ]]; then
+
+	# If the command is not installed, skip it
+	if ! command -v "$_command" >& /dev/null; then
+		continue
+	fi
+
+	# If the completion file does not exist, or the binary is newer, generate completion
+	if [[ ! -f "$_completion_path" || $(command -v "$_command") -nt "$_completion_path" ]]; then
 		"$_command" completion zsh > "$_completion_path"
 	fi
 done

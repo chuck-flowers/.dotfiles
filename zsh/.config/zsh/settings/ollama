@@ -1,0 +1,3 @@
+#!/usr/bin/env zsh
+
+export OLLAMA_HOST='http://sherlock.attlocal.net:11434'
