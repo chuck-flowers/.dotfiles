@@ -10,8 +10,9 @@ _commands=(
 	grype
 	helm
 	k9s
-	kubectl
 	kube-linter
+	kubectl
+	kubescape
 	pnpm
 	syft
 )
