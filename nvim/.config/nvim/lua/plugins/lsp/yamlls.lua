@@ -13,6 +13,7 @@ vim.lsp.config('yamlls', {
 				"!Sub scalar",
 			},
 			schemas = {
+				kubernetes = { "*.k8s.yaml", "*.k8s.yml" },
 				["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] =
 				"docker-compose*.yml",
 				["https://json.schemastore.org/chart.json"] = "Chart.yaml",
