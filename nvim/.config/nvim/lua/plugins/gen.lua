@@ -9,5 +9,6 @@ return {
 	keys = {
 		{ '<leader>aa', '<cmd>Gen<cr>' },
 		{ '<leader>ac', '<cmd>Gen Chat<cr>' },
+		{ '<leader>am', function() require('gen').select_model() end },
 	},
 }

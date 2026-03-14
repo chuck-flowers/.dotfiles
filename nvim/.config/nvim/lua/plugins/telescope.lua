@@ -56,6 +56,5 @@ return {
 		{ "<leader>fe", "<cmd>Telescope filetypes<cr>" },
 		{ "<leader>fd", "<cmd>Telescope diagnostics<cr>" },
 		{ "<leader>fk", "<cmd>Telescope keymaps<cr>" },
-		{ "<leader>fa", function() require('gen').select_model() end },
 	},
 }
