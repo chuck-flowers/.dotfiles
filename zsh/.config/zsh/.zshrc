@@ -9,6 +9,3 @@ REPORTTIME=1
 for settings in "$ZDOTDIR"/settings/*; do
 	source "$settings"
 done
-
-# Launch Zellij
-eval "$(zellij setup --generate-auto-start zsh)"
