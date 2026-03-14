@@ -8,7 +8,14 @@
       "options": {
         "baseURL": "{env:OLLAMA_HOST}/v1"
       },
-      "models": {}
+      "models": {
+        "qwen3.5:4b": {
+          "name": "Qwen 3.5 (Small)"
+        },
+        "qwen3.5:9b": {
+          "name": "Qwen 3.5"
+        }
+      }
     }
   }
 }
