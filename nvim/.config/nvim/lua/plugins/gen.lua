@@ -1,7 +1,7 @@
 return {
 	'David-Kunz/gen.nvim',
 	opts = {
-		model = "gemma3:latest",
+		model = "qwen3.5:latest",
 		display_mode = 'vertical-split',
 		show_model = true,
 	},
