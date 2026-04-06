@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+main() {
+	# Choose an option from .pgpass
+	local choice
+	choice=$(cat ~/.pgpass | fzf --delimiter ':' --with-nth '{3} ({4}@{1})')
+
+	# Extract each field
+	local host port db user
+	host=$(echo "$choice" | cut --delimiter ':' --field 1)
+	port=$(echo "$choice" | cut --delimiter ':' --field 2)
+	db=$(echo "$choice" | cut --delimiter ':' --field 3)
+	user=$(echo "$choice" | cut --delimiter ':' --field 4)
+
+	# Perform the connection
+	psql -h "$host" -p "$port" -U "$user" "$db"
+}
+
+main "$@"
+
