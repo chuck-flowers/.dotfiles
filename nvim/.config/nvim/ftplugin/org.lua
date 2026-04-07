@@ -1,3 +1,5 @@
+vim.lsp.enable('org')
+
 -- Auto wrap the text at 80 characters
 vim.bo.textwidth = 80
 vim.o.colorcolumn = "80"
