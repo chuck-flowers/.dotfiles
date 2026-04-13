@@ -1,0 +1,5 @@
+#!/usr/bin/env zsh
+
+if [[ -f /usr/share/zsh/plugins/forgit/forgit.plugin.zsh ]]; then
+	source /usr/share/zsh/plugins/forgit/forgit.plugin.zsh 
+fi
