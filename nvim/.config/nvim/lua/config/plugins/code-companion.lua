@@ -19,6 +19,11 @@ require('codecompanion').setup({
 				name = 'ollama',
 				model = 'qwen3.5',
 			},
+			keymaps = {
+				completion = {
+					modes = { i = '<C-Space>' },
+				},
+			},
 		},
 	},
 })
