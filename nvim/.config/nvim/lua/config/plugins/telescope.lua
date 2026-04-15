@@ -7,8 +7,14 @@ vim.pack.add({
 local telescope = require 'telescope'
 local actions = require 'telescope.actions'
 
+--- @type telescope.options
+local theme = {}
+
 telescope.setup({
 	defaults = {
+		file_ignore_patterns = {
+			'^%.git/'
+		},
 		mappings = {
 			i = {
 				["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist
@@ -29,7 +35,11 @@ telescope.setup({
 		},
 	},
 	extensions = {
-		['ui-select'] = {}
+		['ui-select'] = {
+			require('telescope.themes').get_dropdown({
+
+			})
+		}
 	},
 })
 
