@@ -36,9 +36,7 @@ if test -d "$HOME/.cargo/bin"; then
 fi
 
 # Default Browser
-if command -v wsl-open >& /dev/null; then
-	export BROWSER=wsl-open
-else
+if ! uname -r | grep -- '-WSL2$' >& /dev/null; then
 	export BROWSER=brave
 fi
 
