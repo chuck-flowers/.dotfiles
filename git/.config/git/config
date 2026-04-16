@@ -3,30 +3,41 @@
 	name = Chuck Flowers
 [core]
 	editor = nvim
-[init]
-	defaultBranch = master
-[rebase]
-	autoSquash = true
-	autoStash = true
-[pull]
-	ff = only
-	rebase = true
 [alias]
 	l = log --all --decorate --oneline --graph
 	lb = log --decorate --oneline --graph
 	rd = rebase -i master
 	rr = rebase -i origin
+
+# Command Configuration
+[branch]
+	sort = -committerdate
 [diff]
-	tool = nvimdiff
-[difftool "nvimdiff"]
-	cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+	algorithm = histogram
+	colorMoved = plain
+	external = difft
+[fetch]
+	all = true
+	pruneTags = true
+[init]
+	defaultBranch = master
+[merge]
+	ff = only
+[pull]
+	ff = only
+	rebase = true
+[push]
+	autoSetupRemote = true
+	followTags = true
+[rebase]
+	autoSquash = true
+	autoStash = true
+	updateRefs = true
+[tag]
+	sort = version:refname
+
+# Credentials
 [credential "https://github.com"]
 	helper = !/usr/bin/gh auth git-credential
 [credential "https://gist.github.com"]
 	helper = !/usr/bin/gh auth git-credential
-[branch]
-	autoSetupMerge = always
-[merge]
-	ff = only
-[push]
-	followTags = true
