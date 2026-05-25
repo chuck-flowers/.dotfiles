@@ -10,6 +10,5 @@ if not vim.lsp.is_enabled(LSP) then
 	})
 
 	vim.lsp.enable(LSP)
-	require('utils.lsp').install_lsp(LSP)
 end
 

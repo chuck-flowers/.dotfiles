@@ -3,7 +3,7 @@ vim.pack.add({
 })
 
 -- Load the snippets from files
-local snippet_dir = vim.fn.stdpath("config") .. "/lua/config/luasnip"
+local snippet_dir = vim.fn.stdpath("config") .. "/lua/config/plugins/luasnip"
 require("luasnip.loaders.from_lua").load({
 	paths = { snippet_dir },
 })

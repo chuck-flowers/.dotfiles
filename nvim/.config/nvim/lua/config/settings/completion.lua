@@ -8,7 +8,7 @@ local group_id = vim.api.nvim_create_augroup('completion.settings', {
 
 vim.api.nvim_create_autocmd('LspAttach', {
 	group = group_id,
-	callback = function (args)
+	callback = function(args)
 		local client = vim.lsp.get_client_by_id(args.data.client_id)
 		if not client then
 			vim.notify('Failed to determine client for attached LSP', vim.log.levels.ERROR)
@@ -20,8 +20,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
 			buf = args.buf,
 		})
 
-		vim.lsp.completion.enable(true, client.id, args.buf, {
-			autotrigger = true,
-		})
+		if client:supports_method('textDocument/completion') then
+			vim.lsp.completion.enable(true, client.id, args.buf, {
+				autotrigger = true,
+			})
+		end
 	end
 })

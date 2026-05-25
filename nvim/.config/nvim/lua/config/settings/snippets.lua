@@ -1,0 +1,2 @@
+-- vim.keymap.set({ 'i', 'x' }, '<C-l>', function () vim.snippet.jump(1) end)
+-- vim.keymap.set({ 'i', 'x' }, '<C-h>', function () vim.snippet.jump(-1) end)

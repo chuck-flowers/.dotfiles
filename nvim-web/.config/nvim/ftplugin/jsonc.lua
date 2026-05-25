@@ -1,1 +1,6 @@
-vim.keymap.set("n", "<leader>rf", ":%!jq -r ''<left>", { buffer = 0 })
+-- Configure LSP
+local LSP = 'jsonls'
+if not vim.lsp.is_enabled(LSP) then
+	vim.lsp.enable(LSP)
+end
+

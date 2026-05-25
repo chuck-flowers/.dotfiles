@@ -1,6 +1,7 @@
 vim.pack.add({
 	"https://github.com/nvim-lualine/lualine.nvim",
 	"https://github.com/nvim-tree/nvim-web-devicons",
+	'https://github.com/franco-ruggeri/codecompanion-lualine.nvim',
 })
 
 require("lualine").setup({
@@ -26,7 +27,7 @@ require("lualine").setup({
 	sections = {
 		lualine_a = { "mode" },
 		lualine_b = { "branch", "diff", "diagnostics" },
-		lualine_c = { "filename", "lsp_status" },
+		lualine_c = { "filename", "lsp_status", 'codecompanion' },
 		lualine_x = { "filetype" },
 		lualine_y = { "progress" },
 		lualine_z = { "location" },
