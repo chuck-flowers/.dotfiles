@@ -3,13 +3,23 @@ vim.pack.add({
 })
 
 -- Load the snippets from files
-local snippet_dir = vim.fn.stdpath("config") .. "/lua/config/plugins/luasnip"
 require("luasnip.loaders.from_lua").load({
-	paths = { snippet_dir },
+	paths = {
+		vim.fn.stdpath("config") .. "/lua/config/plugins/luasnip/snippets/"
+	},
 })
 
 require("luasnip").filetype_extend("typescriptreact", { "typescript" })
 require("luasnip").filetype_extend("helm", { "yaml" })
+
+require('luasnip').setup({
+
+})
+
+-- Snippet Expansion
+vim.keymap.set({ "i" }, '<c-k>', require('luasnip').expand, {
+	desc = 'expand snippet'
+})
 
 vim.keymap.set({ "i", "s" }, "<c-l>", function()
 	if require("luasnip").jumpable(1) then
@@ -26,11 +36,5 @@ end, { silent = true })
 vim.keymap.set({ "i", "s" }, "<c-j>", function()
 	if require("luasnip").choice_active() then
 		require("luasnip").change_choice(1)
-	end
-end, { silent = true })
-
-vim.keymap.set({ "i", "s" }, "<c-k>", function()
-	if require("luasnip").choice_active() then
-		require("luasnip").change_choice(-1)
 	end
 end, { silent = true })
