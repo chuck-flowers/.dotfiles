@@ -4,6 +4,27 @@ vim.pack.add({
 
 require('orgmode').setup({
 	org_agenda_files = '~/org/**/*.org',
+	org_agenda_custom_commands = {
+		p = {
+			description = 'Personal Tasks',
+			types = {
+				{
+					type = 'agenda',
+					org_agenda_category_filter_preset = '-work'
+				},
+			}
+		},
+		w = {
+			description = 'Work Tasks',
+			types = {
+				{
+					type = 'agenda',
+					org_agenda_category_filter_preset = 'work'
+				},
+			}
+		},
+	},
+
 	org_default_notes_file = '~/org/notes.org',
 	org_startup_indented = true,
 	org_adapt_indentation = false,
