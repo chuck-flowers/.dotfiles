@@ -1,0 +1,12 @@
+name: ${projectName}
+services:
+  # Development
+  dev:
+    build:
+      target: dev
+      secrets:
+        - npmrc
+
+secrets:
+  npmrc:
+    file: $HOME/.npmrc
