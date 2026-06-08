@@ -36,11 +36,6 @@ local import = s(
 		{
 			source = i(1, "", { key = "source" }),
 			members = c(2, {
-				-- Default
-				d(nil, function(args)
-					local alias = extract_alias(args[1][1])
-					return sn(nil, fmt("{alias}", { alias = i(1, alias) }))
-				end, k("source")),
 				-- Named
 				sn(
 					nil,
@@ -48,6 +43,11 @@ local import = s(
 						imports = i(1, ""),
 					})
 				),
+				-- Default
+				d(nil, function(args)
+					local alias = extract_alias(args[1][1])
+					return sn(nil, fmt("{alias}", { alias = i(1, alias) }))
+				end, k("source")),
 				-- Namespace
 				d(nil, function(args)
 					local alias = extract_alias(args[1][1])
