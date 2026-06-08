@@ -1,6 +1,6 @@
 vim.opt.autocomplete = true
 vim.opt.complete = { '.^3', 'w^3', 'b^3', 'u^3' }
-vim.opt.completeopt = { 'menuone', 'noselect', 'popup' }
+vim.opt.completeopt = { 'menuone', 'noselect', 'popup', 'fuzzy' }
 
 local group_id = vim.api.nvim_create_augroup('completion.settings', {
 	clear = true,
