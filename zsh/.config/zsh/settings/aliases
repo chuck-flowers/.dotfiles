@@ -1,9 +1,7 @@
 #!/usr/bin/env zsh
 
-alias df='df -h'
-alias dotfiles="stow -d ~/.dotfiles"
+alias df='df --human-readable'
 alias k='kubectl'
 alias less='less -R'
-alias ll='ls -Al --color=auto'
+alias ll='ls --almost-all --human-readable --group-directories-first -l'
 alias ls='ls -A --color=auto'
-
