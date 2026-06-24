@@ -280,10 +280,10 @@ hl.bind(mainMod .. " + C", hl.dsp.exec_cmd('steam'))
 hl.bind(mainMod .. " + w", hl.dsp.window.close())
 
 -- Window Focus
-hl.bind(mainMod .. " + h", hl.dsp.focus({ direction = "left" }))
-hl.bind(mainMod .. " + j", hl.dsp.focus({ direction = "down" }))
-hl.bind(mainMod .. " + k", hl.dsp.focus({ direction = "up" }))
-hl.bind(mainMod .. " + l", hl.dsp.focus({ direction = "right" }))
+hl.bind(mainMod .. " + j", hl.dsp.window.cycle_next({ next = 1 }))
+hl.bind(mainMod .. " + k", hl.dsp.window.cycle_next({ prev = 1 }))
+hl.bind(mainMod .. " + h", hl.dsp.focus({ monitor = "l" }))
+hl.bind(mainMod .. " + l", hl.dsp.focus({ monitor = "r" }))
 
 -- Window Placement
 hl.bind(mainMod .. "+ SHIFT + j", hl.dsp.window.swap({ next = 1 }))
