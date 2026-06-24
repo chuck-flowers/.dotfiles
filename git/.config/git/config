@@ -15,7 +15,7 @@
 [diff]
 	algorithm = histogram
 	colorMoved = plain
-	external = difft
+	external = difft --color=always
 [fetch]
 	all = true
 	pruneTags = true
