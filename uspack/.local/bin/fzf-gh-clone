@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+_project_dir_root="$HOME/source/repos"
+
+if ! _selected_repo=$(gh repo list --no-archived --json name -q '.[].name' --limit 1000 fleetgistics | fzf); then
+	exit 1
+fi
+
+while true; do
+	case $_selected_repo in
+		auto-* | app-* | int-* | api-*)
+			_subdir=$(sed -E 's/-/\//' <<< "$_selected_repo")
+			break
+			;;
+		*)
+			printf "The repo '%s' is a non-standard name" "$_selected_repo"
+			while true; do
+				case $_new_name in
+					auto-* | app-* | int-*)
+						gh repo -R "fleetgistics/$_selected_repo" rename "$_new_name" || exit 1
+						_selected_repo=$_new_name
+						break
+					;;
+					*)
+						read -rp "New Name: " _new_name
+					;;
+				esac
+			done
+			;;
+	esac
+done
+
+gh repo clone "fleetgistics/$_selected_repo" "$_project_dir_root/$_subdir"
+

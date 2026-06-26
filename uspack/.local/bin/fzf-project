@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+_projects_dir="$HOME/source/repos"
+
+if ! _selected_project=$(fd --type d --hidden --prune '\.git$' "$_projects_dir" | xargs -n1 -- dirname | xargs -n1 realpath --relative-to "$_projects_dir" | fzf); then
+	exit 1
+fi
+
+_selected_project_id="${_selected_project//\//\-}"
+# Attach to session if already exists
+if tmux ls | grep -E "^$_selected_project_id:" &>/dev/null; then
+	tmux attach-session -t "$_selected_project_id"
+	exit 0
+fi
+
+tmux new-session -d -s "$_selected_project_id" -c "$_projects_dir/$_selected_project" nvim
+
+# Start LazyDocker for compose projects
+if command -v docker &>/dev/null; then
+	for x in $_projects_dir/$_selected_project/compose.{yaml,yml}; do
+		if [[ -f "$x" ]]; then
+			tmux new-window -d -c "$_projects_dir/$_selected_project" lazydocker -p "$_selected_project"
+			break
+		fi
+	done
+fi
+
+# Start K9s for Kubernetes projects
+if command -v k9s &>/dev/null && [[ -f "$_projects_dir/$_selected_project/Chart.yaml" ]]; then
+	tmux new-window -d -c "$_projects_dir/$_selected_project" k9s -n "$(yq .name "$_projects_dir/$_selected_project/Chart.yaml")" -c pods
+fi
+
+if command -v pi &>/dev/null; then
+	tmux new-window -d -c "$_projects_dir/$_selected_project" pi
+fi
+
+tmux attach-session -t "$_selected_project_id"
+
