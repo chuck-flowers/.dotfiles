@@ -8,7 +8,11 @@ require('editorconfig')
 --- @type { [string]: string[] }
 local priority_mapping = {
 	css = { 'stylelint_lsp', 'cssls' },
-	typescript = { 'oxfmt', 'eslint', 'ts_ls' }
+	json = { 'oxfmt', 'jsonls' },
+	jsonc = { 'oxfmt', 'jsonls' },
+	typescript = { 'oxfmt', 'eslint', 'ts_ls' },
+	typescriptreact = { 'oxfmt', 'eslint', 'ts_ls' },
+	yaml = { 'oxfmt', 'yamlls' }
 }
 
 --- @param client vim.lsp.Client
