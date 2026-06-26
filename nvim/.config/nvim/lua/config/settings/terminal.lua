@@ -1,3 +1,5 @@
+vim.pack.add({ "https://github.com/brianhuster/unnest.nvim" })
+
 -- Enable full color support
 vim.o.termguicolors = true
 
