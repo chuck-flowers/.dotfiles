@@ -274,6 +274,7 @@ hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + return", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd('steam'))
+hl.bind(mainMod .. " + P", hl.dsp.exec_cmd('wofi-pass'))
 
 -- Window Management
 hl.bind(mainMod .. " + w", hl.dsp.window.close())
