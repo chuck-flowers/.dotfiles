@@ -24,7 +24,7 @@ require 'monitors'
 ---------------------
 
 -- Set programs that you use
-local terminal = "alacritty"
+local terminal = "ghostty"
 local browser  = "brave"
 local menu     = "wofi"
 
