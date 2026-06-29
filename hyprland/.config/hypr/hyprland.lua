@@ -26,7 +26,7 @@ require 'monitors'
 -- Set programs that you use
 local terminal = "alacritty"
 local browser  = "brave"
-local menu     = "hyprlauncher"
+local menu     = "wofi"
 
 
 -------------------
@@ -43,7 +43,6 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("waybar")
 	hl.exec_cmd("hyprpaper")
 	hl.exec_cmd("mako")
-	hl.exec_cmd("hyprlauncher -d")
 
 	hl.exec_cmd("dex --autostart")
 end)
