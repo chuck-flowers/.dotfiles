@@ -45,12 +45,14 @@ local import = s(
 				),
 				-- Default
 				d(nil, function(args)
-					local alias = extract_alias(args[1][1])
+					local alias = require('utils.strings.casings').to_camel_case(extract_alias(args[1][1]))
+					-- local alias = extract_alias(args[1][1])
 					return sn(nil, fmt("{alias}", { alias = i(1, alias) }))
 				end, k("source")),
 				-- Namespace
 				d(nil, function(args)
-					local alias = extract_alias(args[1][1])
+					local alias = require('utils.strings.casings').to_camel_case(extract_alias(args[1][1]))
+					-- local alias = extract_alias(args[1][1])
 					return sn(nil, fmt("* as {alias}", { alias = i(1, alias) }))
 				end, k("source")),
 			}),
