@@ -27,7 +27,7 @@ for _command in ${_commands[@]}; do
 
 	# If the completion file does not exist, or the binary is newer, generate completion
 	if [[ ! -f "$_completion_path" || $(command -v "$_command") -nt "$_completion_path" ]]; then
-		"$_command" completion zsh > "$_completion_path"
+		mkdir -p "$(dirname $_completion_path)" && "$_command" completion zsh > "$_completion_path"
 	fi
 done
 
