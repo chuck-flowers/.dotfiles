@@ -37,5 +37,5 @@ require('orgmode').setup({
 })
 
 vim.keymap.set('n', '<leader>fo', function()
-	require('telescope.builtin').find_files({ cwd = '~/org', follow = true, hidden = true })
+	require('telescope.builtin').find_files({ cwd = '~/mnt/org', follow = true, hidden = true })
 end)
