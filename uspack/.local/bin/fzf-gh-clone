@@ -8,7 +8,7 @@ fi
 
 while true; do
 	case $_selected_repo in
-		auto-* | app-* | int-* | api-*)
+		auto-* | app-* | int-* | micro-*)
 			_subdir=$(sed -E 's/-/\//' <<< "$_selected_repo")
 			break
 			;;
@@ -16,7 +16,7 @@ while true; do
 			printf "The repo '%s' is a non-standard name" "$_selected_repo"
 			while true; do
 				case $_new_name in
-					auto-* | app-* | int-*)
+					auto-* | app-* | int-* | micro-*)
 						gh repo -R "fleetgistics/$_selected_repo" rename "$_new_name" || exit 1
 						_selected_repo=$_new_name
 						break
