@@ -7,7 +7,8 @@ require('editorconfig')
 
 --- @type { [string]: string[] }
 local priority_mapping = {
-	css = { 'stylelint_lsp', 'cssls' },
+	css = { 'oxfmt', 'stylelint_lsp', 'cssls' },
+	html = { 'oxfmt', 'html' },
 	json = { 'oxfmt', 'jsonls' },
 	jsonc = { 'oxfmt', 'jsonls' },
 	typescript = { 'oxfmt', 'eslint', 'ts_ls' },
