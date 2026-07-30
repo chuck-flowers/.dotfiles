@@ -42,10 +42,6 @@ local plugin = s(
 				function(args)
 					local plugin_name = args[1][1]
 					local converted = require('utils.strings.casings').to_kebab_case(plugin_name)
-					print(vim.inspect({
-						converted = converted,
-						plugin_name = plugin_name,
-					}))
 
 					return converted
 				end,
