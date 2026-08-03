@@ -3,7 +3,7 @@ vim.pack.add({
 })
 
 require('orgmode').setup({
-	org_agenda_files = '~/org/**/*.org',
+	org_agenda_files = '~/mnt/org/**/*.org',
 	org_agenda_custom_commands = {
 		p = {
 			description = 'Personal Tasks',
