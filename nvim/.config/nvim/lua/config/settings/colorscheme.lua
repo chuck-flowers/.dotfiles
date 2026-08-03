@@ -11,4 +11,4 @@ end
 
 -- Apply Theme
 vim.o.background = 'dark'
-vim.cmd([[ colorscheme gruvbox ]])
+vim.cmd([[ colorscheme cendre ]])
