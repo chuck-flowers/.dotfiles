@@ -1,4 +1,4 @@
-local gruvbox = require 'themes.gruvbox'
+local theme = require 'themes.cendre'
 
 -- This is an example Hyprland Lua config file.
 -- Refer to the wiki for more information.
@@ -92,16 +92,16 @@ hl.config({
 		col              = {
 			active_border   = {
 				colors = {
-					gruvbox.light.red,
-					gruvbox.light.orange,
-					gruvbox.light.yellow,
-					gruvbox.light.green,
-					gruvbox.light.blue,
-					gruvbox.light.purple,
+					theme.light.red,
+					theme.light.orange,
+					theme.light.yellow,
+					theme.light.green,
+					theme.light.blue,
+					theme.light.purple,
 				},
 				angle = 45
 			},
-			inactive_border = gruvbox.dark.black,
+			inactive_border = theme.dark.black,
 		},
 
 		-- Set to true to enable resizing windows by clicking and dragging on borders and gaps
