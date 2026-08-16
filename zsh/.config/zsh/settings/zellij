@@ -1,3 +1,5 @@
 #!/usr/bin/env zsh
 
-export ZELLIJ_AUTO_EXIT=true
+if command -v zellij &>/dev/null; then
+	export ZELLIJ_AUTO_EXIT=true
+fi

@@ -1,3 +1,5 @@
 #!/usr/bin/env zsh
 
-command -v fzf >& /dev/null && source <(fzf --zsh)
+if command -v fzf &>/dev/null; then
+	source <(fzf --zsh)
+fi
