@@ -1,5 +1,7 @@
 local fs_utils = require 'utils.fs'
 
+vim.o.termguicolors = true
+
 vim.g.mapleader = " "
 
 local ok, err
