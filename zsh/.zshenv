@@ -14,11 +14,6 @@ if test -d "$HOME/go/bin"; then
 	export PATH="$HOME/go/bin:$PATH"
 fi
 
-# Kubernetes Kubectl Plugins
-if test -d "$HOME/.krew/bin"; then
-	export PATH="$HOME/.krew/bin:$PATH"
-fi
-
 # NVM Executables
 if test -d "$HOME/.nvm"; then
 	source "$HOME/.nvm/nvm.sh"
