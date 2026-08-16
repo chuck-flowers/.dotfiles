@@ -40,11 +40,10 @@ function M.enable_autoformat(priority)
 				end
 			end
 
+			-- Run format for all attached clients
 			for _, client in ipairs(clients) do
-				if not vim.tbl_contains(formatting_blacklist, client.name) then
-					if client:supports_method('textDocument/formatting', args.buf) then
-						vim.lsp.buf.format({ async = false, id = client.id })
-					end
+				if client:supports_method('textDocument/formatting', args.buf) then
+					vim.lsp.buf.format({ async = false, id = client.id })
 				end
 			end
 		end
