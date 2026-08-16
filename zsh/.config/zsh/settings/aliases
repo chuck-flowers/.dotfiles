@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
 if command -v bat &>/dev/null; then
+	alias bat='bat --theme cendre'
 	alias cat='bat'
 fi
 
