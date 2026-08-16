@@ -54,11 +54,9 @@ end
 --- @param input string[]
 --- @return string
 function M.as_camel_case(input)
-	vim.notify('to_camel_case ' .. vim.inspect(input), vim.log.levels.INFO)
 	local to_return = input[1]
 	for i = 2, #input do
 		local token = input[i]
-		vim.notify('to_camel_case for ' .. vim.inspect({ i = i, token = token }), vim.log.levels.INFO)
 		to_return = to_return .. (token:sub(1, 1):upper()) .. (token:sub(2))
 	end
 
