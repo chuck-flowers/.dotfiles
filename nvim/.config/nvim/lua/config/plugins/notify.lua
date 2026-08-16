@@ -2,9 +2,6 @@ vim.pack.add({
 	'https://github.com/rcarriga/nvim-notify'
 })
 
-require('notify').setup({
-	background_colour = require('gruvbox').palette.dark1,
-})
+vim.api.nvim_set_hl(0, 'NotifyBackground', { link = 'NormalFloat' })
 
 vim.notify = require('notify')
-
