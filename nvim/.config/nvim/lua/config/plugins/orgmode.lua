@@ -25,6 +25,15 @@ require('orgmode').setup({
 		},
 	},
 
+	org_capture_templates = {
+		w = {
+			description = 'A work-related task',
+			template = '* TODO %?\nSCHEDULED: %t',
+			target = "~/mnt/org/work.org",
+			headline = "Unfiled Tasks"
+		},
+	},
+
 	org_default_notes_file = '~/org/notes.org',
 	org_startup_indented = true,
 	org_adapt_indentation = false,
