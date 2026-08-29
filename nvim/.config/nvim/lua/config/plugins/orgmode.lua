@@ -32,6 +32,12 @@ require('orgmode').setup({
 			target = "~/mnt/org/work.org",
 			headline = "Unfiled Tasks"
 		},
+		p = {
+			description = 'A personal task',
+			template = '* TODO %?\nSCHEDULED: %t',
+			target = "~/mnt/org/todos.org",
+			headline = "Unfiled"
+		},
 	},
 
 	org_default_notes_file = '~/org/notes.org',
