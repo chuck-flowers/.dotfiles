@@ -379,3 +379,9 @@ hl.window_rule({
 	move  = "20 monitor_h-120",
 	float = true,
 })
+
+hl.config({
+	misc = {
+		disable_splash_rendering = true
+	}
+})
