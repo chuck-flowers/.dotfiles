@@ -3,10 +3,10 @@ return {
 		"eslintrc",
 		fmt(
 			[[
-		{{
-			"$schema": "https://json.schemastore.org/eslintrc.json"
-		}}
-	]],
+				{{
+					"$schema": "https://json.schemastore.org/eslintrc.json"
+				}}
+			]],
 			{}
 		)
 	),
@@ -14,10 +14,10 @@ return {
 		"npm-package",
 		fmt(
 			[[
-		{{
-			"$schema": "https://json.schemastore.org/package.json"
-		}}
-	]],
+				{{
+					"$schema": "https://json.schemastore.org/package.json"
+				}}
+			]],
 			{}
 		)
 	),
@@ -25,10 +25,10 @@ return {
 		"tsconfig",
 		fmt(
 			[[
-		{{
-			"$schema": "https://json.schemastore.org/tsconfig.json"
-		}}
-	]],
+				{{
+					"$schema": "https://json.schemastore.org/tsconfig.json"
+				}}
+			]],
 			{}
 		)
 	),
@@ -36,10 +36,21 @@ return {
 		"schema",
 		fmt(
 			[[
-		{{
-			"$schema": "https://json-schema.org/draft-07/schema#"
-		}}
-	]],
+				{{
+					"$schema": "https://json-schema.org/draft-07/schema#"
+				}}
+			]],
+			{}
+		)
+	),
+	s(
+		"node-config",
+		fmt(
+			[[
+				{{
+					"$schema": "https://nodejs.org/dist/latest-v24.x/docs/node-config-schema.json"
+				}}
+			]],
 			{}
 		)
 	),
