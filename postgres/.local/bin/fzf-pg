@@ -3,7 +3,9 @@
 main() {
 	# Choose an option from .pgpass
 	local choice
-	choice=$(cat ~/.pgpass | fzf --delimiter ':' --with-nth '{3} ({4}@{1})')
+	if ! choice=$(grep -Ev '^(#.*|\s*)$' ~/.pgpass | fzf --delimiter ':' --with-nth '{3} ({4}@{1})'); then
+		exit 1
+	fi
 
 	# Extract each field
 	local host port db user
@@ -13,7 +15,7 @@ main() {
 	user=$(echo "$choice" | cut --delimiter ':' --field 4)
 
 	# Perform the connection
-	psql -h "$host" -p "$port" -U "$user" "$db"
+	exec psql -h "$host" -p "$port" -U "$user" "$db"
 }
 
 main "$@"
