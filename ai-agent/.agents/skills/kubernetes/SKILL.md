@@ -1,17 +1,12 @@
 ---
-name: uspack-k8s-conventions
+name: kubernetes
 description: >
-  Describes the conventions used by USPack within the Kubernetes environments.
-  Use whenever interacting with Kubernetes via the kubectl CLI to understand how
-  the cluster is organized
+  Describes naming conventions within a Kubernetes cluster, and how to properly
+  navigate and interact with it. Use whenever you need to interact with
+  Kubernetes via `kubectl`.
 ---
 
-# USPack Kubernetes Conventions
-
-This is a skill meant to describe the organizational scheme used within the
-USPack kubernetes clusters.
-
-## Cluster Scopes
+## Cluster Contexts
 
 Each cluster corresponds to an environment. The production versions of workloads
 are deployed in the `primary` cluster. The staging versions of workloads are
