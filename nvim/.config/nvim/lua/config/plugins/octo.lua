@@ -13,3 +13,5 @@ require('octo').setup({
 
 vim.keymap.set('n', '<leader>hh', '<cmd>Octo<cr>')
 vim.keymap.set('n', '<leader>hr', '<cmd>Octo repo browser<cr>')
+vim.keymap.set('n', '<leader>hi', '<cmd>Octo issue list<cr>')
+vim.keymap.set('n', '<leader>hp', '<cmd>Octo pr list<cr>')
