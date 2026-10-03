@@ -11,6 +11,7 @@ local priority_mapping = {
 	html = { 'oxfmt', 'html' },
 	json = { 'oxfmt', 'jsonls' },
 	jsonc = { 'oxfmt', 'jsonls' },
+	lua = { 'lua_ls' },
 	typescript = { 'oxfmt', 'eslint', 'ts_ls' },
 	typescriptreact = { 'oxfmt', 'eslint', 'ts_ls' },
 	yaml = { 'oxfmt', 'yamlls' }
