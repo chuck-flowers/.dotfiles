@@ -4,16 +4,16 @@
 	"height": 30, // Waybar height (to be removed for auto height)
 	// "width": 1280, // Waybar width
 	"spacing": 24,
+	"reload_style_on_change": true,
 	// Choose the order of the modules
 	"modules-left": [
 		"hyprland/workspaces"
-		// "custom/media"
 	],
 	"modules-center": [
-		"hyprland/window"
+		"pulseaudio",
+		"mpris"
 	],
 	"modules-right": [
-		"pulseaudio",
 		"cpu",
 		"memory",
 		"disk",
@@ -50,21 +50,34 @@
 		"format-alt": "{:%Y-%m-%d}"
 	},
 	"cpu": {
-		"format": " {usage}%",
-		"tooltip": false
+		"format": "{icon} {usage}%",
+		"format-icons": [
+			""
+		],
+		"on-click": "ghostty -e btop"
 	},
 	"memory": {
-		"format": " {}%"
+		"format": "{icon} {percentage}%",
+		"format-icons": [
+			"󰍛"
+		],
+		"on-click": "ghostty -e btop"
 	},
 	"disk": {
-		"format": " {}%"
+		"format": "{path} {percentage_used}%",
+		"header": " ",
+		"paths": [
+			"/",
+			"/home"
+		],
+		"separator": " ",
+		"on-click": "ghostty -e btop"
 	},
 	"pulseaudio": {
-		// "scroll-step": 1, // %, can be a float
 		"format": "{icon} {volume}% {format_source}",
 		"format-bluetooth": "{volume}% {icon} {format_source}",
 		"format-bluetooth-muted": "  {icon} {format_source}",
-		"format-muted": "  {format_source}",
+		"format-muted": " {format_source}",
 		"format-source": " {volume}%",
 		"format-source-muted": "",
 		"format-icons": {
@@ -80,13 +93,13 @@
 				""
 			]
 		},
-		"on-click": "flatpak run --user org.pulseaudio.pavucontrol"
+		"on-click": "pavucontrol"
 	},
 	"custom/media": {
 		"format": "{icon} {}",
 		"return-type": "json",
-		"max-length": 40,
 		"format-icons": {
+			"max-length": 40,
 			"spotify": "",
 			"default": "🎜"
 		},

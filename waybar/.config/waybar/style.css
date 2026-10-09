@@ -1,57 +1,49 @@
-@define-color theme-dark-black #201b19;
-@define-color theme-dark-red #d1766e;
-@define-color theme-dark-green #99af6b;
-@define-color theme-dark-yellow #fcba81;
-@define-color theme-dark-blue #58bdff;
-@define-color theme-dark-purple #9480ba;
-@define-color theme-dark-aqua #4e89a2;
-@define-color theme-dark-white #a09384;
+/* @define-color theme-dark-black #201b19; */
+/* @define-color theme-dark-red #d1766e; */
+/* @define-color theme-dark-green #99af6b; */
+/* @define-color theme-dark-yellow #fcba81; */
+/* @define-color theme-dark-blue #58bdff; */
+/* @define-color theme-dark-purple #9480ba; */
+/* @define-color theme-dark-aqua #4e89a2; */
+/* @define-color theme-dark-white #a09384; */
 
-@define-color theme-light-black #73665b;
-@define-color theme-light-red #d25780;
-@define-color theme-light-green #43b16a;
-@define-color theme-light-yellow #f4a21c;
-@define-color theme-light-blue #8bcfff;
-@define-color theme-light-purple #a692cd;
-@define-color theme-light-aqua #20c9cb;
-@define-color theme-light-white #e6d5c2;
-
-* {
-	border: none;
-	border-radius: 0;
-	font-family: Fira Code Nerd Font;
-	font-size: 14pt;
-	min-height: 0;
-}
-
-window#waybar {
-	background: @theme-dark-black;
-	border-bottom: 3px solid @theme-dark-yellow;
-	color: @theme-light-white;
-}
+/* @define-color theme-light-black #73665b; */
+/* @define-color theme-light-red #d25780; */
+/* @define-color theme-light-green #43b16a; */
+/* @define-color theme-light-yellow #f4a21c; */
+/* @define-color theme-light-blue #8bcfff; */
+/* @define-color theme-light-purple #a692cd; */
+/* @define-color theme-light-aqua #20c9cb; */
+/* @define-color theme-light-white #e6d5c2; */
 
 tooltip {
-	background: @theme-dark-black;
-	border: 1px solid @theme-light-white;
+	background: #201b19;
+	border: 1px solid currentcolor;
 }
 
-tooltip label {
-	color: @theme-light-white;
+#waybar {
+	color: #e6d5c2;
+	font-family: Fira Code Nerd Font;
+
+	padding-left: 8px;
+	padding-right: 8px;
 }
 
 #workspaces button {
-	padding: 0 5px;
-	background: transparent;
-	color: @theme-light-white;
-	border-bottom: 3px solid transparent;
+	transition:
+		background-color 250ms linear,
+		color 250ms linear;
+}
+
+#workspaces button.active,
+#workspaces button.urgent {
+	color: #201b19;
 }
 
 #workspaces button.active {
-	color: @theme-dark-black;
-	background-color: @theme-light-green;
+	background-color: #99af6b;
 }
 
 #workspaces button.urgent {
-	color: @theme-dark-black;
-	background-color: @theme-light-red;
+	background-color: #d1766e;
 }
