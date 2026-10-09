@@ -1,1 +1,3 @@
-theme = cendre
+theme = Gruvbox Dark Hard
+background-blur = true
+background-opacity = 0.9
