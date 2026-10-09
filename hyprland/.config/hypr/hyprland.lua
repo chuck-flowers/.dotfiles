@@ -41,7 +41,7 @@ local menu     = "wofi"
 hl.on("hyprland.start", function()
 	-- Hyprland UI Components
 	hl.exec_cmd("waybar")
-	hl.exec_cmd("hyprpaper")
+	hl.exec_cmd("waypaper --restore")
 	hl.exec_cmd("mako")
 
 	hl.exec_cmd("dex --autostart")
