@@ -11,4 +11,7 @@ end
 
 -- Apply Theme
 vim.o.background = 'dark'
-vim.cmd([[ colorscheme cendre ]])
+vim.cmd([[ colorscheme retrobox ]])
+
+-- Transparent Background
+vim.cmd([[ highlight Normal guibg=NONE ]])
